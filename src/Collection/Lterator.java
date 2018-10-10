@@ -37,7 +37,11 @@ import java.util.Map;
 //}
 
 //使用4种方法遍历Map
-
+/*总结
+      1）map的key采用简单形式和复杂形式时，查找的效率是不同的，简单的key值效率更高
+      2）当数据量大的时候，采用entrySet遍历key+value的效率要高于keySet
+      3）当我们只需要取得value值时，采用values来遍历效率更高
+* */
 public class Lterator{
     public static void main(String[] args) {
         Map<String, String> map = new HashMap<>();
@@ -65,10 +69,11 @@ public class Lterator{
             System.out.println("key= " + entry.getKey() + " and value= " + entry.getValue());
         }
 
-        //第四种
+        //第四种 当我们只需要取得value值时，采用values来遍历效率更高
         System.out.println("通过Map.values()遍历所有的value，但不能遍历key");
         for (String v : map.values()) {
             System.out.println("value= " + v);
         }
     }
 }
+
