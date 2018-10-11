@@ -20,7 +20,7 @@ public class SynLock implements Runnable {
 //                System.out.println(Thread.currentThread().getName() + " synchronized loop " + i);
 //            }
 //        }
-//        putTest();
+        putTest();
 //        getTest();
 //        method();
 //        method1();
