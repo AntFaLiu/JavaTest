@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="3a6951b6-d539-4f44-8a44-d9796da7f2bf" name="Default" comment="">
 <<<<<<< HEAD
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/src/Exception/TestException.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/Thread/ThreadUseCase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -17,17 +18,59 @@
       <change beforePath="$PROJECT_DIR$/out/production/lyp/LockTest/ReLock/ReentrantLocakTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lyp/LockTest/ReLock/ReentrantLocakTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/IoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IoTest.java" afterDir="false" />
 >>>>>>> e9a8ac4bc61e3236f5d880801452327fefa30bd7
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+>>>>>>> CollectionFrame
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="960458634">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="11" />
+          <entry key="project.open.time.10" value="1" />
+          <entry key="project.open.time.27" value="1" />
+          <entry key="project.open.time.34" value="1" />
+          <entry key="project.open.time.6" value="2" />
+          <entry key="project.open.time.7" value="7" />
+          <entry key="project.open.time.8" value="1" />
+          <entry key="project.opened" value="13" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="36" />
+          <entry key="md" value="156" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="36" />
+          <entry key="Markdown" value="38" />
+          <entry key="PLAIN_TEXT" value="118" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="md" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="PLAIN_TEXT" value="3" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+<<<<<<< HEAD
 <<<<<<< HEAD
       <file leaf-file-name="ThreadWay.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Thread/ThreadWay.java">
@@ -50,6 +93,13 @@
             <state relative-caret-position="94">
               <caret line="11" selection-start-line="11" selection-end-line="12" />
 >>>>>>> e9a8ac4bc61e3236f5d880801452327fefa30bd7
+=======
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Thread/ThreadWay.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="299">
+              <caret line="15" column="48" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="48" />
+>>>>>>> CollectionFrame
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -58,15 +108,18 @@
         </entry>
       </file>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <file leaf-file-name="Executor.java" pinned="false" current-in-tab="false">
+=======
+      <file pinned="false" current-in-tab="false">
+>>>>>>> CollectionFrame
         <entry file="file://$PROJECT_DIR$/src/Thread/Executor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
-              <caret line="223" lean-forward="true" selection-start-line="223" selection-end-line="223" />
+            <state relative-caret-position="5083">
+              <caret line="223" selection-start-line="223" selection-end-line="223" />
               <folding>
                 <element signature="e#6505#6506#0" expanded="true" />
                 <element signature="e#6545#6546#0" expanded="true" />
-                <element signature="e#8984#8993#0" expanded="true" />
               </folding>
 =======
       <file leaf-file-name="Demo.java" pinned="false" current-in-tab="false">
@@ -78,6 +131,7 @@
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="Demo.class" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Demo.class">
           <provider selected="true" editor-type-id="text-editor">
@@ -99,10 +153,13 @@
       </file>
 <<<<<<< HEAD
       <file leaf-file-name="ThreadUseCase.java" pinned="false" current-in-tab="true">
+=======
+      <file pinned="false" current-in-tab="false">
+>>>>>>> CollectionFrame
         <entry file="file://$PROJECT_DIR$/src/Thread/ThreadUseCase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="154" column="22" selection-start-line="154" selection-start-column="22" selection-end-line="154" selection-end-column="22" />
+            <state relative-caret-position="3450">
+              <caret line="160" column="50" selection-start-line="160" selection-start-column="50" selection-end-line="160" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2759#2760#0" expanded="true" />
@@ -128,10 +185,24 @@
         </entry>
       </file>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <file leaf-file-name="TestException.java" pinned="false" current-in-tab="false">
+=======
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Collection/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor />
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+>>>>>>> CollectionFrame
         <entry file="file://$PROJECT_DIR$/src/Exception/TestException.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
+            <state relative-caret-position="552">
               <caret line="24" column="36" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
 =======
       <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
@@ -148,6 +219,7 @@
         </entry>
       </file>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <file leaf-file-name="SynLock.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/LockTest/SynLock.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -163,10 +235,18 @@
                 <element signature="imports" expanded="true" />
               </folding>
 >>>>>>> e9a8ac4bc61e3236f5d880801452327fefa30bd7
+=======
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/LockTest/SynLock.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3082">
+              <caret line="134" column="13" selection-start-line="132" selection-start-column="11" selection-end-line="134" selection-end-column="13" />
+>>>>>>> CollectionFrame
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
 <<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/src/Thread/README.md">
@@ -181,6 +261,34 @@
               <first_editor relative-caret-position="288">
                 <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
 >>>>>>> e9a8ac4bc61e3236f5d880801452327fefa30bd7
+=======
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Thread/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor />
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor />
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/JavaDemo/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="94">
+                <caret line="55" lean-forward="true" selection-start-line="55" selection-end-line="55" />
+>>>>>>> CollectionFrame
               </first_editor>
               <second_editor />
             </state>
@@ -257,11 +365,13 @@
         <option value="$PROJECT_DIR$/src/Thread/Daemon.java" />
         <option value="$PROJECT_DIR$/src/Collection/Demo.java" />
 <<<<<<< HEAD
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/Collection/README.md" />
+=======
+>>>>>>> CollectionFrame
         <option value="$PROJECT_DIR$/src/Collection/Lterator.java" />
         <option value="$PROJECT_DIR$/src/Collection/HashMap.java" />
         <option value="$PROJECT_DIR$/src/LockTest/README.md" />
-        <option value="$PROJECT_DIR$/src/Thread/README.md" />
         <option value="$PROJECT_DIR$/src/Thread/ThreadWay.java" />
 =======
         <option value="$PROJECT_DIR$/src/Collection/Lterator.java" />
@@ -273,6 +383,7 @@
         <option value="$PROJECT_DIR$/src/Thread/Executor.java" />
         <option value="$PROJECT_DIR$/src/Thread/ThreadUseCase.java" />
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         <option value="$PROJECT_DIR$/src/Collection/README.md" />
         <option value="$PROJECT_DIR$/src/Thread/ThreadWay.java" />
@@ -283,6 +394,11 @@
         <option value="$PROJECT_DIR$/src/IODemo/README.md" />
         <option value="$PROJECT_DIR$/src/IoTest.java" />
 >>>>>>> e9a8ac4bc61e3236f5d880801452327fefa30bd7
+=======
+        <option value="$PROJECT_DIR$/src/Collection/README.md" />
+        <option value="$PROJECT_DIR$/src/Thread/README.md" />
+        <option value="$PROJECT_DIR$/src/JavaDemo/README.md" />
+>>>>>>> CollectionFrame
       </list>
     </option>
   </component>
@@ -292,10 +408,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="y" value="-1080" />
-    <option name="width" value="1920" />
-    <option name="height" value="1080" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="113" />
+    <option name="y" value="25" />
+    <option name="width" value="1440" />
+    <option name="height" value="774" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -320,27 +437,32 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
+<<<<<<< HEAD
 <<<<<<< HEAD
       <pane id="AndroidView" />
 =======
 >>>>>>> e9a8ac4bc61e3236f5d880801452327fefa30bd7
+=======
+>>>>>>> CollectionFrame
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="lyp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lyp" type="462c0819:PsiDirectoryNode" />
+              <item name="JavaTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaTest" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="lyp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lyp" type="462c0819:PsiDirectoryNode" />
+              <item name="JavaTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaTest" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="lyp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lyp" type="462c0819:PsiDirectoryNode" />
+              <item name="JavaTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaTest" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
 <<<<<<< HEAD
               <item name="Exception" type="462c0819:PsiDirectoryNode" />
             </path>
@@ -369,22 +491,29 @@
             <path>
               <item name="lyp" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+=======
+              <item name="JavaDemo" type="462c0819:PsiDirectoryNode" />
+>>>>>>> CollectionFrame
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+<<<<<<< HEAD
       <pane id="Scope" />
 <<<<<<< HEAD
 =======
       <pane id="AndroidView" />
 >>>>>>> e9a8ac4bc61e3236f5d880801452327fefa30bd7
+=======
+>>>>>>> CollectionFrame
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/src.zip!/java/util/concurrent/Executors.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539698780563" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
@@ -394,9 +523,13 @@
     </key>
     <key name="CopyFile.RECENT_KEYS">
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
       <recent name="$PROJECT_DIR$/src/IODemo" />
 >>>>>>> e9a8ac4bc61e3236f5d880801452327fefa30bd7
+=======
+      <recent name="C:\Users\Administrator\IdeaProjects\JavaTest\src\JavaDemo" />
+>>>>>>> CollectionFrame
       <recent name="$PROJECT_DIR$/src/LockTest" />
       <recent name="$PROJECT_DIR$/src/Collection" />
     </key>
@@ -417,6 +550,9 @@
   <component name="RunManager" selected="Application.ThreadUseCase">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="CallDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Thread.CallDemo" />
@@ -428,6 +564,9 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="Executor" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Thread.Executor" />
@@ -439,6 +578,9 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="SynLock" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="LockTest.SynLock" />
@@ -472,6 +614,9 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
 <<<<<<< HEAD
     <configuration name="TestException" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -492,6 +637,9 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="ThreadUseCase" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Thread.ThreadUseCase" />
@@ -503,60 +651,38 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
       <properties />
       <listeners />
-    </configuration>
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
       <option name="PROGRAM_PARAMETERS" />
       <predefined_log_file id="idea.log" enabled="true" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <list>
 <<<<<<< HEAD
@@ -627,6 +753,7 @@
     <option name="totallyTimeSpent" value="57987000" />
   </component>
   <component name="ToolWindowManager">
+<<<<<<< HEAD
     <frame x="0" y="-1080" width="1920" height="1080" extended-state="0" />
     <editor active="true" />
 =======
@@ -635,12 +762,14 @@
   <component name="ToolWindowManager">
     <frame x="0" y="-1080" width="1920" height="1080" extended-state="0" />
 >>>>>>> e9a8ac4bc61e3236f5d880801452327fefa30bd7
+=======
+    <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
+>>>>>>> CollectionFrame
     <layout>
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.3299389" />
-      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.116416305" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
+<<<<<<< HEAD
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
@@ -667,11 +796,27 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
+=======
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Learn" order="5" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info id="Favorites" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.27800408" />
+>>>>>>> CollectionFrame
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.6094808" />
+      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.3299389" />
+      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+<<<<<<< HEAD
       <window_info id="Learn" order="2" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -679,6 +824,16 @@
 =======
       <window_info anchor="bottom" id="Find" order="1" />
 >>>>>>> e9a8ac4bc61e3236f5d880801452327fefa30bd7
+=======
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Maven Projects" order="7" />
+      <window_info anchor="right" id="Database" order="8" />
+>>>>>>> CollectionFrame
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -687,12 +842,8 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <option name="time" value="2" />
-    </breakpoint-manager>
-  </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
 <<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/BroadcastServer.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -893,10 +1044,15 @@
     </entry>
 =======
 >>>>>>> e9a8ac4bc61e3236f5d880801452327fefa30bd7
+=======
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/src.zip!/java/util/concurrent/ConcurrentHashMap.java" />
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/src.zip!/java/lang/Integer.java" />
+>>>>>>> CollectionFrame
     <entry file="file://$PROJECT_DIR$/src/Collection/Lterator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="583">
           <caret line="66" column="43" lean-forward="true" selection-start-line="66" selection-start-column="43" selection-end-line="66" selection-end-column="43" />
+<<<<<<< HEAD
 <<<<<<< HEAD
           <folding>
             <element signature="imports" expanded="true" />
@@ -930,9 +1086,13 @@
             <caret line="21" column="52" lean-forward="true" selection-start-line="21" selection-start-column="52" selection-end-line="21" selection-end-column="52" />
           </first_editor>
           <second_editor />
+=======
+>>>>>>> CollectionFrame
         </state>
       </provider>
     </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/src.zip!/java/util/Hashtable.java" />
+    <entry file="file://$PROJECT_DIR$/src/LockTest/README.md" />
     <entry file="file://$PROJECT_DIR$/src/Collection/HashMap.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
@@ -945,9 +1105,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -958,11 +1115,14 @@
         <state relative-caret-position="198">
           <caret line="11" column="28" lean-forward="true" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
 <<<<<<< HEAD
+<<<<<<< HEAD
           <folding>
             <element signature="e#525#526#0" expanded="true" />
           </folding>
 =======
 >>>>>>> e9a8ac4bc61e3236f5d880801452327fefa30bd7
+=======
+>>>>>>> CollectionFrame
         </state>
       </provider>
     </entry>
@@ -978,22 +1138,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="468">
           <caret line="26" column="54" selection-start-line="26" selection-start-column="54" selection-end-line="26" selection-end-column="54" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/WhatWillHappen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="32" lean-forward="true" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
+<<<<<<< HEAD
 =======
     <entry file="file://$PROJECT_DIR$/src/WhatWillHappen.java" />
 >>>>>>> e9a8ac4bc61e3236f5d880801452327fefa30bd7
+=======
+    <entry file="file://$PROJECT_DIR$/src/WhatWillHappen.java" />
+>>>>>>> CollectionFrame
     <entry file="file://$PROJECT_DIR$/src/Message.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -1023,16 +1177,24 @@
         <state relative-caret-position="-3049">
           <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
 <<<<<<< HEAD
+<<<<<<< HEAD
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+=======
+>>>>>>> CollectionFrame
         </state>
       </provider>
     </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/src.zip!/java/util/concurrent/Executors.java" />
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/src.zip!/java/util/concurrent/Callable.java" />
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/src.zip!/java/util/concurrent/ThreadPoolExecutor.java" />
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/src.zip!/java/util/concurrent/ExecutorService.java" />
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/src.zip!/java/util/concurrent/Executor.java" />
     <entry file="file://$PROJECT_DIR$/src/Thread/ThreadWay.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="48" lean-forward="true" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="48" />
+        <state relative-caret-position="299">
+          <caret line="15" column="48" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="48" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1041,62 +1203,83 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/src.zip!/java/util/concurrent/Executors.java">
+    <entry file="file://$PROJECT_DIR$/src/Thread/Executor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
-          <caret line="686" column="41" lean-forward="true" selection-start-line="686" selection-start-column="41" selection-end-line="686" selection-end-column="41" />
+        <state relative-caret-position="5083">
+          <caret line="223" selection-start-line="223" selection-end-line="223" />
           <folding>
-            <element signature="e#28564#28565#0" expanded="true" />
-            <element signature="e#28609#28610#0" expanded="true" />
+            <element signature="e#6505#6506#0" expanded="true" />
+            <element signature="e#6545#6546#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/src.zip!/java/util/concurrent/Callable.java">
+    <entry file="file://$PROJECT_DIR$/src/Thread/ThreadUseCase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="57" column="7" selection-start-line="57" selection-start-column="7" selection-end-line="57" selection-end-column="7" />
+        <state relative-caret-position="3450">
+          <caret line="160" column="50" selection-start-line="160" selection-start-column="50" selection-end-line="160" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2759#2760#0" expanded="true" />
+            <element signature="e#2797#2798#0" expanded="true" />
+            <element signature="e#2847#2848#0" expanded="true" />
+            <element signature="e#2893#2894#0" expanded="true" />
+            <element signature="e#2928#2929#0" expanded="true" />
+            <element signature="e#2963#2964#0" expanded="true" />
+            <element signature="e#3007#3008#0" expanded="true" />
+            <element signature="e#3047#3048#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/src.zip!/java/util/concurrent/ThreadPoolExecutor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="688">
-          <caret line="447" column="18" selection-start-line="447" selection-start-column="18" selection-end-line="447" selection-end-column="18" />
+    <entry file="file://$PROJECT_DIR$/src/Collection/README.md">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="943">
+          <caret line="134" column="21" selection-start-line="134" selection-start-column="21" selection-end-line="134" selection-end-column="21" />
         </state>
       </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/src.zip!/java/util/concurrent/ExecutorService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="250" column="48" lean-forward="true" selection-start-line="235" selection-start-column="20" selection-end-line="250" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/src.zip!/java/util/concurrent/Executor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="618">
-          <caret line="139" column="9" selection-start-line="139" selection-start-column="9" selection-end-line="139" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/src/Thread/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="18">
-            <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-          </first_editor>
+          <first_editor />
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Exception/TestException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="24" column="36" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/LockTest/SynLock.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="559">
-          <caret line="134" column="13" lean-forward="true" selection-start-line="132" selection-start-column="11" selection-end-line="134" selection-end-column="13" />
+        <state relative-caret-position="3082">
+          <caret line="134" column="13" selection-start-line="132" selection-start-column="11" selection-end-line="134" selection-end-column="13" />
         </state>
       </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/Thread/README.md">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="2300">
+          <caret line="100" selection-start-line="100" selection-end-line="100" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
+        </state>
+      </provider>
+<<<<<<< HEAD
     </entry>
 =======
 >>>>>>> e9a8ac4bc61e3236f5d880801452327fefa30bd7
@@ -1173,6 +1356,27 @@
             <element signature="e#3007#3008#0" expanded="true" />
             <element signature="e#3047#3048#0" expanded="true" />
           </folding>
+=======
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/JavaDemo/README.md">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="1" column="8" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="8" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="94">
+            <caret line="55" lean-forward="true" selection-start-line="55" selection-end-line="55" />
+          </first_editor>
+          <second_editor />
+>>>>>>> CollectionFrame
         </state>
       </provider>
     </entry>

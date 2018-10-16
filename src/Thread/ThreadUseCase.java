@@ -152,7 +152,7 @@ public class ThreadUseCase {
         }
         //wait finish
         countDownLatch.await();
-        es.shutdown();
+        es.shutdown();tttttttttttttttttttttttttttttttttttt
         return resultList;
     }
 

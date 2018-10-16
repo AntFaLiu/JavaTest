@@ -44,6 +44,87 @@ ABA问题
 锁机制保证了只有获得锁的线程才能够操作锁定的内存区域。JVM内部实现了很多锁机制，有偏向锁，轻量级锁和互斥锁有意思的是除了偏向锁，JVM实现锁的方式都用了循环CAS，即当一个线程向进入同步块的时候使用CAS的方式来获取锁，当它退出同步块的是很好使用循环CAS释放锁。
 
 
+##  Java 线程的 6 中状态  及其转换方法   ：NEW,RUNNABLE,BLOCKED,WAITING,TIMED_WAITING,TERMINATED;
+public enum State {
+        /**
+         * Thread state for a thread which has not yet started.
+         */
+        NEW,
+
+        /**
+         * Thread state for a runnable thread.  A thread in the runnable
+         * state is executing in the Java virtual machine but it may
+         * be waiting for other resources from the operating system
+         * such as processor.
+         */
+        RUNNABLE,
+
+        /**
+         * Thread state for a thread blocked waiting for a monitor lock.
+         * A thread in the blocked state is waiting for a monitor lock
+         * to enter a synchronized block/method or
+         * reenter a synchronized block/method after calling
+         * {@link Object#wait() Object.wait}.
+         */
+        BLOCKED,   //等待锁
+        /**
+         * Thread state for a waiting thread.
+         * A thread is in the waiting state due to calling one of the
+         * following methods:
+         * <ul>
+         *   <li>{@link Object#wait() Object.wait} with no timeout</li>
+         *   <li>{@link #join() Thread.join} with no timeout</li>
+         *   <li>{@link LockSupport#park() LockSupport.park}</li>
+         * </ul>
+         * <p>A thread in the waiting state is waiting for another thread to
+         * perform a particular action.
+         * For example, a thread that has called <tt>Object.wait()</tt>
+         * on an object is waiting for another thread to call
+         * <tt>Object.notify()</tt> or <tt>Object.notifyAll()</tt> on
+         * that object. A thread that has called <tt>Thread.join()</tt>
+         * is waiting for a specified thread to terminate.
+         */
+        WAITING,
+        /**
+         * Thread state for a waiting thread with a specified waiting time.
+         * A thread is in the timed waiting state due to calling one of
+         * the following methods with a specified positive waiting time:
+         * <ul>
+         *   <li>{@link #sleep Thread.sleep}</li>
+         *   <li>{@link Object#wait(long) Object.wait} with timeout</li>
+         *   <li>{@link #join(long) Thread.join} with timeout</li>
+         *   <li>{@link LockSupport#parkNanos LockSupport.parkNanos}</li>
+         *   <li>{@link LockSupport#parkUntil LockSupport.parkUntil}</li>
+         * </ul>
+         */
+        TIMED_WAITING
+        /**
+         * Thread state for a terminated thread.
+         * The thread has completed execution.
+         */
+        TERMINATED;
+}
+
+
+借鉴：https://www.zhihu.com/question/27654579
+
+初始态：NEW创建一个Thread对象，但还未调用start()启动线程时，线程处于初始态。运行态：RUNNABLE在Java中，运行态包括就绪态 和 运行态。
+就绪态  该状态下的线程已经获得执行所需的所有资源，只要CPU分配执行权就能运行。所有就绪态的线程存放在就绪队列中。
+运行态  获得CPU执行权，正在执行的线程。由于一个CPU同一时刻只能执行一条线程，因此每个CPU每个时刻只有一条运行态的线程。
+阻塞态当一条正在执行的线程请求某一资源失败时，就会进入阻塞态。而在Java中，阻塞态专指请求锁失败时进入的状态。
+由一个阻塞队列存放所有阻塞态的线程。处于阻塞态的线程会不断请求资源，一旦请求成功，就会进入就绪队列，等待执行。
+PS：锁、IO、Socket等都资源。等待态当前线程中调用wait、join、park函数时，当前线程就会进入等待态。
+也有一个等待队列存放所有等待态的线程。线程处于等待态表示它需要等待其他线程的指示才能继续运行。
+进入等待态的线程会释放CPU执行权，并释放资源（如：锁）超时等待态当运行中的线程调用sleep(time)、wait、join、parkNanos、parkUntil时，就会进入该状态；
+它和等待态一样，并不是因为请求不到资源，而是主动进入，并且进入后需要其他线程唤醒；进入该状态后释放CPU执行权 和 占有的资源。
+与等待态的区别：到了超时时间后自动进入阻塞队列，开始竞争锁。终止态线程执行结束后的状态。
+
+注意：
+wait()方法会释放CPU执行权 和 占有的锁。sleep(long)方法仅释放CPU使用权，锁仍然占用；线程被放入超时等待队列，与yield相比，它会使线程较长时间得不到运行。
+yield()方法仅释放CPU执行权，锁仍然占用，线程会被放入就绪队列，会在短时间内再次执行。wait和notify必须配套使用，即必须使用同一把锁调用；
+wait和notify必须放在一个同步块中调用wait和notify的对象必须是他们所处同步块的锁对象
+
+
 
 内存屏障，又称内存栅栏，是一组处理器指令，用于实现对内存操作的顺序限制。
 为了阻止某些特定情况下的重排序
