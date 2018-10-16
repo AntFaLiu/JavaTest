@@ -183,3 +183,47 @@ workQueue ： 一个阻塞的任务队列。根据不同实现此队列有所不
 synchronized
 修饰代码块
 修饰方法
+
+
+3.Volatile：
+例子：假如count变量是volatile的。线程1，线程2 在进行read,load 操作中，发现主内存中count的值都是5，那么都会加载这个最新的值在线程1堆count进行修改之后，会write到主内存中，主内存中的count变量就会变为6，线程2由于已经进行read,load操作，在进行运算之后，也会更新主内存count的变量值为6，导致两个线程及时用volatile关键字修改之后，还是会存在并发的情况。
+解决的问题：
+每次让线程从内存中去取数据。
+Jvm的重排序
+
+
+
+线程池中的参数：
+corepoolSize       //核心线程数
+Maxmumpoolsize     //最大线程数
+keepAliveTime      //闲置线程存活时间
+NewlinkedBlockingDeque<Runnable>();// 任务队列
+Executors.defaultThreadFatory() //线程工厂         
+New AbortPolicy()// 队列已满而且当前线程数超过最大线程数时的异常处理策略
+BlockingQueue  中都定义了一个  ReentrantLock
+其中的方法都是同步的 
+public ThreadPoolExecutor(int corePoolSize,
+                              int maximumPoolSize,
+                              long keepAliveTime,
+                              TimeUnit unit,
+                              BlockingQueue<Runnable> workQueue) {
+public PriorityBlockingQueue() {    //添加任务的方法和Queue相同
+        q = new PriorityQueue<E>();           
+}
+阻塞队列可以很容易的实现数据共享  
+ArrayBlockingQueue ：一个由数组结构组成的有界阻塞队列。	fifo
+LinkedBlockingQueue ：一个由链表结构组成的有界阻塞队列。Fifo
+PriorityBlockingQueue ：一个支持优先级排序的无界阻塞队列。Fifo 基于优先级队列实现
+DelayQueue：一个使用优先级队列实现的无界阻塞队列。基于优先级队列实现	fifo
+SynchronousQueue：一个不存储元素的阻塞队列。
+LinkedTransferQueue：一个由链表结构组成的无界阻塞队列。
+LinkedBlockingDeque：一个由链表结构组成的双向阻塞队列。
+声明一个SynchronousQueue有两种不同的方式，它们之间有着不太一样的行为。公平模式和非公平模式的区别:
+如果采用公平模式：SynchronousQueue会采用公平锁，并配合一个FIFO队列来阻塞多余的生产者和消费者，从而体系整体的公平策略；
+但如果是非公平模式（SynchronousQueue默认）：SynchronousQueue采用非公平锁，同时配合一个LIFO队列来管理多余的生产者和消费者，而后一种模式，如果生产者和消费者的处理速度有差距，则很容易出现饥渴的情况，即可能有某些生产者或者是消费者的数据永远都得不到处理。
+
+临界资源：同一时刻只允许一个线程访问的资源
+临界区 ：访问临界资源的代码段
+临界区特点：临界区（Critical Section）是一段供线程独占式访问的代码，也就是说若有一线程正在访问该代码段，其它线程想要访问，只能等待当前线程离开该代码段方可进入，这样保证了线程安全。他工作于用户级（相对于内核级），在Window系统中CRITICAL_SECTION实现临界区相关机制。
+可重入函数：一个函数在执行的过程中被中断而在之后的某个时刻又重新执行这个任务，并且最后得到的结果与原本不被打断所得到的结果相同。
+可重入锁：外层函数在获得锁进行执行的之后，内层函数执行的时候仍然需要获得锁这时操作仍然可以实行这个锁就是可以重入的。
