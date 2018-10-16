@@ -67,6 +67,7 @@
 
 
 
+<<<<<<< HEAD
 SortedSet 
 继承于Set保存有序的集合。
 Map
@@ -79,4 +80,15 @@ SortedMap
 继承于 Map，使 Key 保持在升序排列。
 
 Enumeration
+=======
+## SortedSet 
+继承于Set保存有序的集合。
+## Map
+Map 接口存储一组键值对象，提供key（键）到value（值）的映射。
+## Map.Entry 
+描述在一个Map中的一个元素（键/值对）。是一个Map的内部类。
+## SortedMap
+继承于 Map，使 Key 保持在升序排列。
+## Enumeration
+>>>>>>> e9a8ac4bc61e3236f5d880801452327fefa30bd7
 这是一个传统的接口和定义的方法，通过它可以枚举（一次获得一个）对象集合中的元素。这个传统接口已被迭代器取代。
