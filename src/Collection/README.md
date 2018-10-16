@@ -38,6 +38,8 @@
   
   Listlist=Collections.synchronizedList(newLinkedList(...));
   LinkedList 查找效率低。
+
+
 ###	5 ArrayList
   该类也是实现了List的接口，实现了可变大小的数组，随机访问和遍历元素时，提供更好的性能。该类也是非同步的,在多线程的情况下不要使用。ArrayList 增长当前长度的50%，插入删除效率低。
 ### 6 AbstractSet 
@@ -50,7 +52,8 @@
   该类实现了Set接口，可以实现排序等功能。
 ### 10 AbstractMap 
   实现了大部分的Map接口。
-### 11	HashMap 
+
+### 11	HashMap
   HashMap 是一个散列表，它存储的内容是键值对(key-value)映射。
   该类实现了Map接口，根据键的HashCode值存储数据，具有很快的访问速度，最多允许一条记录的键为null，不支持线程同步。
 ### 12	TreeMap 
@@ -80,3 +83,68 @@ SortedMap
 
 Enumeration
 这是一个传统的接口和定义的方法，通过它可以枚举（一次获得一个）对象集合中的元素。这个传统接口已被迭代器取代。
+
+
+java 集合框架库主要框架粗讲
+Java  集合框架库：
+1. HashMap 和 HashSet 的默认大小是16。
+HashMap 的容量大小需要保证为 2^n。
+2. Hashtable 的默认大小是11。
+3. ArrayList 和 Vector 的默认大小是10。
+4. ArrayDeque 的默认大小是8。
+5. PriorityQueue 的默认大小是11。
+6.ConcurrentHashMap：16
+Get（）方法没有加锁，是因为在get()的时候如果有别的线程在进行删除，他是重新构造一个新的链表，不会影响到get（）方法的读取，只是有可能get()方法读到的数据不是最新的数据，  当有别的线程进行增加的时候呢不会影响到get（）方法因为他采取的是尾插
+Put（）调用put方法的时候不能传一个空值
+
+
+1、Java中HashMap和Hashtable继承和实现的区别
+　　Hashtable是基于陈旧的Dictionary类，完成了Map接口;HashMap是Java 1.2引进的Map接口的一个实现(HashMap继承于AbstractMap,AbstractMap完成了Map接口)。
+2、 Java中HashMap和Hashtable线程安全的区别
+HashTable的方法是同步的，HashMap是未同步，所以在多线程场合要手动同步HashMap。
+3、 Java中HashMap和Hashtable对null的处理的区别
+　　HashTable不允许null值(key和value都不可以，当要插入表空值的时候会抛出异常),HashMap允许null值(key和value都可以)。即 HashTable不允许null值其实在编译期不会有任何的不一样，会照样执行，只是在运行期的时候Hashtable中设置的话回出现空指针异常。 HashMap允许null值是指可以有一个或多个键所对应的值为null。当get()方法返回null值时，即可以表示 HashMap中没有该键，也可以表示该键所对应的值为null。因此，在HashMap中不能由get()方法来判断HashMap中是否存在某个键，而应该用containsKey()方法来判断。
+4、Java中HashMap和Hashtable方法上的区别
+HashTable有一个contains(Object value)，功能和containsValue(Object value)功能一样。
+5、Java中HashMap和Hashtable使用区别
+遍历方法：
+HashTable使用Enumeration，interator，HashTable可以使用Keyset
+的，HashMap使用Iterator entryset。
+6、Java中HashMap和Hashtable默认大小的区别
+HashTable中hash数组默认大小是11，增加的方式是 old*2+1。HashMap中hash数组的默认大小是16，而且一定是2的指数。
+7、Java中HashMap和Hashtable哈希值的使用区别
+　　HashTable直接使用对象的hashCode，代码是如下：
+　　int hash = key.hashCode();
+int index = (hash & 0x7FFFFFFF) % tab.length;
+hash & 0x7FFFFFFF)去掉其符号位置。
+　　而HashMap重新计算hash值，而且用与代替求模：
+　　int hash = hash(key.Hashcode());
+　　int i = indexFor(hash, table.length);
+　　static int hash(Object x) {
+　　int h = x.hashCode();
+　　h += ~(h << 9);
+　　h ^= (h >>> 14);
+　　h += (h << 4);
+h ^= (h >>> 10);
+把后面几位移动到前面
+　　return h;
+　　}
+　　static int indexFor(int h, int length) {   //散列值
+　　return h & (length-1);
+　　}
+ArrayLis 和 LinkedList
+1、ArrayList的大小是如何自动增加的？你能分享一下你的代码吗？
+2、什么情况下你会使用ArrayList？什么时候你会选择LinkedList？
+3、当传递ArrayList到某个方法中，或者某个方法返回ArrayList，什么时候要考虑安全隐患？如何修复安全违规这个问题呢？
+4、如何复制某个ArrayList到另一个ArrayList中去？写出你的代码？
+5、在索引中ArrayList的增加或者删除某个对象的运行过程？效率很低吗？解释一下为什么？
+
+
+
+equals()和hashCode()区别？
+
+equals()：反映的是对象或变量具体的值，即两个对象里面包含的值--可能是对象的引用，也可能是值类型的值。
+hashCode()：计算出对象实例的哈希码，并返回哈希码，又称为散列函数。根类Object的hashCode()方法的计算依赖于对象实例的D（内存地址），故每个Object对象的hashCode都是唯一的；当然，当对象所对应的类重写了hashCode()方法时，结果就截然不同了。
+之所以有hashCode方法，是因为在批量的对象比较中，hashCode要比equals来得快，很多集合都用到了hashCode，比如HashTable。
+两个obj，如果equals()相等，hashCode()一定相等。
+两个obj，如果hashCode()相等，equals()不一定相等（Hash散列值有冲突的情况，虽然概率很低）。
