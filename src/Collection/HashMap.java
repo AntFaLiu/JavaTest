@@ -9,6 +9,7 @@ public class HashMap {
         System.out.println("result: " + result);
     }
 
+    //判断n是否越界，返回 2的n次方作为 table（哈希桶）的阈值
     public static int get(int cap) {
         int n = cap - 1;
         n |= n >>> 1;
@@ -34,3 +35,4 @@ public class HashMap {
         return result;
     }
 }
+

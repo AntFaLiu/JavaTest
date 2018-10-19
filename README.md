@@ -1,10 +1,8 @@
 # Java相关知识汇总
+
 ## Java 集合
 ## Java IO
 ## Java 内存模型
-<<<<<<< HEAD
-## java 多线程
-=======
 ## java 多线程
 
 
@@ -64,4 +62,4 @@
   -cp <path>               指定查找用户类文件的位置
   -bootclasspath <path>    覆盖引导类文件的位置
 
->>>>>>> e9a8ac4bc61e3236f5d880801452327fefa30bd7
+

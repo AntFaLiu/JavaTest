@@ -1,4 +1,4 @@
-package LockTest;
+package LockTest.SynLockTest;
 /*
     synchronized
 */

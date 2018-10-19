@@ -1,10 +1,9 @@
 import java.io.*;
 import java.util.Scanner;
 
-<<<<<<< HEAD
-public class IoTest {
-    public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//public class IoTest {
+//    public static void main(String[] args) throws IOException {
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 //        String str;
 //        do {
 //            str = br.readLine();
@@ -22,13 +21,13 @@ public class IoTest {
 //        System.out.println(i);
 //
 //        Scanner scan = new Scanner(System.in);
-        File file = new File("Users/ant_oliu");
-        String s = file.getParent();
-        System.out.println("parent: " + s);
-        System.out.println("list: " + file.listFiles());
-    }
-}
-=======
+//        File file = new File("Users/ant_oliu");
+//        String s = file.getParent();
+//        System.out.println("parent: " + s);
+//        System.out.println("list: " + file.listFiles());
+//    }
+//}
+
 //public class IoTest {
 //    public static void main(String[] args) throws IOException {
 //        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -89,7 +88,7 @@ public class IoTest {
 
         String s = new String(data);
         if (s != null) {
-            bufferedWriter(s, "D:\\FtpFile\\test1.txt");
+            bufferedWriter(s, "/Users/ant_oliu/Documents/资料/党员个人信息情况表.doc");
         }
         return new String(data);
     }
@@ -131,7 +130,7 @@ public class IoTest {
         }
 
         if (sb != null) {
-            bufferedWriter(sb.toString(), "D:\\FtpFile\\test2.txt");
+            bufferedWriter(sb.toString(), "/Users/ant_oliu/Documents/资料/党员个人信息情况表.doc");
         }
         return sb != null ? sb.toString() : null; // GsonUtil.transJsonStrToObject(sb.toString(), KubeData.class)
     }
@@ -225,7 +224,7 @@ public class IoTest {
     public static void main(String[] args) {
         try {
             long date1 = System.currentTimeMillis();
-            String s = readTxtFileJson("D://FtpFile//get_services.txt");
+            String s = readTxtFileJson("/Users/ant_oliu/Documents/资料/党员个人信息情况表.doc");
 //System.out.println(s);
             System.out.println(System.currentTimeMillis() - date1);
 
@@ -234,7 +233,7 @@ public class IoTest {
 // }
 
             long date2 = System.currentTimeMillis();
-            String s1 = readTxtFile("D://FtpFile//get_services.txt");
+            String s1 = readTxtFile("/Users/ant_oliu/Documents/资料/党员个人信息情况表.doc");
 //System.out.println(s1);
             System.out.println(System.currentTimeMillis() - date2);
         } catch (Exception e) {
@@ -251,4 +250,4 @@ public class IoTest {
 //BufferedInputStream/BufferedOutputStream实现缓冲的输入/输出字节数据
 //
 //操作耗时比
->>>>>>> e9a8ac4bc61e3236f5d880801452327fefa30bd7
+
