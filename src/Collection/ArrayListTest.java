@@ -69,10 +69,6 @@ public class ArrayListTest {
 
 
     public static void main(String[] args) {
-        List list = new ArrayList();
-        list.get();
-        list.remove();
-        ((ArrayList) list).clone();
-        Arrays.copyOf()
+
     }
 }

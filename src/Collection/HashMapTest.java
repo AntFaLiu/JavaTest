@@ -1,12 +1,26 @@
 package Collection;
 
-public class HashMap {
+
+import java.util.*;
+
+public class HashMapTest {
+
+    public static Map data = new HashMap();
 
     public static void main(String[] args) {
         int n = get(20);
         String result = toBinaryString(n);
         System.out.println("20 : " + toBinaryString(20));
         System.out.println("result: " + result);
+        data.put("lup", null);
+        data.put("lup", null);
+        data.put("lyp", null);
+        data.put("lur", null);
+        data.put("lur", null);
+        data.put("lud", null);
+        data.put("lud", null);
+        System.out.println("map:  " + data);
+
     }
 
     //判断n是否越界，返回 2的n次方作为 table（哈希桶）的阈值
