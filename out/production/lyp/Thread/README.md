@@ -1,36 +1,34 @@
 
-java实现多线程的几种方式
-
-# 原子性
-
-java 内存模型
+## java实现多线程的几种方式
 
 ## 原子性
-# Java 多线程
-java实现多线程的几种方式
 
 ## java 内存模型
 
 ## 原子性
+# Java 多线程
+    java实现多线程的几种方式
 
-1、总线锁保证原子性
-使用处理器提供的一个LOCK#信号，当一个处理器在总线上输出此信号时，其它处理器的请求将被阻塞，那么该处理器就能独自共享内存。
+## java 内存模型
 
-2、缓存锁保证原子性
-“缓存锁定”指内存区域如果被缓存在处理器的缓存行中，并且在Lock操作期间被锁定，那么当它执行锁操作回写到内存时，处理器不需要在总线上声言LOCK#信号，而是修改内部的内存地址，通过缓存一致性机制保证操作的原子性。
-例外：当操作的数据不能被缓存在处理器内部，或操作的数据跨多个缓存行，处理器会调用总线锁定。
+## 原子性
+    1、总线锁保证原子性
+    使用处理器提供的一个LOCK#信号，当一个处理器在总线上输出此信号时，其它处理器的请求将被阻塞，那么该处理器就能独自共享内存。  
+    2、缓存锁保证原子性
+    “缓存锁定”指内存区域如果被缓存在处理器的缓存行中，并且在Lock操作期间被锁定，那么当它执行锁操作回写到内存时，处理器不需要在总线上声言LOCK#信号，而是修改内部的内存地址，通过缓存一致性机制保证操作的原子性。
+    例外：当操作的数据不能被缓存在处理器内部，或操作的数据跨多个缓存行，处理器会调用总线锁定。
 
-Java中实现原子操作：
-使用循环CAS和锁的方式来实现
+## Java中实现原子操作：
+        使用循环CAS和锁的方式来实现
 
-Java如何实现原子操作：
+## Java如何实现原子操作：
 
-(1)使用循环CAS实现原子操作
+    (1)使用循环CAS实现原子操作
 
-JVM中的CAS操作正是利用了处理器提供的CMPXCHG指令实现的，自旋的CAS实现的基本思路就是循环进行CAS操作直到成功为止。
+    JVM中的CAS操作正是利用了处理器提供的CMPXCHG指令实现的，自旋的CAS实现的基本思路就是循环进行CAS操作直到成功为止。
 
-CAS
-jvm中的CAS操作是基于处理器的CMPXCHG指令实现的，CAS存在三个问题：
+## CAS
+### jvm中的CAS操作是基于处理器的CMPXCHG指令实现的，CAS存在三个问题：
 
 ABA问题
 循环时间长开销大
@@ -175,90 +173,86 @@ Volatile
 ### ThreadPoolExecutor()
 
 
-corePoolSize ：核心线程数量，就是要保持在线程池中即使不运行任务也一直存活的线程数量。值得注意的是如果当前池中有空闲线程，但是总线程数没有达到corePoolSize 设置的值时优先开启新的线程直到到达corePoolSize为止。
-
-maximumPoolSize：线程池运许存在的最大线程数量（包括核心线程），其运行规则是：
-
-提交一个新的任务，如果线程数量没有达到corePoolSize的限制则创建新的线程执行
-如果达到当前正在执行任务的线程数量等于corePoolSize，那么将新添加的任务放到workQueue中等待其他线程空闲出来后再队列中取出任务继续执行
-如果workQueue已经满了且corePoolSize < currentPoolSize < maximumPoolSize
-时会创建新的线程，辅助核心线程加速执行任务
-如果workQueue已满且currentPoolSize = maximumPoolSize 时则抛出异常拒绝接受新的任务
-keepAliveTime & unit：这两个时配合使用的，keepAliveTime用于控制currentPoolSize > corePoolSize时多出来的线程运许空闲的最大时间。unit 为时间单位（TimeUnit）
-
-workQueue ： 一个阻塞的任务队列。根据不同实现此队列有所不同。
+    corePoolSize ：核心线程数量，就是要保持在线程池中即使不运行任务也一直存活的线程数量。值得注意的是如果当前池中有空闲线程，但是总线程数没有达到corePoolSize 设置的值时优先开启新的线程直到到达corePoolSize为止。
+    
+    maximumPoolSize：线程池运许存在的最大线程数量（包括核心线程），其运行规则是：
+    
+    提交一个新的任务，如果线程数量没有达到corePoolSize的限制则创建新的线程执行
+    如果达到当前正在执行任务的线程数量等于corePoolSize，那么将新添加的任务放到workQueue中等待其他线程空闲出来后再队列中取出任务继续执行
+    如果workQueue已经满了且corePoolSize < currentPoolSize < maximumPoolSize
+    时会创建新的线程，辅助核心线程加速执行任务
+    如果workQueue已满且currentPoolSize = maximumPoolSize 时则抛出异常拒绝接受新的任务
+    keepAliveTime & unit：这两个时配合使用的，keepAliveTime用于控制currentPoolSize > corePoolSize时多出来的线程运许空闲的最大时间。unit 为时间单位（TimeUnit）
+    workQueue ： 一个阻塞的任务队列。根据不同实现此队列有所不同。
 ## 锁
-synchronized
-修饰代码块
-
-修饰方法
-
-
-
-3.Volatile：
-例子：假如count变量是volatile的。线程1，线程2 在进行read,load 操作中，发现主内存中count的值都是5，那么都会加载这个最新的值在线程1堆count进行修改之后，会write到主内存中，主内存中的count变量就会变为6，线程2由于已经进行read,load操作，在进行运算之后，也会更新主内存count的变量值为6，导致两个线程及时用volatile关键字修改之后，还是会存在并发的情况。
-解决的问题：
-每次让线程从内存中去取数据。
-Jvm的重排序
+### synchronized
+#### 修饰代码块
+#### 修饰方法
 
 
 
-线程池中的参数：
-corepoolSize       //核心线程数
-Maxmumpoolsize     //最大线程数
-keepAliveTime      //闲置线程存活时间
-NewlinkedBlockingDeque<Runnable>();// 任务队列
-Executors.defaultThreadFatory() //线程工厂         
-New AbortPolicy()// 队列已满而且当前线程数超过最大线程数时的异常处理策略
-BlockingQueue  中都定义了一个  ReentrantLock
-其中的方法都是同步的 
-public ThreadPoolExecutor(int corePoolSize,
-                              int maximumPoolSize,
-                              long keepAliveTime,
-                              TimeUnit unit,
-                              BlockingQueue<Runnable> workQueue) {
-public PriorityBlockingQueue() {    //添加任务的方法和Queue相同
-        q = new PriorityQueue<E>();           
-}
-阻塞队列可以很容易的实现数据共享  
-ArrayBlockingQueue ：一个由数组结构组成的有界阻塞队列。	fifo
-LinkedBlockingQueue ：一个由链表结构组成的有界阻塞队列。Fifo
-PriorityBlockingQueue ：一个支持优先级排序的无界阻塞队列。Fifo 基于优先级队列实现
-DelayQueue：一个使用优先级队列实现的无界阻塞队列。基于优先级队列实现	fifo
-SynchronousQueue：一个不存储元素的阻塞队列。
-LinkedTransferQueue：一个由链表结构组成的无界阻塞队列。
-LinkedBlockingDeque：一个由链表结构组成的双向阻塞队列。
-声明一个SynchronousQueue有两种不同的方式，它们之间有着不太一样的行为。公平模式和非公平模式的区别:
-如果采用公平模式：SynchronousQueue会采用公平锁，并配合一个FIFO队列来阻塞多余的生产者和消费者，从而体系整体的公平策略；
-但如果是非公平模式（SynchronousQueue默认）：SynchronousQueue采用非公平锁，同时配合一个LIFO队列来管理多余的生产者和消费者，而后一种模式，如果生产者和消费者的处理速度有差距，则很容易出现饥渴的情况，即可能有某些生产者或者是消费者的数据永远都得不到处理。
+## 3.Volatile：
+    例子：假如count变量是volatile的。线程1，线程2 在进行read,load 操作中，发现主内存中count的值都是5，那么都会加载这个最新的值在线程1堆count进行修改之后，会write到主内存中，主内存中的count变量就会变为6，线程2由于已经进行read,load操作，在进行运算之后，也会更新主内存count的变量值为6，导致两个线程及时用volatile关键字修改之后，还是会存在并发的情况。
+    解决的问题：
+    每次让线程从内存中去取数据。
+    Jvm的重排序
 
-临界资源：同一时刻只允许一个线程访问的资源
-临界区 ：访问临界资源的代码段
-临界区特点：临界区（Critical Section）是一段供线程独占式访问的代码，也就是说若有一线程正在访问该代码段，其它线程想要访问，只能等待当前线程离开该代码段方可进入，这样保证了线程安全。他工作于用户级（相对于内核级），在Window系统中CRITICAL_SECTION实现临界区相关机制。
-可重入函数：一个函数在执行的过程中被中断而在之后的某个时刻又重新执行这个任务，并且最后得到的结果与原本不被打断所得到的结果相同。
-可重入锁：外层函数在获得锁进行执行的之后，内层函数执行的时候仍然需要获得锁这时操作仍然可以实行这个锁就是可以重入的。
-修饰方法
-修饰方法
+    线程池中的参数：
+    corepoolSize       //核心线程数
+    Maxmumpoolsize     //最大线程数
+    keepAliveTime      //闲置线程存活时间
+    NewlinkedBlockingDeque<Runnable>();// 任务队列
+    Executors.defaultThreadFatory() //线程工厂         
+    New AbortPolicy()// 队列已满而且当前线程数超过最大线程数时的异常处理策略
+    BlockingQueue  中都定义了一个  ReentrantLock
+    其中的方法都是同步的 
+    public ThreadPoolExecutor(int corePoolSize,
+                                  int maximumPoolSize,
+                                  long keepAliveTime,
+                                  TimeUnit unit,
+                                  BlockingQueue<Runnable> workQueue) {
+    public PriorityBlockingQueue() {    //添加任务的方法和Queue相同
+            q = new PriorityQueue<E>();           
+    }
+    阻塞队列可以很容易的实现数据共享  
+    ArrayBlockingQueue ：一个由数组结构组成的有界阻塞队列。	fifo
+    LinkedBlockingQueue ：一个由链表结构组成的有界阻塞队列。Fifo
+    PriorityBlockingQueue ：一个支持优先级排序的无界阻塞队列。Fifo 基于优先级队列实现
+    DelayQueue：一个使用优先级队列实现的无界阻塞队列。基于优先级队列实现	fifo
+    SynchronousQueue：一个不存储元素的阻塞队列。
+    LinkedTransferQueue：一个由链表结构组成的无界阻塞队列。
+    LinkedBlockingDeque：一个由链表结构组成的双向阻塞队列。
+    声明一个SynchronousQueue有两种不同的方式，它们之间有着不太一样的行为。公平模式和非公平模式的区别:
+    如果采用公平模式：SynchronousQueue会采用公平锁，并配合一个FIFO队列来阻塞多余的生产者和消费者，从而体系整体的公平策略；
+    但如果是非公平模式（SynchronousQueue默认）：SynchronousQueue采用非公平锁，同时配合一个LIFO队列来管理多余的生产者和消费者，而后一种模式，如果生产者和消费者的处理速度有差距，则很容易出现饥渴的情况，即可能有某些生产者或者是消费者的数据永远都得不到处理。
+
+    临界资源：同一时刻只允许一个线程访问的资源
+    临界区 ：访问临界资源的代码段
+    临界区特点：临界区（Critical Section）是一段供线程独占式访问的代码，也就是说若有一线程正在访问该代码段，其它线程想要访问，只能等待当前线程离开该代码段方可进入，这样保证了线程安全。他工作于用户级（相对于内核级），在Window系统中CRITICAL_SECTION实现临界区相关机制。
+    可重入函数：一个函数在执行的过程中被中断而在之后的某个时刻又重新执行这个任务，并且最后得到的结果与原本不被打断所得到的结果相同。
+    可重入锁：外层函数在获得锁进行执行的之后，内层函数执行的时候仍然需要获得锁这时操作仍然可以实行这个锁就是可以重入的。
+    修饰方法
+    修饰方法
 
 ## 线程池
-1、降低资源消耗 
-可以重复利用已创建的线程降低线程创建和销毁造成的消耗。 
-2、提高响应速度 
-当任务到达时，任务可以不需要等到线程创建就能立即执行。 
-3、提高线程的可管理性 
-线程是稀缺资源，如果无限制地创建，不仅会消耗系统资源，还会降低系统的稳定性，使用线程池可以进行统一分配、调优和监控
+    1、降低资源消耗 
+    可以重复利用已创建的线程降低线程创建和销毁造成的消耗。 
+    2、提高响应速度 
+    当任务到达时，任务可以不需要等到线程创建就能立即执行。 
+    3、提高线程的可管理性 
+    线程是稀缺资源，如果无限制地创建，不仅会消耗系统资源，还会降低系统的稳定性，使用线程池可以进行统一分配、调优和监控
 
 ## 工作原理：
-1、线程池判断核心线程池里的线程是否都在执行任务。如果不是，则创建一个新的工作线程来执行任务。如果核心线程池里的线程都在执行任务，则执行第二步。 
-2、线程池判断工作队列是否已经满。如果工作队列没有满，则将新提交的任务存储在这个工作队列里进行等待。如果工作队列满了，则执行第三步 
-3、线程池判断线程池的线程是否都处于工作状态。如果没有，则创建一个新的工作线程来执行任务。如果已经满了，则交给饱和策略来处理这个任务
+    1、线程池判断核心线程池里的线程是否都在执行任务。如果不是，则创建一个新的工作线程来执行任务。如果核心线程池里的线程都在执行任务，则执行第二步。 
+    2、线程池判断工作队列是否已经满。如果工作队列没有满，则将新提交的任务存储在这个工作队列里进行等待。如果工作队列满了，则执行第三步 
+    3、线程池判断线程池的线程是否都处于工作状态。如果没有，则创建一个新的工作线程来执行任务。如果已经满了，则交给饱和策略来处理这个任务
 
 ### 饱和策略：
-1.Abort策略：默认策略，新任务提交时直接抛出未检查的异常RejectedExecutionException，该异常可由调用者捕获。在之上的代码中已写。
-程序抛出了RejectedExecutionException，并且一共运行了8个任务(线程池开始能运行3个任务，工作队列中存储5个队列)。
-当工作队列满了的时候，直接抛出了异常，而且JVM一直不退出。我们可以看到执行任务的线程全是线程池中的线程。
-2.CallerRuns策略：为调节机制，既不抛弃任务也不抛出异常，而是将某些任务回退到调用者。不会在线程池的线程中执行新的任务，而是在调用exector的线程中运行新的任务。
-所有的任务都被运行，且有2（10 - 3 -5）个任务是在main线程中执行成功的，8个任务在线程池中的线程执行的。
-也有可能main线程只执行一个，因为可能出现最后一个加入线程池的时候，第一个已经执行完毕。
-3.Discard策略：新提交的任务被抛弃。通过上面的结果可以显示：没有异常抛出，后面提交的2个新任务被抛弃，只处理了前8（3+5）个任务，JVM退出.
-4.DiscardOldest策略：队列的是“队头”的任务，然后尝试提交新的任务。（不适合工作队列为优先队列场景）
+    1.Abort策略：默认策略，新任务提交时直接抛出未检查的异常RejectedExecutionException，该异常可由调用者捕获。在之上的代码中已写。
+    程序抛出了RejectedExecutionException，并且一共运行了8个任务(线程池开始能运行3个任务，工作队列中存储5个队列)。
+    当工作队列满了的时候，直接抛出了异常，而且JVM一直不退出。我们可以看到执行任务的线程全是线程池中的线程。
+    2.CallerRuns策略：为调节机制，既不抛弃任务也不抛出异常，而是将某些任务回退到调用者。不会在线程池的线程中执行新的任务，而是在调用exector的线程中运行新的任务。
+    所有的任务都被运行，且有2（10 - 3 -5）个任务是在main线程中执行成功的，8个任务在线程池中的线程执行的。
+    也有可能main线程只执行一个，因为可能出现最后一个加入线程池的时候，第一个已经执行完毕。
+    3.Discard策略：新提交的任务被抛弃。通过上面的结果可以显示：没有异常抛出，后面提交的2个新任务被抛弃，只处理了前8（3+5）个任务，JVM退出.
+    4.DiscardOldest策略：队列的是“队头”的任务，然后尝试提交新的任务。（不适合工作队列为优先队列场景）

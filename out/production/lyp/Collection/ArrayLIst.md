@@ -22,6 +22,25 @@
     ArrayList是否允许重复数据	允许
     ArrayList是否有序	有序
     ArrayList是否线程安全	    非线程安全
+## modCount用法
+    根据上面的解释和我们追溯源码可以总结出：在这些线程不安全的集合中，在某些方法中，初始化迭代器时会给这个modCount赋值，
+    如果在遍历的过程中，一旦发现这个对象的modCount和迭代器存储的modCount不一样，就会报错。    
+    modCount是这个list被结构性修改的次数。    
+    结构性修改是指：改变list的size大小，或者，以其他方式改变他导致正在进行迭代时出现错误的结果。    
+    这个字段用于迭代器和列表迭代器的实现类中，由迭代器和列表迭代器方法返回。    
+    如果这个值被意外改变，这个迭代器将会抛出 ConcurrentModificationException的异常来响应：next,remove,previous,set,add 这些操作。  
+    在迭代过程中，他提供了fail-fast行为而不是不确定行为来处理并发修改。   
+    子类使用这个字段是可选的，如果子类希望提供fail-fast迭代器，它仅仅需要在add(int, E),remove(int)方法（或者它重写的其他任何会结构性修改这个列表的方法）中添加这个字段。    
+    调用一次add(int,E)或者remove(int)方法时必须且仅仅给这个字段加1，否则迭代器会抛出伪装的ConcurrentModificationExceptions错误。
+    如果一个实现类不希望提供fail-fast迭代器，则可以忽略这个字段
+## expectedModCount源码解释  
+    迭代器认为支持列表应该有的modCount的值，如果违背了这个期望，迭代器会检测到这个并发修改。  
+## fail-fast机制
+    在线程不安全的集合中，如果使用迭代器的过程中，发现集合被修改，会抛出ConcurrentModificationExceptions错误，
+    这就是fail-fast机制。对集合进行结构性修改时，modCount都会增加，在初始化迭代器时，
+    modCount的值会赋给expectedModCount，在迭代的过程中，只要modCount改变了，
+    int expectedModCount = modCount等式就不成立了，迭代器检测到这一点，就会抛出错误：currentModificationExceptions。
+   
 ## 属性
     初始容量
     private static final int DEFAULT_CAPACITY = 10;
@@ -51,12 +70,8 @@
     如果size+新增数据的个数>Integer.MAX_VALUE，则抛出OutOfMemoryError异常。
     
     这里需要注意一下，当ArrayList容量扩充完成之后会调用这样一句代码： 
-    elementData = Arrays.copyOf(elementData, newCapacity); 这句代码的意思就是按照新的容量大小来创建一个新的数据，并且把原来数据的数据拷贝过来。不懂 Arrays.copyOf()看看便明白。
-    --------------------- 
-    作者：乐观男孩 
-    来源：CSDN 
-    原文：https://blog.csdn.net/lzjlzjlzjlzjlzjlzj/article/details/52291703 
-    版权声明：本文为博主原创文章，转载请附上博文链接！
+    elementData = Arrays.copyOf(elementData, newCapacity); 这句代码的意思就是按照新的容量大小来创建一个新的数据，
+    并且把原来数据的数据拷贝过来。不懂 Arrays.copyOf()看看便明白。
 
 ## 构造方法
     public ArrayList(int initialCapacity) {
@@ -81,14 +96,14 @@
             if (elementData.getClass() != Object[].class)
                 elementData = Arrays.copyOf(elementData, size, Object[].class);
         }
-## add（）
+### add（）
     新增一个数据的源码非常简单，如果不看ensureCapacityInternal(size + 1);这一句代码，实际上就是往数组的size索引这个位置放入一个数据。size是ArrayList的大小。注意，这里的size不是数组的大小，而是数组里真正存在数据的大小，也即是ArrayList的大小。比如ArrayList的size是10，但是数据的长度有可能是100，只有前10个位置存放了真正的数据。
     public boolean add(E e) {
        ensureCapacityInternal(size + 1);  // Increments modCount!!
        elementData[size++] = e;
        return true;
     }
-## public void add(int index, E element) { 在指定的index位置添加一个数据，index之后的数据将依次往后移
+### public void add(int index, E element) { 在指定的index位置添加一个数据，index之后的数据将依次往后移
           rangeCheckForAdd(index);
   
           ensureCapacityInternal(size + 1);  // Increments modCount!!
@@ -98,7 +113,7 @@
           size++;
       }
       这里也是直接在数据的index位置放入一个数据，但是在这之前，判断了传入的index是否有越界；同时也判断了ArrayList是否需要扩充容量，并且通过数据拷贝的方式把index后的数据往后移。其实数据的移动都是通过调用System.arraycopy(）进行移动的。
-## public boolean addAll(int index, Collection<? extends E> c) {
+### public boolean addAll(int index, Collection<? extends E> c) {
         rangeCheckForAdd(index);
 
         Object[] a = c.toArray();
@@ -114,7 +129,7 @@
         size += numNew;
         return numNew != 0;
     }
-## public E remove(int index) { 方法移除元素之后，index后面的数据是往前移动，同样也是通过System.arraycopy(
+### public E remove(int index) { 方法移除元素之后，index后面的数据是往前移动，同样也是通过System.arraycopy(
           rangeCheck(index);
   
           modCount++;
@@ -128,31 +143,34 @@
   
           return oldValue;
       }
-## public boolean remove(Object o) {
-              if (o == null) {
-                  for (int index = 0; index < size; index++)
-                      if (elementData[index] == null) {
-                          fastRemove(index);
-                          return true;
-                      }
-              } else {
-                  for (int index = 0; index < size; index++)
-                      if (o.equals(elementData[index])) {
-                          fastRemove(index);
-                          return true;
-                      }
-              }
-              return false;
-          }
-##  private void fastRemove(int index) {
+### public boolean remove(Object o) {
+    /因为list支持 null 元素，所以对null进行特殊处理
+    if (o == null) {
+        for (int index = 0; index < size; index++)
+            if (elementData[index] == null) {
+                fastRemove(index);
+                return true;
+            }
+    } else {
+        //使用元素下标进行遍历判断
+        for (int index = 0; index < size; index++)
+            if (o.equals(elementData[index])) {
+                fastRemove(index);
+                return true;
+            }
+    }
+        return false;
+    }
+###  private void fastRemove(int index) {   //注意这是一个私有的方法 私有的删除元素方法，不进行边界检查和是否存在的检查，直接按照指定的索引进行删除
            modCount++;
            int numMoved = size - index - 1;
            if (numMoved > 0)
                System.arraycopy(elementData, index+1, elementData, index,
                                 numMoved);
            elementData[--size] = null; // clear to let GC do its work
+           
        }
-## protected void removeRange(int fromIndex, int toIndex)  删除fromIndex到toIndex之间的全部元素
+### protected void removeRange(int fromIndex, int toIndex)  删除fromIndex到toIndex之间的全部元素
     {
        modCount++;
        //numMoved为删除索引后面的元素个数
@@ -167,14 +185,14 @@
        }
        size = newSize;
     }
-## public boolean removeAll(Collection<?> c) { // 移除ArrayList中Collection所包含的所有元素
+### public boolean removeAll(Collection<?> c) { // 移除ArrayList中Collection所包含的所有元素
        return batchRemove(c, false);
     }
-## public boolean retainAll(Collection<?> c) { // 保留所有ArrayList和Collection共有的元素
+### public boolean retainAll(Collection<?> c) { // 保留所有ArrayList和Collection共有的元素
        return batchRemove(c, true);
     }
     /* 移除和保留是相反的操作，complement表示是否进行相反操作 */
-## private boolean batchRemove(Collection<?> c, boolean complement){
+### private boolean batchRemove(Collection<?> c, boolean complement){
        final Object[] elementData = this.elementData;
        int r = 0, w = 0;
        boolean modified = false;
@@ -200,7 +218,7 @@
        }
        return modified;
     }
-## private void writeObject(java.io.ObjectOutputStream s) // java.io.Serializable的写入函数 // 将ArrayList的“容量，所有的元素值”都写入到输出流中
+### private void writeObject(java.io.ObjectOutputStream s) // java.io.Serializable的写入函数 // 将ArrayList的“容量，所有的元素值”都写入到输出流中
                                                             
         throws java.io.IOException{
         // 写出元素计数和任何隐藏的东西
@@ -219,7 +237,7 @@
             throw new ConcurrentModificationException();
         }
     }
-##  private void readObject(java.io.ObjectInputStream s) java.io.Serializable的读取函数：根据写入方式读出 // 先将ArrayList的“容量”读出，然后将“所有的元素值”读出
+###  private void readObject(java.io.ObjectInputStream s) java.io.Serializable的读取函数：根据写入方式读出 // 先将ArrayList的“容量”读出，然后将“所有的元素值”读出
         throws java.io.IOException, ClassNotFoundException {
         elementData = EMPTY_ELEMENTDATA;
 
@@ -241,7 +259,7 @@
         }
     }
 
-## ensureCapacityInternal（）
+### ensureCapacityInternal（）
     private void ensureCapacityInternal(int minCapacity) {
             if (elementData == EMPTY_ELEMENTDATA) {
                 minCapacity = Math.max(DEFAULT_CAPACITY, minCapacity);
@@ -257,7 +275,7 @@
         if (minCapacity - elementData.length > 0)
             grow(minCapacity);
     }
-## public void clear() {
+### public void clear() {
            modCount++;
    
            // clear to let GC do its work
@@ -267,7 +285,7 @@
            size = 0;
        }
        
-## public int indexOf(Object o) {
+### public int indexOf(Object o) {
            if (o == null) {
                for (int i = 0; i < size; i++)
                    if (elementData[i]==null)
@@ -280,7 +298,7 @@
            return -1;
        }
 
-## public int lastIndexOf(Object o) {
+### public int lastIndexOf(Object o) {
           if (o == null) {
               for (int i = size-1; i >= 0; i--)
                   if (elementData[i]==null)
@@ -354,6 +372,24 @@
         }
         return -1;
     }
+### public E set(int index, E element) {  用指定的元素替代此列表中指定位置上的元素
+    //在remove中也使用了该函数，检查 index>=siez
+        rangeCheck(index);
+    //记录替换之前的元素
+        E oldValue = elementData(index);
+    //直接更新
+        elementData[index] = element;
+        return oldValue;
+    }
+### public E get(int index) {
+       //检查下标是否越界size
+       rangeCheck(index);
+       //直接通过下标拿到了元素
+       return elementData(index);
+    }
+### E elementData(int index) {  获得指定下标的 元素
+      return (E) elementData[index];
+    }
         
 ### public Object clone() {
     try {
@@ -366,7 +402,6 @@
         throw new InternalError(e);
     }
     ArrayList底层实现原理是通过数组实现，因此其优点是随机访问效率比较高，但是随机插入和删除元素比较慢，因为要对其它元素进行移动。
-    原文：https://blog.csdn.net/qq_25622107/article/details/52488366 
     
 ### private void rangeCheckForAdd(int index){ //判断是否出现下标是否越界 
     //如果下标超过了集合的尺寸 或者 小于0就是越界  
@@ -392,6 +427,7 @@
     * 这就是modCount和expectedModCount的作用所在
     */
     
+    
 
 ### toArray()异常问题
      调用toArray()函数会抛出"java.lang.ClassCastException"异常，但是调用toArray(T[] contents)能正常返回T[]。
@@ -406,3 +442,6 @@
     
     jdk1.8中
     it.forEachRemaining(ele -> System.out.println(ele)); // 打印每个元素
+    
+    
+    
