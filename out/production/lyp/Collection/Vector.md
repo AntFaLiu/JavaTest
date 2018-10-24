@@ -1,0 +1,4 @@
+## vector因为很多方法都跟ArrayList一样，只是多加了个synchronized来保证线程安全罢了.
+3、Vector创建时的默认大小为10。
+
+4、Vector每次扩容都以当前数组大小的2倍去扩容。当指定了capacityIncrement之后，每次扩容仅在原先基础上增加capacityIncrement个单位空间。

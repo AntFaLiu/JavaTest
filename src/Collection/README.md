@@ -142,12 +142,7 @@ h ^= (h >>> 10);
 　　static int indexFor(int h, int length) {   //散列值
 　　return h & (length-1);
 　　}
-ArrayLis 和 LinkedList
-1、ArrayList的大小是如何自动增加的？你能分享一下你的代码吗？
-2、什么情况下你会使用ArrayList？什么时候你会选择LinkedList？
-3、当传递ArrayList到某个方法中，或者某个方法返回ArrayList，什么时候要考虑安全隐患？如何修复安全违规这个问题呢？
-4、如何复制某个ArrayList到另一个ArrayList中去？写出你的代码？
-5、在索引中ArrayList的增加或者删除某个对象的运行过程？效率很低吗？解释一下为什么？
+
 
 
 
