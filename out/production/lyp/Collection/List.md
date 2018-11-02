@@ -1,3 +1,6 @@
+## List的抽象实现类 AbstractList
+    AbstractList 继承自 AbstractCollection 类，
+    实现了 List 接口。整个类的设计类似于AbstractCollection,实现了大多数方法，抽象了对于需要根据数据操作的方法。
 ## 有几种list
 ArrayList、LinkedList
 ### list的遍历方法
@@ -27,6 +30,15 @@ ArrayList、LinkedList
     4、如何复制某个ArrayList到另一个ArrayList中去？写出你的代码？
     5、在索引中ArrayList的增加或者删除某个对象的运行过程？效率很低吗？解释一下为什么？
 
+### ArrayList 特点
+    容量不固定，可以动态扩容
+    有序（基于数组的实现，当然有序~~）
+    元素可以为 null
+    效率高
+    查找操作的时间复杂度是 O(1)
+    增删操作的时间复杂度是 O(n)
+    其他操作基本也都是 O(n)
+    占用空间少，相比 LinkedList，不用占用额外空间维护表结构
 ### 1、ArrayList的大小是如何自动增加的？你能分享一下你的代码吗？
     ArrayList Add方法：
     public boolean add(E e){

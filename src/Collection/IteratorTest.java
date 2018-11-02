@@ -33,7 +33,7 @@ public class IteratorTest {
 //        {
 //            System.out.println(ite.next());
 //        }
-        ite.forEachRemaining(ele->System.out.println(ele));
+      //  ite.forEachRemaining(ele->System.out.println(ele));
     }
 }
 

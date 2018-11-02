@@ -45,6 +45,8 @@ package Collection;
 //
 //        }
 
+import LockTest.ReLock.ReentrantLocakTest;
+
 import java.util.*;
 
 //4、如何复制某个ArrayList到另一个ArrayList中去？写出你的代码？
@@ -99,7 +101,7 @@ class sortThree implements Comparator<String> {
 
 public class ArrayListTest {
 
-    static List l = new ArrayList();
+    static List l = new ArrayList<>();
 
     public static void main(String[] args) {
         sortTwo two = new sortTwo();
@@ -132,6 +134,7 @@ public class ArrayListTest {
         l.add("laa");
         l.add("lpa");
         l.add("lra");
+
         l.sort(three);
         System.out.println(l);
 
@@ -176,7 +179,7 @@ class MyArrayList<E> extends ArrayList<E> {
 //java Arraylist 和 Array 的相互转换
 class Test {
     public static void main(String[] args) {
-
+        
         int drr[][][] = {{{1, 2, 3}, {43, 65, 76}, {3, 6, 7}, {232}, {23},}, {{1, 2, 3}, {3, 6, 7}}};
         System.out.println("Arrays.asList(drr): " + Arrays.asList(drr));
         int b[] = {11, 12, 13, 14, 15, 16, 17, 18, 19, 20};
@@ -225,6 +228,7 @@ class Test {
 class ArrayListToArray{
 
     public static void main(String[] args) {
+
         List<Integer> list = new ArrayList<>();
         list.add(1);
         list.add(2);
