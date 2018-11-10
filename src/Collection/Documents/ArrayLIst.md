@@ -49,13 +49,9 @@
     存放元素的数组
     private transient Object[] elementData;
     数组大小
-    private INTsize;
-    计数器
-    private static final long serialVersionUID = 8683452581122892189L;
-    private static final int DEFAULT_CAPACITY = 10;
-    private static final Object[] DEFAULTCAPACITY_EMPTY_ELEMENTDATA = {};
-    transient Object[] elementData; // non-private to simplify nested class access  
     private int size;
+    // 序列版本号
+    private static final long serialVersionUID = 8683452581122892189L;
     //MAX_ARRAY_SIZE：Integer的最大值，但是源码中实际的长度会比Integer的最大值小8
     疑问：为什么不直接赋值为Integer.MAX_VALUE。
     private static final int MAX_ARRAY_SIZE = Integer.MAX_VALUE - 8;
@@ -97,7 +93,9 @@
                 elementData = Arrays.copyOf(elementData, size, Object[].class);
         }
 ### add（）
-    新增一个数据的源码非常简单，如果不看ensureCapacityInternal(size + 1);这一句代码，实际上就是往数组的size索引这个位置放入一个数据。size是ArrayList的大小。注意，这里的size不是数组的大小，而是数组里真正存在数据的大小，也即是ArrayList的大小。比如ArrayList的size是10，但是数据的长度有可能是100，只有前10个位置存放了真正的数据。
+    新增一个数据的源码非常简单，如果不看ensureCapacityInternal(size + 1);这一句代码，实际上就是往数组的size索引这个位置放入一个数据。
+    size是ArrayList的大小。注意，这里的size不是数组的大小，而是数组里真正存在数据的大小，也即是ArrayList的大小。
+    比如ArrayList的size是10，但是数据的长度有可能是100，只有前10个位置存放了真正的数据。
     public boolean add(E e) {
        ensureCapacityInternal(size + 1);  // Increments modCount!!
        elementData[size++] = e;
@@ -115,32 +113,26 @@
       这里也是直接在数据的index位置放入一个数据，但是在这之前，判断了传入的index是否有越界；同时也判断了ArrayList是否需要扩充容量，并且通过数据拷贝的方式把index后的数据往后移。其实数据的移动都是通过调用System.arraycopy(）进行移动的。
 ### public boolean addAll(int index, Collection<? extends E> c) {
         rangeCheckForAdd(index);
-
         Object[] a = c.toArray();
         int numNew = a.length;
         ensureCapacityInternal(size + numNew);  // Increments modCount
-
         int numMoved = size - index;
         if (numMoved > 0)
             System.arraycopy(elementData, index, elementData, index + numNew,
                              numMoved);
-
         System.arraycopy(a, 0, elementData, index, numNew);
         size += numNew;
         return numNew != 0;
     }
 ### public E remove(int index) { 方法移除元素之后，index后面的数据是往前移动，同样也是通过System.arraycopy(
           rangeCheck(index);
-  
           modCount++;
           E oldValue = elementData(index);
-  
           int numMoved = size - index - 1;
           if (numMoved > 0)
               System.arraycopy(elementData, index+1, elementData, index,
                                numMoved);
           elementData[--size] = null; // clear to let GC do its work
-  
           return oldValue;
       }
 ### public boolean remove(Object o) {
@@ -258,6 +250,14 @@
             }
         }
     }
+### 重新“修剪”数组容量大小
+    public void trimToSize() {
+        modCount++;
+		//当ArrayList中的元素个数小于elementData数组大小时，重新修整elementData到size大小
+        if (size < elementData.length) {
+            elementData = Arrays.copyOf(elementData, size);
+        }
+    }
 
 ### ensureCapacityInternal（）
     private void ensureCapacityInternal(int minCapacity) {
@@ -270,7 +270,6 @@
  
     private void ensureExplicitCapacity(int minCapacity) {
         modCount++;
- 
         // overflow-conscious code
         if (minCapacity - elementData.length > 0)
             grow(minCapacity);

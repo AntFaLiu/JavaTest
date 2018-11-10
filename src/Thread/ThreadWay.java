@@ -26,6 +26,7 @@ public class ThreadWay {
 //        t.setName("我是自定义的线程3");
 //        System.out.println(Thread.currentThread().getName());
 //        t.start();
+//如果代码逻辑简单可以使用以下方式：
 
 
         ThreadDemo td = new ThreadDemo();

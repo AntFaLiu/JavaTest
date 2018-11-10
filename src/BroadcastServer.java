@@ -10,7 +10,7 @@
 //import java.nio.channels.Selector;
 //import java.nio.channels.ServerSocketChannel;
 //import java.nio.channels.SocketChannel;
-//import java.nio.charset.Charset;
+//import java.nio.charset.MyCharsetTest;
 //import java.util.*;
 //import java.util.concurrent.ArrayBlockingQueue;
 //import java.util.concurrent.BlockingQueue;
@@ -32,7 +32,7 @@
 //
 //public class BroadcastServer {
 //
-//    private static final Charset UTF8 = Charset.forName("UTF-8");
+//    private static final MyCharsetTest UTF8 = MyCharsetTest.forName("UTF-8");
 //
 //    private final Logger logger = LoggerFactory.getLogger(BroadcastServer.class);
 //
@@ -157,7 +157,7 @@
 //                if( b == '\n' ){
 //                    // end of command
 //                    command.flip();
-//                    logger.info("Complete message from client, [{}]", new String(command.array(),Charset.defaultCharset()));
+//                    logger.info("Complete message from client, [{}]", new String(command.array(),MyCharsetTest.defaultCharset()));
 //                    command.clear(); // put it back
 //                    endOfLastCommand = i;
 //                } else {

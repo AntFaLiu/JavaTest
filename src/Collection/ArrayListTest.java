@@ -51,18 +51,12 @@ import java.util.*;
 
 //4、如何复制某个ArrayList到另一个ArrayList中去？写出你的代码？
 //        下面就是把某个ArrayList复制到另一个ArrayList中去的几种技术：
-//
 //        使用clone()方法，比如ArrayList newArray = oldArray.clone();
-//
 //        使用ArrayList构造方法，比如：ArrayList myObject = new ArrayList(myTempObject);
-//
 //        使用Collection的copy方法。
-//
 //        注意1和2是浅拷贝(shallow copy)。
-//
 //        5、在索引中ArrayList的增加或者删除某个对象的运行过程？效率很低吗？解释一下为什么？
 //        在ArrayList中增加或者是删除元素，要调用System.arraycopy这种效率很低的操作，如果遇到了需要频繁插入或者是删除的时候，你可以选择其他的Java集合，比如LinkedList。看一下下面的代码：
-//
 //        在ArrayList的某个索引i处添加元素：
 
 class sort implements Comparable {
@@ -205,10 +199,11 @@ class Test {
 
 
         System.out.println("list.toArray():" + Arrays.toString(list.toArray()));
-        List<String> listiteator = new ArrayList<String>();
+        List<String> listiteator = new ArrayList<>();
         listiteator.add("aaa");
         listiteator.add("bbb");
         listiteator.add("ccc");
+        //listiteator.add(1122);  就错了
         for (String attribute : listiteator) {
             System.out.println(attribute);
         }
@@ -233,8 +228,13 @@ class ArrayListToArray{
         list.add(1);
         list.add(2);
         list.add(3);
+        list.add(4);
+        list.add(5);
+        list.add(6);
         Integer[] a = new Integer[3];
         a =  list.toArray(a);
         System.out.println(Arrays.toString(a));
+        List l = list.subList(2,5);
+        System.out.println("list.subList: \n"+l.toString());
     }
 }

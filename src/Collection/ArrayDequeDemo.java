@@ -3,7 +3,8 @@ package Collection;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
-public class ArrayDequeDemo {
+public class ArrayDequeDemo{
+
     public static void main(String[] args) {
 
         // create an empty array deque with an initial capacity

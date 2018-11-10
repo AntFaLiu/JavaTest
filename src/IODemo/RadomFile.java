@@ -12,11 +12,11 @@ import java.io.*;
 public class RadomFile {
 
     public static void main(String[] args) {
-        String source = "/Users/ant_oliu/Documents/资料/lypJavaTest.txt";
+        String source = "E:/JavaIOTest.txt";
 //        randomReader(source,20);
-//        randomWrite(source);
-//        randomInsert(source, 7, "刘宇鹏");
-        write(source);
+        randomWrite(source);
+        randomInsert(source, 7, "刘宇鹏");
+//        write(source);
     }
 
     /**
@@ -54,7 +54,7 @@ public class RadomFile {
             RandomAccessFile raf = new RandomAccessFile(path, "rw");
             //将记录指针移动到文件最后
             raf.seek(raf.length());
-            //raf.seek(4);//移动文件指针位置
+            // raf.seek(4);//移动文件指针位置
             raf.write("我是追加的 \r\n".getBytes());
 
         } catch (Exception e) {
@@ -65,10 +65,6 @@ public class RadomFile {
 
     /**
      * 任意位置插入数据
-     *
-     * @param path
-     * @param points
-     * @param insertContent
      */
     public static void randomInsert(String path, long points, String insertContent) {
         try {
