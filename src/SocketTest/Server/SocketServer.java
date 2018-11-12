@@ -3,11 +3,11 @@ package SocketTest.Server;
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
-//同步阻塞式I/O
+//同步阻塞式I/O  这种模式只能处理一对一的请求，那实际生产中是肯定不是一对一的请求----》BIO
+
 public class SocketServer {
 
     public static void main(String[] args) throws IOException {
-
         // 端口号
         int port = 7000;
         // 在端口上创建一个服务器套接字

@@ -11,6 +11,8 @@ import java.nio.channels.SocketChannel;
 import java.util.Iterator;
 import java.util.Random;
 import java.util.Set;
+//NIO 指的就是Selector编程，了解Selector编程 首先要了解三个概念1：Buffer、2:channe 和我们前面将的流是一个作用只不过流是
+// 单向的而channel是双向的
 //Selector是Java  NIO 编程的基础。
 // Selector提供选择已经就绪的任务的能力：Selector会不断轮询注册在其上的Channel，如果某个Channel上面发生读或者写事件，
 // 这个Channel就处于就绪状态，会被Selector轮询出来，然后通过SelectionKey可以获取就绪Channel的集合，进行后续的I/O操作。

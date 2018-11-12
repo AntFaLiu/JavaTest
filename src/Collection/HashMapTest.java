@@ -1,7 +1,8 @@
 package Collection;
 
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 public class HashMapTest {
 
@@ -20,7 +21,6 @@ public class HashMapTest {
         data.put("lud", null);
         data.put("lud", null);
         System.out.println("map:  " + data);
-
     }
 
     //判断n是否越界，返回 2的n次方作为 table（哈希桶）的阈值

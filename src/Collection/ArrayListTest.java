@@ -182,20 +182,33 @@ class Test {
             System.out.println(l.get(i));
         }
         System.out.println("Arrays.asList(b): " + new MyArrayList(l).toString());
-        // System.out.println("Arrays.asList(b): " + new MyArrayList().toString());
+        // System.out.println("Arrays.asList(b): " + new MyArrayListTest().toString());
         List<String> list = new ArrayList<>();
-        list.add("sadas");
+        //增加
+        list.add("刘宇鹏");
         list.add("sadas");
         list.add("sasdds");
         list.add("sasdds");
         list.add("sasads");
-        list.add("sasa");
+        list.add("liuliuliuliu");
         list.add("sasdads");
         list.add("sasdas");
         list.add("sasdads");
         list.add("sasdas");
         list.add("sasdads");
-        list.add("sasdas");
+
+        list.add("刘玉萍");
+
+        //删除
+        list.remove("刘玉萍");
+        list.remove(0);
+
+        //改
+        list.set(5,"yuyuyuyuyuyuyu");
+
+        //查对应遍历方法二
+
+
 
 
         System.out.println("list.toArray():" + Arrays.toString(list.toArray()));
@@ -204,11 +217,13 @@ class Test {
         listiteator.add("bbb");
         listiteator.add("ccc");
         //listiteator.add(1122);  就错了
+
+        //方法一：
         for (String attribute : listiteator) {
             System.out.println(attribute);
         }
 //        方法二：
-//        对于ArrayList来说速度比较快, 用for循环, 以size为条件遍历:
+//        对于ArrayList来说速度比较快, 用for循环, 以size为条件遍历:   查
         for (int i = 0; i < listiteator.size(); i++) {
             System.out.println(listiteator.get(i));
         }

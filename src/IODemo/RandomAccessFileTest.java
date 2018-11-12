@@ -10,7 +10,7 @@ public class RandomAccessFileTest {
     public static void main(String[] args) {
 
         String source = "E:/JavaIOTest.txt";
-//        randomReader(source,10);  //只能移动双数位
+        randomReader(source,10);  //只能移动双数位
 //        randomWrite(source);
         randomInsert(source, 20, "fhdfjdsh");
 //        write(source);

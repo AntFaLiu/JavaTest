@@ -49,7 +49,7 @@ public class NioClient {
                 while (iterator.hasNext()) {
                     SelectionKey selectionKey = (SelectionKey) iterator.next();
                     //判断此键的通道是否已完成其套接字连接操作
-                    if (selectionKey.isConnectable()) {
+                    if (selectionKey.isConnectable()) {    //是否已经连接上
                         System.out.println("Client:  already connected.");
                         client = (SocketChannel) selectionKey.channel();
                         //判断该通道是否进行连接过程、完成连接过程
