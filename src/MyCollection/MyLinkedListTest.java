@@ -29,6 +29,7 @@ class MyLinkedList<T> implements List<T>{
     static class Entry<T> implements List.Entry<T>{
         private T value;
         private Entry<T> next;
+        //加一个后继指针
         public Entry(){//带头节点
             next=null;
         }
@@ -60,7 +61,8 @@ class MyLinkedList<T> implements List<T>{
 
     }
 
-    private Entry<T> head;
+    private Entry<T> head; //头结点
+    //加一个Last指向尾 尾节点
     public MyLinkedList() {
         // TODO Auto-generated constructor stub
         head=new Entry<T>();

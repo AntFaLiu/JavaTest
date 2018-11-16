@@ -35,3 +35,71 @@ public class Demo {
 //       16对应的就是k += 2;
 //        16: iinc 3, 2—把第三变量的值加二
 
+//  synchronized 使用实例Hashtable
+//    public synchronized V get(Object key) {
+//        Hashtable.Entry<?,?> tab[] = table;
+//        int hash = key.hashCode();
+//        int index = (hash & 0x7FFFFFFF) % tab.length;
+//        for (Hashtable.Entry<?,?> e = tab[index]; e != null ; e = e.next) {
+//            if ((e.hash == hash) && e.key.equals(key)) {
+//                return (V)e.value;
+//            }
+//        }
+//        return null;
+//    }
+
+//    JDK示例-2：Collections提供线程安全转换方法
+//    在JDK中，Collections有一个方法可以把不是线程安全的集合转化为线性安全的集合，它是这样实现的：
+//
+//
+//    public static <T> Collection<T> synchronizedCollection(Collection<T> c) {
+//        return new SynchronizedCollection<>(c);
+//    }
+//    static class SynchronizedCollection<E> implements Collection<E>, Serializable {
+//        private static final long serialVersionUID = 3053995032091335093L;
+//
+//        final Collection<E> c;  // Backing Collection
+//        final Object mutex;     // Object on which to synchronize
+//
+//        SynchronizedCollection(Collection<E> c) {
+//            this.c = Objects.requireNonNull(c);
+//            mutex = this;
+//        }
+//
+//        SynchronizedCollection(Collection<E> c, Object mutex) {
+//            this.c = Objects.requireNonNull(c);
+//            this.mutex = Objects.requireNonNull(mutex);
+//        }
+//
+//        public int size() {
+//            synchronized (mutex) {return c.size();}
+//        }
+//
+//        ......
+//    }
+
+//可以看到 在构造函数中 有mutex = this, 然后在具体的方法使用了 synchronized(mutex)，这样就会对调用该方法的对象进行加锁。还是会出现HashTable 出现的那种问题，也就是效率不高。
+
+
+
+
+//当没有明确的对象作为锁，只是想让一段代码同步时，可以创建一个特殊的对象来充当锁：
+//class Test implements Runnable {
+//    private byte[] lock = new byte[0];  // 特殊的instance变量
+//
+//    public void method() {
+//        synchronized (lock) {
+//            for (int i = 0; i < 5; i++) {
+//                System.out.println(Thread.currentThread().getName() + " synchronized loop " + i);
+//            }
+//        }
+//    }
+//
+//    public void run() {
+//
+//    }
+//}
+//        putTest();
+//        getTest();
+//        method();
+//        method1();

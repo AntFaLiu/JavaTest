@@ -55,7 +55,7 @@ class Producer extends Thread {
                 }
                 Random random = new Random();
                 int i = random.nextInt();
-                System.out.println("Producing value : " + i);
+                System.out.println("Producing one ");
                 queue.add(i);
                 queue.notifyAll();
             }
@@ -94,7 +94,8 @@ class Consumer extends Thread {
                         ex.printStackTrace();
                     }
                 }
-                System.out.println("Consuming value : " + queue.remove());
+                queue.remove();
+                System.out.println("Consuming one");
                 queue.notifyAll();
             }
         }

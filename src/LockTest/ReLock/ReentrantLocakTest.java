@@ -49,9 +49,9 @@ public class ReentrantLocakTest implements Runnable {
 
     public static void main(String[] args) {
         ReentrantLocakTest test = new ReentrantLocakTest();
-        ReentrantLocakTest test1 = new ReentrantLocakTest();
+        //ReentrantLocakTest test1 = new ReentrantLocakTest();
         Thread t1 = new Thread(test,"A");
-        Thread t2 = new Thread(test1,"B");
+        Thread t2 = new Thread(test,"B");
         t1.start();
         t2.start();
     }
