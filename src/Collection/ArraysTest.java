@@ -35,6 +35,7 @@ public class ArraysTest {
         System.out.println();
         //通过java.util.Arrays类的copyOf方法对源数组进行复制
         Student[] dest = Arrays.copyOf(stus, 6);
+
         System.out.print("复制长度为6的子数组: \n");
         for (int i = 0; i < dest.length; i++) {
             //System.out.print(dest[i] + " ");

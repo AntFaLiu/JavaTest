@@ -3,9 +3,15 @@ package Thread;
 class Test implements Runnable {
     @Override
     public void run() {
-        for (int i = 0; i < 5000; i++) {
-            System.out.println("i=" + (i + 1));
+        try {
+            for (int i = 0; i < 5000; i++) {
+                System.out.println("i=" + (i + 1));
+                Thread.sleep(1000);
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
+
     }
 }
 

@@ -25,6 +25,8 @@ public class ReadAndWriteLockTest {
                 lockTest.writeFile(Thread.currentThread());
             }
         });
+        service.shutdown();
+        service1.shutdown();
     }
 
     // 读操作

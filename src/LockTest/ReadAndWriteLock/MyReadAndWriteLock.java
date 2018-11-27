@@ -35,23 +35,23 @@
 package LockTest.ReadAndWriteLock;
 
 public class MyReadAndWriteLock {
-    private volatile int writers = 0;
-    private volatile int readers = 0;
-    private volatile int writerequest = 0;
+    private int writers = 0;
+    private int readers = 0;
+    private int writerequest = 0;
 
-    public void lockRead() throws InterruptedException {
+    public synchronized void lockRead() throws InterruptedException {
         while (writers > 0 || writerequest > 0) {
             wait();
         }
         readers++;
     }
 
-    public void unLockRead() {
+    public synchronized void unLockRead() {
         readers--;
         notifyAll();
     }
 
-    public void lockWrite() throws InterruptedException {
+    public synchronized void lockWrite() throws InterruptedException {
         writerequest++;
         while (readers > 0 || writers > 0) {
             wait();
@@ -60,7 +60,7 @@ public class MyReadAndWriteLock {
         writerequest--;
     }
 
-    public void unLockWrite() {
+    public synchronized void unLockWrite() {
         writers--;
         notifyAll();
     }

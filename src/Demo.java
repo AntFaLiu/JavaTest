@@ -1,7 +1,12 @@
 //反编译的方式讲解i++ 和 ++i的区别
 
+import java.util.Arrays;
+
 public class Demo {
     public static void main(String[] args) {
+        int[] arr = {1, 2, 45, 63, 78};
+        int[] brr = arr.clone();
+        System.out.println("brr: "+ Arrays.toString(arr));
         int i = 0;
         int j = 1;
         int k = 2;
@@ -79,8 +84,6 @@ public class Demo {
 //    }
 
 //可以看到 在构造函数中 有mutex = this, 然后在具体的方法使用了 synchronized(mutex)，这样就会对调用该方法的对象进行加锁。还是会出现HashTable 出现的那种问题，也就是效率不高。
-
-
 
 
 //当没有明确的对象作为锁，只是想让一段代码同步时，可以创建一个特殊的对象来充当锁：

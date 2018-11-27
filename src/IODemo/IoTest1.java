@@ -5,6 +5,14 @@ import java.io.*;
 class IntSer {
     public String tmp;
 }
+//ObjectInputStream与ObjectOutputStream使用以及与DataInputStream,DataOutput区别
+//        结论
+//        1.Object相当于装IO流的一个盒子,我们可以把对象比作一个个拼好的积木,IO流就是拼积木的积木块,那么如果要搬走积木(对象),
+// 肯定需要把积木(对象)先拆了,再扔进盒子(Object)里,这就是为什么对象要序列化(Serializable)
+//        2.当然装的时候我们可以有两种装法一种是全放入(output.writeObject(this))第一种盒子(ObjectInputStream)另一种是分类别
+// (如:,比如屋顶,地板,这就是流里面的) 放入(output.writeUTF(number),output.writeUTF(name),output.writeInt(age)…)
+// 第二种盒子(DataInputStream),所以在搬到另一个地方的时候,第一种盒子里我们把混在一起的积木块倒出((Member)intput.readObject()),
+// 第二种盒子则是分块拿出来({input.readUTF(),input.readUTF(),input.readInt()…)
 
 //IO读取时间比较
 public class IoTest1 {
@@ -24,10 +32,10 @@ public class IoTest1 {
         raf.close();
         String source = "E:/JavaIOTest.txt";
         String dest = "E:/JavaIOTestTwo.txt";
-        copyWithFileStream(source, dest);
-        copyWithObjectStream(source, dest);
+//        copyWithFileStream(source, dest);
+//        copyWithObjectStream(source, dest);
         copyWithBufferedStream(source, dest);
-        copyWithDateStream(source, dest);
+//        copyWithDateStream(source, dest);
 
     }
 

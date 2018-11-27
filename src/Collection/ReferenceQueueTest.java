@@ -11,13 +11,15 @@ public class ReferenceQueueTest {
     public static void main(String[] args) {
         ReferenceQueue<MyArray> queue = new ReferenceQueue<>();
         PhantomReference<MyArray> ptr = new PhantomReference<>(new MyArray(), queue);
-
-        System.gc(); //此处启动GC，回收A对象，queue收到通知，该对象回收了
-
+        System.out.println(ptr.get());//永远返回NUll
+        System.gc(); //此处启动GC，回收MyArray对象，queue收到通知，该对象回收了 Gc并不是一个实时执行的一个命令
+        //多运行几次看效果
         if (ptr.isEnqueued()) {
             System.out.println("ptr.isEnqueued()");
         } else {
             System.out.println("not ptr.isEnqueued()");
         }
+
+        System.out.println(queue.poll());
     }
 }

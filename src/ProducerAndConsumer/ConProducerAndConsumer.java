@@ -79,7 +79,7 @@ import java.util.concurrent.locks.ReentrantLock;
 
 public class ConProducerAndConsumer {
     private int queueSize = 10;
-    private PriorityQueue<Integer> queue = new PriorityQueue<Integer>(queueSize);
+    private PriorityQueue<Integer> queue = new PriorityQueue<>(10);
     private Lock lock = new ReentrantLock();
     private Condition notFull = lock.newCondition();
     private Condition notEmpty = lock.newCondition();
@@ -90,7 +90,7 @@ public class ConProducerAndConsumer {
         Consumer consumer = test.new Consumer();
         producer.start();
         consumer.start();
-        Thread.sleep(0);
+        Thread.sleep(20);
         producer.interrupt();
         consumer.interrupt();
     }

@@ -61,8 +61,16 @@ public class HashTableTest {
         for (Map.Entry e : table.entrySet())
             System.out.print(" key: " + e.getKey() + "  value: " + e.getValue());
         System.out.println();
-        System.out.println("table.toString()");
-        System.out.println(table.toString());
+        System.out.println("table.toString():  "+table.toString());
+
+
+        Iterator<String> valueIterator = table.values().iterator();
+        System.out.println();
+        System.out.println("使用value遍历");
+        while (valueIterator.hasNext()) {
+            String value = valueIterator.next();
+            System.out.print(value + " ");
+        }
     }
 
 

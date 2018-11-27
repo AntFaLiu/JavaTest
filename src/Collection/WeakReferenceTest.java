@@ -8,10 +8,10 @@ import java.lang.ref.WeakReference;
 public class WeakReferenceTest {
     public static void main(String[] args) {
         Object obj = new Object();
-        WeakReference<Object> wf = new WeakReference<Object>(obj);
+        WeakReference<Object> wf = new WeakReference<>(obj);
         obj = null;
         System.out.println("obj: " + obj + " wf.get()" + wf.get());//有时候会返回null;
-        System.gc(); ////通知JVM的gc进行垃圾回收
+        System.gc(); //通知JVM的gc进行垃圾回收
         System.out.println("obj: " + obj + " wf.get()" + wf.get());
         System.out.println(wf.isEnqueued());//返回是否被垃圾回收器标记为即将回收的垃圾
 
@@ -26,6 +26,7 @@ public class WeakReferenceTest {
 
         System.out.println(w.get());
         System.out.println(w.isEnqueued());
+        //虽然已经get不到但是队列中仍有保存
         System.out.println(queue.poll());
     }
 }

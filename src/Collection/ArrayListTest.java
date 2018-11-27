@@ -30,7 +30,8 @@ package Collection;
 //  这是一种极为消耗资源的操作，因此，在频繁的插入或者是删除元素的情况下，LinkedList的性能会更加好一点。
 
 //3.当传递ArrayList到某个方法中，或者某个方法返回ArrayList，什么时候要考虑安全隐患？如何修复安全违规这个问题呢？
-//        当array被当做参数传递到某个方法中，如果array在没有被复制的情况下直接被分配给了成员变量，那么就可能发生这种情况，即当原始的数组被调用的方法改变的时候，传递到这个方法中的数组也会改变。下面的这段代码展示的就是安全违规以及如何修复这个问题。
+//当array被当做参数传递到某个方法中，如果array在没有被复制的情况下直接被分配给了成员变量，那么就可能发生这种情况，
+//即当原始的数组被调用的方法改变的时候，传递到这个方法中的数组也会改变。下面的这段代码展示的就是安全违规以及如何修复这个问题。
 //
 //        ArrayList被直接赋给成员变量——安全隐患：
 //public void setMyArray(String[] myArray){
@@ -173,16 +174,12 @@ class MyArrayList<E> extends ArrayList<E> {
 //java Arraylist 和 Array 的相互转换
 class Test {
     public static void main(String[] args) {
-        
-        int drr[][][] = {{{1, 2, 3}, {43, 65, 76}, {3, 6, 7}, {232}, {23},}, {{1, 2, 3}, {3, 6, 7}}};
-        System.out.println("Arrays.asList(drr): " + Arrays.asList(drr));
         int b[] = {11, 12, 13, 14, 15, 16, 17, 18, 19, 20};
         List l = Arrays.asList(b);
-        for (int i = 0; i < l.size(); i++) {//内部不锁定，效率最高，但在多线程要考虑并发操作的问题。
-            System.out.println(l.get(i));
+        for (int i = 0; i < l.size(); i++) {   //为什么打印不出东西？
+            System.out.println("b数组元素打印： "+l.get(i)+ " size: "+l.size());
         }
-        System.out.println("Arrays.asList(b): " + new MyArrayList(l).toString());
-        // System.out.println("Arrays.asList(b): " + new MyArrayListTest().toString());
+        System.out.println("Arrays.asList(b): " + new MyArrayList(l));
         List<String> list = new ArrayList<>();
         //增加
         list.add("刘宇鹏");
@@ -207,9 +204,7 @@ class Test {
         list.set(5,"yuyuyuyuyuyuyu");
 
         //查对应遍历方法二
-
-
-
+           list.get(1);
 
         System.out.println("list.toArray():" + Arrays.toString(list.toArray()));
         List<String> listiteator = new ArrayList<>();
@@ -247,9 +242,9 @@ class ArrayListToArray{
         list.add(5);
         list.add(6);
         Integer[] a = new Integer[3];
-        a =  list.toArray(a);
+        a =  list.toArray(a);   //toArray()
         System.out.println(Arrays.toString(a));
-        List l = list.subList(2,5);
+        List l = list.subList(2,5);   //求子链表
         System.out.println("list.subList: \n"+l.toString());
     }
 }

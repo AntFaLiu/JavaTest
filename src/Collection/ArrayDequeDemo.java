@@ -17,6 +17,7 @@ public class ArrayDequeDemo{
         deque.add(18);
         deque.add(15);
         deque.add(13);
+        deque.add(null);
         // printing all the elements available in deque
         for (Integer number : deque) {
             System.out.println("Number = " + number);

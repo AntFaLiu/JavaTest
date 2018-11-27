@@ -44,7 +44,7 @@ import java.util.concurrent.*;
 //    private static final ExecutorService cachedThreadPool = Executors.newCachedThreadPool();
 //    //创建一个固定长度线程池，支持定时及周期性任务执行。
 //    private static final ScheduledExecutorService scheduledExecutorService = Executors.newScheduledThreadPool(5);
-//    //创建一个单线程化的线程池，它只会用唯一的工作线程来执行任务，保证所有任务按照指定顺序(FIFO, LIFO, 优先级)执行。
+//    //创建一个单线程化的线TheadPoolExecutor程池，它只会用唯一的工作线程来执行任务，保证所有任务按照指定顺序(FIFO, LIFO, 优先级)执行。
 //    private static final ExecutorService singleThreadExecutor = Executors.newSingleThreadExecutor();
 //
 //    public static void main(String[] args) {

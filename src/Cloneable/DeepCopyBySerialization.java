@@ -4,16 +4,16 @@ import java.io.*;
 
 /* 通过序列化实现深拷贝   如果某个属性被transient修饰，那么该属性就无法被拷贝了。*/
 public class DeepCopyBySerialization {
-    public static void main(String[] args) throws IOException, ClassNotFoundException  {
-        DeepCopyBySerializationAge a=new DeepCopyBySerializationAge(20);
-        DeepCopyBySerializationStudent stu1=new DeepCopyBySerializationStudent("刘宇鹏",a,175);
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
+        DeepCopyBySerializationAge a = new DeepCopyBySerializationAge(20);
+        DeepCopyBySerializationStudent stu1 = new DeepCopyBySerializationStudent("刘宇鹏", a, 175);
         //通过序列化方法实现深拷贝
-        ByteArrayOutputStream bos=new ByteArrayOutputStream();
-        ObjectOutputStream oos=new ObjectOutputStream(bos);
+        ByteArrayOutputStream bos = new ByteArrayOutputStream();
+        ObjectOutputStream oos = new ObjectOutputStream(bos);
         oos.writeObject(stu1);
         oos.flush();
-        ObjectInputStream ois=new ObjectInputStream(new ByteArrayInputStream(bos.toByteArray()));
-        DeepCopyBySerializationStudent stu2=(DeepCopyBySerializationStudent)ois.readObject();
+        ObjectInputStream ois = new ObjectInputStream(new ByteArrayInputStream(bos.toByteArray()));
+        DeepCopyBySerializationStudent stu2 = (DeepCopyBySerializationStudent) ois.readObject();
         System.out.println(stu1.toString());
         System.out.println(stu2.toString());
         System.out.println();
@@ -30,12 +30,13 @@ public class DeepCopyBySerialization {
 /*
  * 创建年龄类
  */
-class DeepCopyBySerializationAge implements Serializable{
+class DeepCopyBySerializationAge implements Serializable {
     //年龄类的成员变量（属性）
     private int age;
+
     //构造方法
     public DeepCopyBySerializationAge(int age) {
-        this.age=age;
+        this.age = age;
     }
 
     public int getAge() {
@@ -47,22 +48,24 @@ class DeepCopyBySerializationAge implements Serializable{
     }
 
     public String toString() {
-        return this.age+"";
+        return this.age + "";
     }
 }
+
 /*
  * 创建学生类
  */
-class DeepCopyBySerializationStudent implements Serializable{
+class DeepCopyBySerializationStudent implements Serializable {
     //学生类的成员变量（属性）,其中一个属性为类的对象
     private String name;
     private DeepCopyBySerializationAge aage;
     private int length;
+
     //构造方法,其中一个参数为另一个类的对象
-    public DeepCopyBySerializationStudent(String name,DeepCopyBySerializationAge a,int length) {
-        this.name=name;
-        this.aage=a;
-        this.length=length;
+    public DeepCopyBySerializationStudent(String name, DeepCopyBySerializationAge a, int length) {
+        this.name = name;
+        this.aage = a;
+        this.length = length;
     }
 
     //eclipe中alt+shift+s自动添加所有的set和get方法
@@ -79,7 +82,7 @@ class DeepCopyBySerializationStudent implements Serializable{
     }
 
     public void setaAge(DeepCopyBySerializationAge age) {
-        this.aage=age;
+        this.aage = age;
     }
 
     public int getLength() {
@@ -87,10 +90,11 @@ class DeepCopyBySerializationStudent implements Serializable{
     }
 
     public void setLength(int length) {
-        this.length=length;
+        this.length = length;
     }
+
     //设置输出的字符串形式
     public String toString() {
-        return "姓名是： "+this.getName()+"， 年龄为： "+this.getaAge().toString()+", 长度是： "+this.getLength();
+        return "姓名是： " + this.getName() + "， 年龄为： " + this.getaAge().toString() + ", 长度是： " + this.getLength();
     }
 }

@@ -86,11 +86,18 @@ public class cloneableTest {
         stu1.setName("zhangsan");
         stu1.setSex(new StringBuffer("男"));
         s1.setStu(stu1);
-        System.out.println("s1: " + s1 + " s1的hashcode:" + s1.hashCode() + "  s1中stu1的hashcode:" + s1.getStu().hashCode());
+        System.out.println("s1: " + s1 + " s1的hashcode:" + s1.hashCode() + "  s1中stu1的hashcode:" + s1.getStu().hashCode()+"schoolNmae: "+s1.getSchoolName().hashCode());
         School s2 = s1.clone();  //调用重写的clone方法，clone出一个新的school---s2
-        System.out.println("s2: " + s2 + " s2的hashcode:" + s2.hashCode() + " s2中stu1的hashcode:" + s2.getStu().hashCode());
-//        可以看出s1与s2的hashcode不同，也就是说clone方法并不是把s1的引用赋予s2，而是在堆中重新开辟了一块空间，将s1复制过去，将新的地址返回给s2。   
-//        但是s1中stu的hashcode与s2中stu的hashcode相同，也就是这两个指向了同一个对象，修改s2中的stu会造成s1中stu数据的改变。但是修改s2中的基本数据类型与Stirng类型时，不会造成s1中数据的改变，基本数据类型例如int，在clone的时候会重新开辟一个四个字节的大小的空间，将其赋值。而String则由于String变量的唯一性，如果在s2中改变了String类型的值，则会生成一个新的String对象，对之前的没有影响。  这就是浅度克隆。
+
+        System.out.println("s2: " + s2 + " s2的hashcode:" + s2.hashCode() + " s2中stu1的hashcode:" + s2.getStu().hashCode()+"schoolNmae: "+s2.getSchoolName().hashCode());
+        s2.setSchoolName("dsadasda");
+        System.out.println(s1.getSchoolName());
+// 可以看出s1与s2的hashcode不同，也就是说clone方法并不是把s1的引用赋予s2，而是在堆中重新开辟了一块空间，
+//         将s1复制过去，将新的地址返回给s2。   
+//        但是s1中stu的hashcode与s2中stu的hashcode相同，也就是这两个指向了同一个对象，修改s2中的stu会造成s1中stu数据的改变。
+// 但是修改s2中的基本数据类型与Stirng类型时，不会造成s1中数据的改变，基本数据类型例如int，在clone的时候会重新开辟一个
+// 四个字节的大小的空间，将其赋值。而String则由于String变量的唯一性，如果在s2中改变了String类型的值，
+// 则会生成一个新的String对象，对之前的没有影响。  这就是浅度克隆。
 
     }
 }

@@ -17,6 +17,11 @@ public class RandomAccessFileTest {
 
     }
 
+    /**
+     * 读取任意位置的数据
+     * @param path
+     * @param postion
+     */
     public static void randomReader(String path, int postion) {
 
         try {
@@ -31,6 +36,7 @@ public class RandomAccessFileTest {
             while ((hasRead = raf.read(buff)) > 0) {
                 //打印读取的内容,并将字节转为字符串输入
                 System.out.println(new String(buff, 0, hasRead,"gbk"));//输出中文
+                System.out.println("RandomAccessFile文件指针的初始位置:" + raf.getFilePointer());
             }
         } catch (Exception e) {
             e.printStackTrace();

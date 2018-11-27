@@ -21,12 +21,17 @@ public class PrintElemTest {
         for (Iterator<Integer> it = list.iterator(); it.hasNext(); ) {
             System.out.print(it.next() + " ");
         }
+        System.out.println();
+        System.out.println("foreach : ");
+        for(Integer a : list){
+            System.out.print(a+" ");
+        }
 //        System.out.println();
 //        System.out.println("ListIterator遍历: ");
         ListIterator<Integer> li;//获得listItegerator对象
-        for (li = list.listIterator(); li.hasNext(); ) {
-            System.out.print(li.next() + " ");
-        }
+//        for (li = list.listIterator(); li.hasNext(); ) {
+//            System.out.print(li.next() + " ");
+//        }
         li = list.listIterator(10);  //如果不加这个会怎么样
         System.out.println();
         System.out.println("ListIterator反向遍历: ");
@@ -34,15 +39,17 @@ public class PrintElemTest {
             System.out.print(li.previous() + " ");
         }
 
-        System.out.println();
-        System.out.println("foreach的遍历方式：");
-        for (Integer elem : list) {
-            System.out.print(elem + " ");
-        }
+//        System.out.println();
+//        System.out.println("foreach的遍历方式：");
+//        for (Integer elem : list) {
+//            System.out.print(elem + " ");
+//        }
         System.out.println();
         //元素替换
-        for (li = list.listIterator(); li.hasNext();) {
-            li.next();
+        System.out.println("size: "+list.size());
+        li = list.listIterator(list.size());
+        while (li.hasPrevious()) {
+            li.previous();
             li.set(22);
         }
         System.out.println();

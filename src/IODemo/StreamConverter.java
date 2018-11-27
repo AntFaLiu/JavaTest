@@ -17,14 +17,14 @@ public class StreamConverter {
     }
 
     /**
-     * OutputStreamWriter 演示函数
+     * OutputStreamWriter 演示函数   //转换流
      */
     private static void testWrite() {
         try {
             // 创建文件“file.txt”对应File对象
             File file = new File(FileName);
             // 创建FileOutputStream对应OutputStreamWriter：将字节流转换为字符流，即写入out1的数据会自动由字节转换为字符。
-            OutputStreamWriter out1 = new OutputStreamWriter(new FileOutputStream(file), CharsetName);
+            OutputStreamWriter out1 = new OutputStreamWriter(new FileOutputStream(file), "GBK");   //CharsetName需要前后统一
             // 写入10个汉字
             out1.write("字节流转为字符流示例");
             // 向“文件中”写入"0123456789"+换行符
@@ -43,11 +43,11 @@ public class StreamConverter {
             // 方法1：新建FileInputStream对象
             // 新建文件“file.txt”对应File对象
             File file = new File(FileName);
-            InputStreamReader in1 = new InputStreamReader(new FileInputStream(file), CharsetName);
+            InputStreamReader in1 = new InputStreamReader(new FileInputStream(file), "GBK");
             // 测试read()，从中读取一个字符
             char c1 = (char) in1.read();
             System.out.println("c1=" + c1);
-            // 测试skip(long byteCount)，跳过4个字符
+            // 测试skip(long byteCount)，跳过6个字符
             in1.skip(6);
             // 测试read(char[] cbuf, int off, int len)
             char[] buf = new char[10];
