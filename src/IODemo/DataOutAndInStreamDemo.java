@@ -5,7 +5,7 @@ import java.io.*;
 public class DataOutAndInStreamDemo {
     public static void main(String[] args) throws IOException {
         DataOutputStream dos = new DataOutputStream(new FileOutputStream("D:\\java.txt"));
-        dos.writeUTF("α");
+        dos.writeUTF("流");
         dos.writeInt(1234567);
         dos.writeBoolean(true);
         dos.writeShort((short) 123);

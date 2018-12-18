@@ -7,7 +7,7 @@ import java.io.IOException;
 public class CharArrayDemo {
     public static void main(String[] args) throws IOException {
         char[] letters = new char[]{'b', 'c', 'd', 'e', 'f', 'h', 'i', 'j'};
-        testCharArrayWriter(letters);
+//        testCharArrayWriter(letters);
         System.out.println("-----------------------------------------------------------");
         testCharArrayReader(letters);
     }
@@ -17,8 +17,8 @@ public class CharArrayDemo {
         CharArrayWriter caw = new CharArrayWriter();
         caw.write('a');
         caw.write(letters, 0, 4);
-        caw.write("world", 1, 3);
-        caw.append('0').append("123").append("678910", 0, 2);
+        caw.write("lemonTree", 1, 3);
+        caw.append('0').append("123").append("678910", 0, 3);
         String result = caw.toString();
         System.out.println("缓冲区数据转化成字符串:  " + result);
         char[] charArray = caw.toCharArray();
@@ -42,7 +42,7 @@ public class CharArrayDemo {
         System.out.println("字符数组letterChar:" + String.valueOf(letterChar));
         //mark(0),0不表示实际意义,mark的是当前位置
         if (car.markSupported()) {
-            car.mark(0);
+            car.mark(2);
         }
         //跳过三个字节
         car.skip(3);

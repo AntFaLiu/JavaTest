@@ -21,9 +21,9 @@ public class SynLock implements Runnable {
 //            }
 //        }
 //        putTest();
-        getTest();
+//        getTest();
 //        method();
-//        method1();
+        method1();
     }
 
     //修饰一个方法 - 对象锁

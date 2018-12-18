@@ -13,8 +13,8 @@ public class RadomFile {
 
     public static void main(String[] args) {
         String source = "E:/JavaIOTest.txt";
-//        randomReader(source,20);
-        randomWrite(source);
+        randomReader(source,20);
+//        randomWrite(source);
         randomInsert(source, 7, "刘宇鹏");
 //        write(source);
     }

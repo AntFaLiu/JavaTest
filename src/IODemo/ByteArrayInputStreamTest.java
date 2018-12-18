@@ -23,7 +23,9 @@ public class ByteArrayInputStreamTest {
     private static void tesByteArrayInputStream() {
         // 创建ByteArrayInputStream字节流，内容是ArrayLetters数组
         ByteArrayInputStream bais = new ByteArrayInputStream(ArrayLetters);
-
+        bais.skip(5);
+        System.out.println((char)bais.read());
+        System.out.println(bais.markSupported());
         // 从字节流中读取5个字节
         for (int i=0; i<LEN; i++) {
             // 若能继续读取下一个字节，则读取下一个字节

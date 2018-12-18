@@ -81,7 +81,6 @@ public class NioClient {
                         client.write(sendBuffer);
                         System.out.println("Client:客户端向服务器端发送数据--：" + sendText);
                         client.register(selector, SelectionKey.OP_READ);
-
                     }
                 }
                 selectionKeys.clear();

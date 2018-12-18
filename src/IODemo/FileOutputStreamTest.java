@@ -38,6 +38,5 @@ public class FileOutputStreamTest {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 }

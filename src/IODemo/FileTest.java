@@ -70,6 +70,7 @@ public class FileTest {
             System.out.println(f.getPath()+"不是目录");
         }
 
+
 //        列出指定目录的全部内容   使用递归的形式打印所有内容
         File w = new File("d:" + File.separator);
         print(w);

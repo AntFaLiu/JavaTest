@@ -16,6 +16,7 @@ public class ProducerConsumerInJava {
         consumer.start();
     }
 }
+
 class Producer extends Thread {
     private Queue queue;
     private int maxSize;
@@ -40,8 +41,9 @@ class Producer extends Thread {
                 }
                 Random random = new Random();
                 int i = random.nextInt();
-                System.out.println("Producing one ");
+
                 queue.add(i);
+                System.out.println("Producing one 此时队列容量为：" + queue.size());
                 queue.notifyAll();
             }
         }
@@ -72,7 +74,7 @@ class Consumer extends Thread {
                     }
                 }
                 queue.remove();
-                System.out.println("Consuming one");
+                System.out.println("Consuming one 此时队列容量为：" + queue.size());
                 queue.notifyAll();
             }
         }

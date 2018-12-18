@@ -8,6 +8,7 @@ import java.util.ListIterator;
 public class LinkedListTest {
     public static void main(String[] args) {
         List<String> l = new LinkedList();
+
         for (int i = 0; i < 100; i++) {
             l.add(i + " ");
         }
@@ -19,7 +20,7 @@ public class LinkedListTest {
         l.remove(79);
 
         l.remove("36 ");
-
+        System.out.println("是否含有50： " + l.contains(String.valueOf(50)+" "));
         for (int i = 0; i < l.size(); i++) {
             System.out.print(l.get(i));
         }
@@ -37,7 +38,7 @@ public class LinkedListTest {
 
         System.out.println();
         System.out.println("通过Foreach 打印");
-        for(String s : l){
+        for (String s : l) {
             System.out.print(s);
         }
     }

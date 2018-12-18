@@ -1,10 +1,11 @@
 package Thread;
 
-import java.io.*;
+import java.io.IOException;
+import java.io.PushbackReader;
+import java.io.StringReader;
 
 public class PushbackInputStreamTest {
-    public static void main(String args[]) throws Exception
-    {
+    public static void main(String args[]) throws Exception {
 //        PushbackInputStream in = new PushbackInputStream(System.in);
 //        in.unread('a');
 //        int ch = -1;
@@ -27,7 +28,7 @@ public class PushbackInputStreamTest {
         StringReader sr = new StringReader(s);
 
         // create a new PushBack reader based on our string reader
-        PushbackReader pr = new PushbackReader(sr, 20);
+        PushbackReader pr = new PushbackReader(sr, 5);
 
         try {
             // read the first five chars
@@ -40,10 +41,11 @@ public class PushbackInputStreamTest {
             System.out.println();
 
             // create a new array to unread
-            //char cbuf[] = {'w', 'o', 'r', 'l', 'd'};
-
+//            char cbuf[] = {'e', 'v', 'e', 'r', 'o'};
+            char cbuf[] = new char[5];
             // unread into cbuf
-            //pr.unread(cbuf);
+            pr.unread(cbuf);
+            pr.skip(6);
 
             // read five chars, which is what we unread from cbuf
             for (int i = 0; i < 5; i++) {

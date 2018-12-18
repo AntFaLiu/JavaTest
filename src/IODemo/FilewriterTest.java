@@ -40,8 +40,8 @@ public class FilewriterTest {
 
         FileWriter fw = null;
         try {
-            fw = new FileWriter("E:/de.tx", true);
-            fw.write("hello" + LINE_SEPARATOR + "world!");
+            fw = new FileWriter("E:/de.txt", true);
+            fw.write("hello" + LINE_SEPARATOR + "刘宇鹏!");
         } catch (Exception e) {
             System.out.println(e.toString());
         } finally {

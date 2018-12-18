@@ -32,10 +32,10 @@ public class IoTest1 {
         raf.close();
         String source = "E:/JavaIOTest.txt";
         String dest = "E:/JavaIOTestTwo.txt";
-//        copyWithFileStream(source, dest);
-//        copyWithObjectStream(source, dest);
+        copyWithFileStream(source, dest);
+        copyWithObjectStream(source, dest);
         copyWithBufferedStream(source, dest);
-//        copyWithDateStream(source, dest);
+        copyWithDateStream(source, dest);
 
     }
 

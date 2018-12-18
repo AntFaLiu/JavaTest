@@ -8,7 +8,7 @@ public class StreamConverterTest {
     private static final String CharsetName = "utf-8";
     //private static final String CharsetName = "gb2312";
     public static void main(String[] args) {
-//        testWrite();
+        testWrite();
         testRead();
     }
 

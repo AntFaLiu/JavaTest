@@ -2,48 +2,41 @@ package Thread;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
 import java.util.concurrent.FutureTask;
 
 public class ThreadWay {
     public static void main(String[] args) {
         //方式一 继承Thread类
 //        Demo threadDemo01 = new Demo();
-//        threadDemo01.setName("我是自定义的线程1");
+//        threadDemo01.setName("我是继承Thread类的线程1");
 //        threadDemo01.start();
-//        System.out.println(Thread.currentThread().toString());
-//
+
 //        //方式二 实现runnable接口
-//        Thread t1 = new Thread(new DemoOne());
-//        t1.setName("我是自定义的线程2");
-//        System.out.println(Thread.currentThread().getName());
+//        Thread t1 = new Thread(new DemoOne(),"我是实现runnable接口的线程2");
 //        t1.start();
-//
+
 //        //方式三 实现callable接口
-//        Callable<Object> oneCallable = new Tickets<Object>();
-//        FutureTask<Object> oneTask = new FutureTask<Object>(oneCallable);
-//
-//        Thread t = new Thread(oneTask);
-//        t.setName("我是自定义的线程3");
-//        System.out.println(Thread.currentThread().getName());
-//        t.start();
+        Callable<Object> oneCallable = new Tickets<Object>();
+        FutureTask<Object> oneTask = new FutureTask<Object>(oneCallable);
+        Thread t = new Thread(oneTask);
+        t.setName("我是实现callable接口的线程3");
+        t.start();
 //如果代码逻辑简单可以使用以下方式：
 
-
-        ThreadDemo td = new ThreadDemo();
-
-        //1.执行 Callable 方式，需要 FutureTask 实现类的支持，用于接收运算结果。
-        FutureTask<Integer> result = new FutureTask<>(td);
-
-        new Thread(result).start();
-
-        //2.接收线程运算后的结果
-        try {
-            Integer sum = result.get();  //FutureTask 可用于 闭锁 类似于CountDownLatch的作用，在所有的线程没有执行完成之后这里是不会执行的
-            System.out.println(sum);
-            System.out.println("------------------------------------");
-        } catch (InterruptedException | ExecutionException e) {
-            e.printStackTrace();
-        }
+//        ThreadDemo td = new ThreadDemo();
+//        //1.执行 Callable 方式，需要 FutureTask 实现类的支持，用于接收运算结果。
+//        FutureTask<Integer> result = new FutureTask<>(td);
+//        new Thread(result).start();
+//
+//        //2.接收线程运算后的结果
+//        try {
+//            Integer sum = result.get();  //FutureTask 可用于 闭锁 类似于CountDownLatch的作用，在所有的线程没有执行完成之后这里是不会执行的
+//            System.out.println(sum);
+//            System.out.println("------------------------------------");
+//        } catch (InterruptedException | ExecutionException e) {
+//            e.printStackTrace();
+//        }
     }
 }
 
@@ -63,7 +56,6 @@ class DemoOne implements Runnable {
     @Override
     public void run() {
         // TODO Auto-generated method stub
-        System.out.println(Thread.currentThread().getName() + "-->我是通过实现接口的线程实现方式！");
         for (int i = 0; i < 5; i++) {
             System.out.println(Thread.currentThread().getName() + " synchronized loop " + i);
         }

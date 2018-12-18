@@ -28,7 +28,7 @@ public class MyLinkedListTwo {
 class MyLinkedListDou<T> implements List<T> {
     int size;
     private Entry<T> head; //头结点
-    private Entry<T> last; //头结点
+    private Entry<T> last; //尾结点
 
     //加一个Last指向尾 尾节点
     public MyLinkedListDou() {
@@ -41,7 +41,7 @@ class MyLinkedListDou<T> implements List<T> {
     public void add(T value) {   //尾插法
         // TODO Auto-generated method stub
         Entry<T> entry = new Entry<T>(value);
-        entry.pre = last;
+        entry.pre = last;  //尾
         last.next = entry;
         last = entry;
         size++;
@@ -56,6 +56,12 @@ class MyLinkedListDou<T> implements List<T> {
         return null;
     }
 
+    public void set(int index,int value){
+
+
+    }
+
+
     @Override
     public void remove(T value) {
         // TODO Auto-generated method stub
@@ -64,16 +70,16 @@ class MyLinkedListDou<T> implements List<T> {
             return;
         final Entry<T> next = preEntry.next;
         final Entry<T> prev = preEntry.pre;
-        if (prev == null) {
+        if (prev == null) {   //删除的就是第一个节点
             head = next;
-        } else {
+        } else {   //除去第一个节点的任意节点
             prev.next = next;
             preEntry.pre = null;
         }
 
-        if (next == null) {
+        if (next == null) {//删除的就是最后一个节点
             last = prev;
-        } else {
+        } else {  //除去最后一个节点的任意节点
             next.pre = prev;
             preEntry.next = null;
         }

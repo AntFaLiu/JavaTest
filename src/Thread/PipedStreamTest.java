@@ -17,8 +17,8 @@ class Receiver extends Thread {
 
     @Override
     public void run() {
-//        readMessageOnce();
-        readMessageContinued() ;
+        readMessageOnce();
+//        readMessageContinued();
     }
 
     // 从“管道输入流”中读取1次数据
@@ -42,11 +42,11 @@ class Receiver extends Thread {
             byte[] buf = new byte[1024];
             try {
                 int len = in.read(buf);
-                total += len;
-                System.out.println(new String(buf, 0, len));
-                // 若读取的字节总数>1024，则退出循环。
-                if (total > 1024)
+                if(len < 0){
                     break;
+                }
+                total += len;
+                System.out.print(new String(buf, 0, len));
             } catch (IOException e) {
                 e.printStackTrace();
             }

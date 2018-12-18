@@ -90,7 +90,7 @@ public class cloneableTest {
         School s2 = s1.clone();  //调用重写的clone方法，clone出一个新的school---s2
 
         System.out.println("s2: " + s2 + " s2的hashcode:" + s2.hashCode() + " s2中stu1的hashcode:" + s2.getStu().hashCode()+"schoolNmae: "+s2.getSchoolName().hashCode());
-        s2.setSchoolName("dsadasda");
+//        s2.setSchoolName("dsadasda");
         System.out.println(s1.getSchoolName());
 // 可以看出s1与s2的hashcode不同，也就是说clone方法并不是把s1的引用赋予s2，而是在堆中重新开辟了一块空间，
 //         将s1复制过去，将新的地址返回给s2。   

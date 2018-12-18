@@ -30,6 +30,7 @@ public class ByteArrayOutputStreamTest {
         baos.write(0x41);
         baos.write(0x42);
         baos.write(0x43);
+//        baos.reset();//重置
         System.out.printf("baos=%s\n", baos);
 
         // 将ArrayLetters数组中从“3”开始的后5个字节写入到baos中。
@@ -41,7 +42,7 @@ public class ByteArrayOutputStreamTest {
         int size = baos.size();
         System.out.printf("size=%s\n", size);
 
-        // 转换成byte[]数组
+        // 讲流内数据转换成byte[]数组
         byte[] buf = baos.toByteArray();
         String str = new String(buf);
         System.out.printf("str=%s\n", str);

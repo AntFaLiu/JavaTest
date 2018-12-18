@@ -85,14 +85,12 @@ public class ConProducerAndConsumer {
     private Condition notEmpty = lock.newCondition();
 
     public static void main(String[] args) throws InterruptedException {
+
         ConProducerAndConsumer test = new ConProducerAndConsumer();
         Producer producer = test.new Producer();
         Consumer consumer = test.new Consumer();
         producer.start();
         consumer.start();
-        Thread.sleep(20);
-        producer.interrupt();
-        consumer.interrupt();
     }
 
     class Consumer extends Thread {
@@ -116,7 +114,7 @@ public class ConProducerAndConsumer {
                         }
                     }
                     queue.poll();                //每次移走队首元素
-                    notFull.signal();
+                    notFull.signalAll();
                     System.out.println("从队列取走一个元素，队列剩余" + queue.size() + "个元素");
                 } finally {
                     lock.unlock();
@@ -147,7 +145,7 @@ public class ConProducerAndConsumer {
                         }
                     }
                     queue.offer(1);        //每次插入一个元素
-                    notEmpty.signal();
+                    notEmpty.signalAll();
                     System.out.println("向队列取中插入一个元素，队列剩余空间：" + (queueSize - queue.size()));
                 } finally {
                     lock.unlock();

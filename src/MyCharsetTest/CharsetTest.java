@@ -16,8 +16,8 @@ import java.util.SortedMap;
 public class CharsetTest {
 
     public static void main(String[] args) {
-        //charsetDemo();
-        urlEncodeAndDecodeDemo();
+        charsetDemo();
+//        urlEncodeAndDecodeDemo();
     }
 
     public static void charsetDemo() {
@@ -25,7 +25,6 @@ public class CharsetTest {
         //获得虚拟机默认的编码方式
         Charset defaultCharset = Charset.defaultCharset();
         System.out.println("虚拟机默认的编码方式:" + defaultCharset);
-
         //获得系统支持的所有编码方式
         SortedMap<String, Charset> availableCharsets = Charset.availableCharsets();
         Set<Map.Entry<String, Charset>> entrySet = availableCharsets.entrySet();
