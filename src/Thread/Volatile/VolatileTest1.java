@@ -8,7 +8,7 @@ public class VolatileTest1 {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                context = loadContext();
+                context = 1;
                 flag = true;
             }
         }).start();

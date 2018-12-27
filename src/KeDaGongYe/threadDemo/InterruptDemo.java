@@ -6,7 +6,6 @@ public class InterruptDemo {
         t.start();
         t.interrupt();
         Thread.sleep(1000);
-        System.out.println("Worker Interrupted after: " + Thread.interrupted());
         System.out.println("Main thread stopped.");
     }
 
@@ -15,8 +14,7 @@ public class InterruptDemo {
             System.out.println("Worker started.");
             System.out.println("Worker IsInterrupted before: " +
                     Thread.currentThread().isInterrupted());
-//            System.out.println("Worker Interrupted before: " +
-//                    Thread.interrupted());
+            //Thread.interrupted();
             System.out.println("Worker IsInterrupted  after interrupted: " +
                     Thread.currentThread().isInterrupted());
             try {

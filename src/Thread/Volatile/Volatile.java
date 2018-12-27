@@ -13,7 +13,7 @@ import java.util.concurrent.locks.ReentrantLock;
  */
 //public class Volatile {
 //    private static CountDownLatch countDownLatch = new CountDownLatch(10);
-//    public volatile int inc = 0;
+//    public volatile int inc = 0;  //
 //
 //    public static void main(String[] args) {
 //        final Volatile test = new Volatile();
@@ -48,11 +48,11 @@ import java.util.concurrent.locks.ReentrantLock;
 //    Lock lock = new ReentrantLock();
 //
 //    public  void increase() {
-//        //lock.lock();
+//        lock.lock();
 //        try {
 //            inc++;
 //        } finally{
-//            //lock.unlock();
+//            lock.unlock();
 //        }
 //    }
 //
@@ -79,7 +79,7 @@ import java.util.concurrent.locks.ReentrantLock;
 //}
 public class Volatile {
     private static CountDownLatch countDownLatch = new CountDownLatch(10);
-    public AtomicInteger inc = new AtomicInteger();
+        public AtomicInteger inc = new AtomicInteger();
 
     public  void increase() {
         inc.getAndIncrement();

@@ -49,7 +49,6 @@ public class Test4 {
         final Function f = new Function();
         new Thread(
                 new Runnable() {
-
                     @Override
                     public void run() {
                         for (int i = 0; i < 10; i++) {

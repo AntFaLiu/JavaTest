@@ -15,11 +15,11 @@ public class SynLock implements Runnable {
      * */
 
     public void run() {
-//        synchronized (this) {    //synchronized 修饰代码块
-//            for (int i = 0; i < 5; i++) {
-//                System.out.println(Thread.currentThread().getName() + " synchronized loop " + i);
-//            }
-//        }
+        synchronized (this) {    //synchronized 修饰代码块
+            for (int i = 0; i < 5; i++) {
+                System.out.println(Thread.currentThread().getName() + " synchronized loop " + i);
+            }
+        }
 //        putTest();
 //        getTest();
 //        method();

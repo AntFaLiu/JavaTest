@@ -33,17 +33,17 @@ public class CyclicBarrierTest {
 
         @Override
         public void run() {
-            // for (int i = 0; i < 3; i++) {
-            System.out.println(threadName + " 准备完成");
-            try {
-                lock.await();
-            } catch (BrokenBarrierException e) {
-                e.printStackTrace();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+            for (int i = 0; i < 3; i++) {
+                System.out.println(threadName + " 准备完成");
+                try {
+                    lock.await();
+                } catch (BrokenBarrierException e) {
+                    e.printStackTrace();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                System.out.println(threadName + " 执行完成");
             }
-            System.out.println(threadName + " 执行完成");
-            // }
         }
     }
 }

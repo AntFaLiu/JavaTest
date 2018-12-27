@@ -11,9 +11,14 @@ public class lockInterruptibly {
         MyThread thread1 = new MyThread(test);
         MyThread thread2 = new MyThread(test);
         thread1.start();
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         thread2.start();
         try {
-            Thread.sleep(2000);
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -29,7 +34,6 @@ public class lockInterruptibly {
                 if(System.currentTimeMillis() - startTime >= Integer.MAX_VALUE) {
                     break;
                 }
-//                插入数据
             }
         }
         finally {

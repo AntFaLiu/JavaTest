@@ -33,8 +33,10 @@ public class CountdownLatchTest2 {
 
         @Override
         public void run() {
-            System.out.println(threadName + " 执行完成");
-            lock.countDown();
+            for(int i = 0;i < 3;i++){
+                System.out.println(threadName + " 执行完成");
+                lock.countDown();
+            }
         }
     }
 }

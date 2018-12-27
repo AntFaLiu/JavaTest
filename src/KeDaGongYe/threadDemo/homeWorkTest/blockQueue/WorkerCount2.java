@@ -21,6 +21,7 @@ public class WorkerCount2 extends Thread {
             System.out.println(name + "阶段1完成, 耗时："+ time);
             countDownLatch.countDown();
 
+
             System.out.println(name + "开始阶段2工作");
             Thread.sleep(time);
             System.out.println(name + "阶段2完成, 耗时："+ time);
@@ -40,8 +41,8 @@ public class WorkerCount2 extends Thread {
         countDownLatch.await();
         System.out.println("准备工作就绪");
 
-        WorkerCount2 worker2 = new WorkerCount2("lilei-2", (long)(Math.random() * 10000), countDownLatch);
-        worker2.start();
-        Thread.sleep(10000);
+//        WorkerCount2 worker2 = new WorkerCount2("lilei-2", (long)(Math.random() * 10000), countDownLatch);
+//        worker2.start();
+//        Thread.sleep(10000);
     }
 }

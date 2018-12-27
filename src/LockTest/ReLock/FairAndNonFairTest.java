@@ -13,15 +13,23 @@ public class FairAndNonFairTest {
     public static void main(String[] args) {
         // TODO Auto-generated method stub
         FairAndNonFairTest rlt = new FairAndNonFairTest();
-        for (int i=0; i<100; i++) {
-//            Thread nonT = new Thread(new NonFairTestThread(rlt));
-//            nonT.setName("nonFair[" + (i + 1) + "]");
-//            nonT.start();
+        for (int i = 0; i < 100; i++) {
+            Thread nonT = new Thread(new NonFairTestThread(rlt));
+            nonT.setName("nonFair[" + (i + 1) + "]");
+            nonT.start();
 
-            Thread fairT = new Thread(new FairTestThread(rlt));
-            fairT.setName("fair[" + (i + 1) + "]");
-            fairT.start();
+//            Thread fairT = new Thread(new FairTestThread(rlt));
+//            fairT.setName("fair[" + (i + 1) + "]");
+//            fairT.start();
         }
+    }
+
+    public int getNum() {
+        return n;
+    }
+
+    public void setNum(int n) {
+        this.n = n;
     }
 
     static class NonFairTestThread implements Runnable {
@@ -62,14 +70,6 @@ public class FairAndNonFairTest {
                 fairlock.unlock();
             }
         }
-    }
-
-    public void setNum(int n) {
-        this.n = n;
-    }
-
-    public int getNum() {
-        return n;
     }
 
 }

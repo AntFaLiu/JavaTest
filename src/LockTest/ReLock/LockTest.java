@@ -16,12 +16,12 @@ public class LockTest {
                 test.insert(Thread.currentThread());
             }
         }.start();
-
         new Thread() {
             public void run() {
                 test.insert(Thread.currentThread());
             }
         }.start();
+
     }
 
     public void insert(Thread thread) {

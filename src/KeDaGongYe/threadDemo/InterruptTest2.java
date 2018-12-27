@@ -3,20 +3,19 @@ package KeDaGongYe.threadDemo;
 
 class MyThreadDemo extends Thread {
     private Object obj = new Object();
+
     @Override
     public void run() {
         super.run();
-        synchronized (MyThreadDemo.class){
-            try {
-                for (int i = 0; i < 500000; i++) {
+        try {
+            for (int i = 0; i < 500000; i++) {
                 this.join();
 //                    MyThreadDemo.class.wait();
-                    System.out.println("i=" + (i + 1));
-                }
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-//            return;
+                System.out.println("i=" + (i + 1));
             }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+//            return;
         }
 
         //尽管线程被中断,但并没有结束运行。这行代码还是会被执行

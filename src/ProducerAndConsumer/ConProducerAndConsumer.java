@@ -140,7 +140,6 @@ public class ConProducerAndConsumer {
                             System.out.println("队列满，等待有空余空间");
                             notFull.await();
                         } catch (InterruptedException e) {
-
                             flag = false;
                         }
                     }
