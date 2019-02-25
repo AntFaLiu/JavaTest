@@ -1,4 +1,4 @@
-package KeDaGongYe.JavaIoDemo;
+package keDaGongYe.JavaIoDemo;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;

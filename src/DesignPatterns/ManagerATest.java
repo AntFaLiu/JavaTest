@@ -1,4 +1,4 @@
-package DesignPatterns;
+package designPatterns;
 
 interface Person {
     void doCoding();

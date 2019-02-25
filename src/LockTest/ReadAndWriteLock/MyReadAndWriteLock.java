@@ -1,4 +1,4 @@
-//package LockTest.ReadAndWriteLock;
+//package lockTest.ReadAndWriteLock;
 //
 //public class MyReadAndWriteLock {
 //    private int writers = 0;
@@ -32,7 +32,7 @@
 //    }
 //}
 
-package LockTest.ReadAndWriteLock;
+package lockTest.ReadAndWriteLock;
 
 public class MyReadAndWriteLock {
     private int writers = 0;

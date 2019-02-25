@@ -1,4 +1,4 @@
-package IODemo;
+package ioDemo;
 
 import sun.nio.cs.StreamDecoder;
 

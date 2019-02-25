@@ -1,4 +1,4 @@
-package KeDaGongYe.JavaIoDemo;
+package keDaGongYe.JavaIoDemo;
 
 import java.io.File;
 import java.io.FileInputStream;

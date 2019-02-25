@@ -1,4 +1,4 @@
-package KeDaGongYe.JavaIoDemo;
+package keDaGongYe.JavaIoDemo;
 
 import java.io.BufferedInputStream;
 import java.io.ByteArrayInputStream;

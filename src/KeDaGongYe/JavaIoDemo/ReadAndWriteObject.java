@@ -1,4 +1,4 @@
-package KeDaGongYe.JavaIoDemo;
+package keDaGongYe.JavaIoDemo;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -60,7 +60,7 @@ public class ReadAndWriteObject {
     public static void main(String[] args) {
         try {
             new Date();
-            User emp2 = (User) Class.forName("KeDaGongYe.JavaIoDemo.User").newInstance();
+            User emp2 = (User) Class.forName("keDaGongYe.JavaIoDemo.User").newInstance();
             emp2.setAge(10);
             emp2.setBirthday(new Date());
             emp2.setGender("男");

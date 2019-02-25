@@ -1,7 +1,6 @@
-package KeDaGongYe.Collection20181126;
+package keDaGongYe.Collection20181126;
 
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.Set;
 
 public class HashSetTest {

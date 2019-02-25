@@ -1,8 +1,6 @@
-package KeDaGongYe.Collection20181126;
+package keDaGongYe.Collection20181126;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
 import java.util.List;
 
 public class ArrayListTest {
@@ -48,19 +46,21 @@ public class ArrayListTest {
 //            System.out.print(value + " ");
 //        }
 
-        int[] num = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20};
-        int[] num1 = new int[20];
-        System.arraycopy(num,0,num1,0,20);
-
-        System.out.println(Arrays.toString(num1));
-        int[] num2 = Arrays.copyOf(num,num.length);
-        System.out.println(Arrays.toString(num2));
-        int[] num3 = num.clone();
-        System.out.println(Arrays.toString(num3));
-
-        int index = 10;
-        System.arraycopy(num,index+1,num,index,num.length-index-1);
-        System.out.println(Arrays.toString(num));
+//        int[] num = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20};
+//        int[] num1 = new int[20];
+//        System.arraycopy(num,0,num1,0,20);
+//
+//        System.out.println(Arrays.toString(num1));
+//        int[] num2 = Arrays.copyOf(num,num.length);
+//        System.out.println(Arrays.toString(num2));
+//        int[] num3 = num.clone();
+//        System.out.println(Arrays.toString(num3));
+//
+//        int index = 10;
+//        System.arraycopy(num,index+1,num,index,num.length-index-1);
+//        System.out.println(Arrays.toString(num));
+        List l = new ArrayList();
+        System.out.println(l.size());
 
     }
 }

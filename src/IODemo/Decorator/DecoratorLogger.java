@@ -1,4 +1,4 @@
-package IODemo.Decorator;
+package ioDemo.Decorator;
 
 import jdk.internal.instrumentation.Logger;
 

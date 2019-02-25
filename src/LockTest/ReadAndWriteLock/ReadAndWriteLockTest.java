@@ -1,4 +1,4 @@
-package LockTest.ReadAndWriteLock;
+package lockTest.ReadAndWriteLock;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

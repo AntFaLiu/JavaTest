@@ -1,4 +1,4 @@
-package JVM;
+package jvm;
 
 import java.util.Arrays;
 

@@ -8,7 +8,7 @@ foreach遍历   两种迭代器遍历  使用ListIterator替换第32个元素
 public class LinkedList<E>  object  
     implements List<E>    可重复、null、有序  pre next  
 	, Deque<E>,
-	Cloneable, clone   jvm底层
+	caiYuan.cloneable, clone   jvm底层
 	java.io.Serializable  可序列化   readobject   writeobject
 	
 	单链表的插入删除   只写方法   不用写类（）  在增删 改查的时候是不要注意 下标是否合法 
@@ -37,7 +37,7 @@ for(int i ;i < 10000000){
     add(i);
 }
 3.线程安全性问题    vetctor  线程安全  grow（） 2  初始容量  11  10
-        Collection c = Collections.synchronizedCollection(new ArrayList());
+        collection c = Collections.synchronizedCollection(new ArrayList());
         List list = Collections.synchronizedList(new ArrayList());
     }
 }
@@ -85,10 +85,10 @@ hashcode  ===   equals
 （6） 哈希、哈希冲突、处理哈希冲突的方法。
 
 public class HashMap<K,V>
-    implements Map<K,V>, Cloneable, Serializable
+    implements Map<K,V>, caiYuan.cloneable, Serializable
    
 Map：
-Cloneable：
+caiYuan.cloneable：
 
 Serializable：
 

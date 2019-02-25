@@ -1,4 +1,4 @@
-package Collection.Reference;
+package collection.Reference;
 
 import java.lang.ref.PhantomReference;
 import java.lang.ref.ReferenceQueue;

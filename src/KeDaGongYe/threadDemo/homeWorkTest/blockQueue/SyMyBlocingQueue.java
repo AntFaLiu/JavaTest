@@ -1,4 +1,4 @@
-package KeDaGongYe.threadDemo.homeWorkTest.blockQueue;
+package keDaGongYe.threadDemo.homeWorkTest.blockQueue;
 
 import java.util.LinkedList;
 import java.util.List;

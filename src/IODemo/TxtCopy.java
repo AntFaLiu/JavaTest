@@ -1,4 +1,4 @@
-package IODemo;
+package ioDemo;
 
 import java.io.FileReader;
 import java.io.FileWriter;

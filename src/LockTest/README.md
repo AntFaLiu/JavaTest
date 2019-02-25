@@ -71,13 +71,13 @@ tryLock(long time,TimeUnit unit)：lock在尝试获取锁的时候，传入一�
     benfit：响应速度更快， 因为不切换线程状态 *7
     bad:线程数量达到一定量时， 性能下降
     public class SpinLock implements Lock{ 
-    private AtomicReference<Thread> sign = new AtomicReference<Thread>();
-    public void lock(){ Thread current=Thread.currentThread(); 
+    private AtomicReference<thread> sign = new AtomicReference<thread>();
+    public void lock(){ thread current=thread.currentThread(); 
     while(!sign.compareAndSet(null, current)){ 
     } 
     }
     public void unlock(){ 
-    Thread current=Thread.currentThread(); 
+    thread current=thread.currentThread(); 
     sign.compareAndSet(current, null); 
     } 
     }

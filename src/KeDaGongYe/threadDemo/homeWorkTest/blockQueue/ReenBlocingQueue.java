@@ -1,4 +1,4 @@
-package KeDaGongYe.threadDemo.homeWorkTest.blockQueue;
+package keDaGongYe.threadDemo.homeWorkTest.blockQueue;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -73,9 +73,7 @@ public class ReenBlocingQueue<E> {
             //生成随机数,按照一定比率读取或者放入，可以更改！！！
             try {
                 if (r < 30) {
-
                     reenBlocingQueue.put(r);
-
                 } else {
                     reenBlocingQueue.take();
                 }

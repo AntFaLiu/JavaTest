@@ -1,4 +1,4 @@
-package Exception;
+package exception;
 /*
 * try、catch、finally语句块的执行顺序:
 * 1)当try没有捕获到异常时：try语句块中的语句逐一被执行，程序将跳过catch语句块，执行finally语句块和其后的语句；

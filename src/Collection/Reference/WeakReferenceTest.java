@@ -1,6 +1,4 @@
-package Collection.Reference;
-
-import Collection.Reference.MyArray;
+package collection.Reference;
 
 import java.lang.ref.ReferenceQueue;
 import java.lang.ref.WeakReference;

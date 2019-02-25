@@ -1,4 +1,4 @@
-package KeDaGongYe.threadDemo.homeWorkTest.blockQueue;
+package keDaGongYe.threadDemo.homeWorkTest.blockQueue;
 
 import java.util.concurrent.CountDownLatch;
 
@@ -43,6 +43,6 @@ public class WorkerCount2 extends Thread {
 
 //        WorkerCount2 worker2 = new WorkerCount2("lilei-2", (long)(Math.random() * 10000), countDownLatch);
 //        worker2.start();
-//        Thread.sleep(10000);
+//        thread.sleep(10000);
     }
 }

@@ -1,7 +1,6 @@
-package KeDaGongYe.JavaIoDemo;
+package keDaGongYe.JavaIoDemo;
 
 import java.io.BufferedInputStream;
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
 
@@ -12,7 +11,7 @@ public class BufferInputTest {
     public static void testBufferedInput() {
         try {
             /**
-             * 建立输入流 BufferedInputStream, 缓冲区大小为8
+             * 建立输入流 BufferedInputStreamTest, 缓冲区大小为8
              * buffer.txt内容为
              * abcdefghij
              */
@@ -26,6 +25,7 @@ public class BufferInputTest {
             in.mark(3);
             /*读取5个字节*/
             in.read(tmp, 0, 4);
+
             System.out.println("字节流中第6到10个字节为: " +  new String(tmp));
             /*reset*/
             in.reset();

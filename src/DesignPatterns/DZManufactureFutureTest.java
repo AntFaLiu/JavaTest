@@ -1,4 +1,4 @@
-package DesignPatterns;
+package designPatterns;
 
 //目标接口
 interface ManufactureFuture {//未来汽车改用电池驱动

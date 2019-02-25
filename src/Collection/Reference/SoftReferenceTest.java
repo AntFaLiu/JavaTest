@@ -1,4 +1,4 @@
-package Collection.Reference;
+package collection.Reference;
 
 import java.lang.ref.ReferenceQueue;
 import java.lang.ref.SoftReference;
@@ -30,9 +30,9 @@ public class SoftReferenceTest {
     }
 }
 //代码运行结果如下，发现启动GC并没有对软引用的对象进行回收：
-//Collection.Reference.MyArray@1b6d3586
+//collection.Reference.MyArray@1b6d3586
 //        false
 //        null
-//        Collection.Reference.MyArray@1b6d3586
+//        collection.Reference.MyArray@1b6d3586
 //        false
 //        null

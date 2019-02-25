@@ -1,10 +1,10 @@
-package IODemo;
+package ioDemo;
 
 import java.io.ByteArrayInputStream;
 import java.io.PushbackInputStream;
 
 //public class PushbackInputStreamDemo1 {
-//    public static void main(String[] args) throws Exception {
+//    public static void main(String[] args) throws exception {
 //        String s = "abcdefg";
 //        /*
 //         * PushbackInputStream pbin = new PushbackInputStream(in)

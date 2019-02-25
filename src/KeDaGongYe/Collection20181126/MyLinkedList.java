@@ -1,4 +1,4 @@
-package KeDaGongYe.Collection20181126;
+package keDaGongYe.Collection20181126;
 
 public class MyLinkedList {
     Node x;

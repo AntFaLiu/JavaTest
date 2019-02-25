@@ -1,4 +1,4 @@
-package Constant;
+package constant;
 
 public class Constant {
     public static final int OPERATORS_PRIO_PLUS_IN = 4;  //栈内加法

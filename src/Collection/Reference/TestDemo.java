@@ -1,4 +1,4 @@
-package Collection.Reference;
+package collection.Reference;
 
 import java.lang.ref.ReferenceQueue;
 import java.lang.ref.SoftReference;

@@ -1,6 +1,6 @@
-package KeDaGongYe.JavaIoDemo;
+package keDaGongYe.JavaIoDemo;
 
-import IODemo.InputStreamReader;
+import ioDemo.InputStreamReader;
 
 import java.io.*;
 
@@ -50,7 +50,7 @@ public class StreamConverter {
             // 方法1：新建FileInputStream对象
             // 新建文件“file.txt”对应File对象
             File file = new File(FileName);
-            IODemo.InputStreamReader in1 = new InputStreamReader(new FileInputStream(file), "utf-8");
+            ioDemo.InputStreamReader in1 = new InputStreamReader(new FileInputStream(file), "utf-8");
             // 测试read()，从中读取一个字符
 //            char c1 = (char) in1.read();
 //            System.out.println("c1=" + c1);
