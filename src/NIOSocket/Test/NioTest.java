@@ -1,7 +1,7 @@
-package NIOSocket.Test;
+package nioSocket.Test;
 
-import NIOSocket.NIOClient.ClientNio;
-import NIOSocket.NioServer.ServerNio;
+import nioSocket.NIOClient.ClientNio;
+import nioSocket.NioServer.ServerNio;
 
 import java.util.Scanner;
 

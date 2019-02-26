@@ -1,4 +1,4 @@
-package MyCollection;
+package myCollection;
 
 import java.util.Iterator;
 import java.util.Map;

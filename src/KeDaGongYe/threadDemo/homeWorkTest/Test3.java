@@ -1,4 +1,4 @@
-package KeDaGongYe.threadDemo.homeWorkTest;
+package keDaGongYe.threadDemo.homeWorkTest;
 
 /**
  * 设计4个线程，其中两个线程每次对j增加1，另外2个线程每次对j减少1.写出程序

@@ -1,4 +1,4 @@
-package Thread;
+package thread;
 
 
 import java.util.concurrent.*;
@@ -64,7 +64,7 @@ import java.util.concurrent.*;
 //                    try {
 //                        while (true) {
 //                            System.out.println(index);
-//                            Thread.sleep(10 * 1000);
+//                            thread.sleep(10 * 1000);
 //                        }
 //                    } catch (InterruptedException e) {
 //                        e.printStackTrace();
@@ -72,7 +72,7 @@ import java.util.concurrent.*;
 //                }
 //            });
 //            try {
-//                Thread.sleep(500);
+//                thread.sleep(500);
 //            } catch (InterruptedException e) {
 //                e.printStackTrace();
 //            }
@@ -111,13 +111,14 @@ import java.util.concurrent.*;
 //        ExecutorService executorFixed = Executors.newFixedThreadPool(2);
 //        ExecutorService executorScheduled = Executors.newScheduledThreadPool(5);
 //        ScheduledExecutorService scheduledThreadPool = Executors.newScheduledThreadPool(5);
+//
 ////        scheduledThreadPool.scheduleAtFixedRate();
 ////        scheduledThreadPool.scheduleWithFixedDelay();
 ////        executorScheduled.submit(new Runnable() {
 ////            @Override
 ////            public void run() {
 ////                for (int i = 0; i < 5; i++) {
-////                    System.out.println(Thread.currentThread().getName() + " synchronized loop " + i);
+////                    System.out.println(thread.currentThread().getName() + " synchronized loop " + i);
 ////                }
 ////            }
 ////        });
@@ -169,12 +170,13 @@ class DemoRunnable implements Runnable {
     @Override
     public void run() {
         //  TODO Auto-generated method stub
+
         System.out.println(Thread.currentThread().getName() + "-->我是通过实现接口的线程实现方式！");
         for (int i = 0; i < 5; i++) {
             System.out.println(Thread.currentThread().getName() + " synchronized loop " + i);
         }
         //int num = 3 / 0;
-        //System.out.println(Thread.currentThread().getName() + num);
+        //System.out.println(thread.currentThread().getName() + num);
     }
 }
 
@@ -214,7 +216,7 @@ public class Executor {
             System.out.println(e.toString());
         }
         // 停止任务执行服务
-        es.shutdownNow();
+//        es.shutdownNow();
 //        es.shutdown();
 
     }
@@ -277,28 +279,28 @@ class CallDemo {
         executor.shutdown();
 
 
-        // TODO 第三种方式:FutureTask + Thread
+        // TODO 第三种方式:FutureTask + thread
 
         // 2. 新建FutureTask,需要一个实现了Callable接口的类的实例作为构造函数参数
 //        FutureTask<Integer> futureTask = new FutureTask<Integer>(new Task());
 //        // 3. 新建Thread对象并启动
-//        Thread thread = new Thread(futureTask);
+//        thread thread = new thread(futureTask);
 //        thread.setName("Task thread");
 //        thread.start();
 //
 //        try {
-//            Thread.sleep(1000);
+//            thread.sleep(1000);
 //        } catch (InterruptedException e) {
 //            e.printStackTrace();
 //        }
 //
-//        System.out.println("Thread [" + Thread.currentThread().getName() + "] is running");
+//        System.out.println("thread [" + thread.currentThread().getName() + "] is running");
 //
 //        // 4. 调用isDone()判断任务是否结束
 //        if (!futureTask.isDone()) {
 //            System.out.println("Task is not done");
 //            try {
-//                Thread.sleep(2000);
+//                thread.sleep(2000);
 //            } catch (InterruptedException e) {
 //                e.printStackTrace();
 //            }
@@ -307,7 +309,7 @@ class CallDemo {
 //        try {
 //            // 5. 调用get()方法获取任务结果,如果任务没有执行完成则阻塞等待
 //            result = futureTask.get();
-//        } catch (Exception e) {
+//        } catch (exception e) {
 //            e.printStackTrace();
 //        }
 //
@@ -320,7 +322,7 @@ class CallDemo {
 
         @Override
         public Integer call() throws Exception {
-            System.out.println("Thread [" + Thread.currentThread().getName() + "] is running");
+            System.out.println("thread [" + Thread.currentThread().getName() + "] is running");
             int result = 0;
             for (int i = 0; i < 100; ++i) {
                 result += i;

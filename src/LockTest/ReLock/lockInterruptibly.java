@@ -1,4 +1,4 @@
-package LockTest.ReLock;
+package lockTest.ReLock;
 
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
@@ -25,7 +25,7 @@ public class lockInterruptibly {
         thread2.interrupt();
     }
 
-    public void insert(Thread thread) throws InterruptedException{
+    public void insert(Thread thread) throws InterruptedException {
         lock.lockInterruptibly();   //注意，如果需要正确中断等待锁的线程，必须将获取锁放在外面，然后将InterruptedException抛出
         try {
             System.out.println(thread.getName()+"得到了锁");

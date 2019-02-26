@@ -1,6 +1,6 @@
-package NIOSocket.NIOClient;
+package nioSocket.NIOClient;
 
-import NIOSocket.Handler.ClientHandle;
+import nioSocket.Handler.ClientHandle;
 
 public class ClientNio {
     private static String DEFAULT_HOST = "127.0.0.1";
@@ -13,7 +13,7 @@ public class ClientNio {
         if(clientHandle!=null)
             clientHandle.stop();
         clientHandle = new ClientHandle(ip,port);
-        new Thread(clientHandle,"Server").start();
+        new Thread(clientHandle,"server").start();
     }
     //向服务器发送消息
     public static boolean sendMsg(String msg) throws Exception{

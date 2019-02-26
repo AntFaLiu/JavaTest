@@ -1,4 +1,4 @@
-package Thread.Volatile;
+package thread.Volatile;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package Collection.Practicequestions;
+package collection.Practicequestions;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package BIOSocketTest.client;
+package bioSocketTest.client;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -18,6 +18,7 @@ public class ClientBio {
         Scanner scn = new Scanner(System.in);
         boolean falg = false;
         while (!falg) {
+            System.out.println("请输入；");
             String expression = scn.next();
             send(expression);
             while (true){

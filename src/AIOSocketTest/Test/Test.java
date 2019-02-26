@@ -1,7 +1,7 @@
-package AIOSocketTest.Test;
+package aioSocketTest.Test;
 
-import AIOSocketTest.Server.ServerAio;
-import AIOSocketTest.client.ClientAio;
+import aioSocketTest.Server.ServerAio;
+import aioSocketTest.client.ClientAio;
 
 import java.util.Scanner;
 

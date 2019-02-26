@@ -1,4 +1,4 @@
-package KeDaGongYe.threadDemo.homeWorkTest;
+package keDaGongYe.threadDemo.homeWorkTest;
 
 /**
  * 编写程序实现,子线程循环10次,接着主线程循环20次,接着再子线程循环10次,主线程循环20次,如此反复,循环10次

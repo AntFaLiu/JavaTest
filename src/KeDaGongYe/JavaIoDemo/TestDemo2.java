@@ -1,4 +1,4 @@
-package KeDaGongYe.JavaIoDemo;
+package keDaGongYe.JavaIoDemo;
 
 import java.io.*;
 import java.util.HashMap;
@@ -7,7 +7,7 @@ import java.util.Map;
 public class TestDemo2 {
     public static void main(String[] args) throws FileNotFoundException {
         // countNum("E:\\java\\代码\\20161007\\src\\com\\example\\test2\\TestDemo.java");
-//        BufferedInputStream bufferedInputStream = new BufferedInputStream(new FileInputStream("E:\\java\\代码\\20161007\\src\\com\\example\\test2\\TestDemo.java"));
+//        BufferedInputStreamTest bufferedInputStream = new BufferedInputStreamTest(new FileInputStream("E:\\java\\代码\\20161007\\src\\com\\example\\test2\\TestDemo.java"));
 //        BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(new FileOutputStream(""));
 //        BufferedReader reader = new BufferedReader(new FileReader("E:\\java\\代码\\20161007\\src\\com\\example\\test2\\TestDemo.java"));
         BufferedReader bufferedReader = new BufferedReader(new FileReader("d:\\aaa.txt"));

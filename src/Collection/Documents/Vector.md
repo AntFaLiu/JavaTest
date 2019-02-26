@@ -51,7 +51,7 @@ Vector包含了许多传统的方法，这些方法不属于集合框架。
     }  
 
 ## 指定集合的Vector构造函数。  
-    public Vector(Collection<? extends E> c) {  
+    public Vector(collection<? extends E> c) {  
         // 获取“集合(c)”的数组，并将其赋值给elementData  
         elementData = c.toArray();  
         // 设置数组长度  

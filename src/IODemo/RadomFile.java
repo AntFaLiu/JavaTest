@@ -1,4 +1,4 @@
-package IODemo;
+package ioDemo;
 
 import java.io.*;
 
@@ -32,6 +32,7 @@ public class RadomFile {
             //获取RandomAccessFile对象文件指针的位置，初始位置是0
             System.out.println("RandomAccessFile文件指针的初始位置:" + raf.getFilePointer());
             raf.seek(postion);//移动文件指针位置
+
             byte[] buff = new byte[1024];
             //用于保存实际读取的字节数
             int hasRead = 0;

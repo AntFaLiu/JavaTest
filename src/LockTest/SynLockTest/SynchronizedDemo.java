@@ -1,7 +1,7 @@
-package LockTest.SynLockTest;
+package lockTest.SynLockTest;
 
 public class SynchronizedDemo {
-    private Object object = new Object();//全局变量
+    private Object object = new Object();
 
     public void method() {
         synchronized (this) {

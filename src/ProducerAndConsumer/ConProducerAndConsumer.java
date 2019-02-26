@@ -1,4 +1,4 @@
-package ProducerAndConsumer;
+package producerAndConsumer;
 
 
 //import java.util.concurrent.locks.Condition;
@@ -26,7 +26,7 @@ package ProducerAndConsumer;
 //        producer.start();
 //    }
 //
-//    class Consumer extends Thread {
+//    class Consumer extends thread {
 //
 //        @Override
 //        public void run() {
@@ -51,7 +51,7 @@ package ProducerAndConsumer;
 //        }
 //    }
 //
-//    class Producer extends Thread {
+//    class Producer extends thread {
 //
 //        @Override
 //        public void run() {
@@ -81,8 +81,8 @@ public class ConProducerAndConsumer {
     private int queueSize = 10;
     private PriorityQueue<Integer> queue = new PriorityQueue<>(10);
     private Lock lock = new ReentrantLock();
-    private Condition notFull = lock.newCondition();
-    private Condition notEmpty = lock.newCondition();
+    private Condition putCon = lock.newCondition();
+    private Condition removeCon = lock.newCondition();
 
     public static void main(String[] args) throws InterruptedException {
 
@@ -108,13 +108,13 @@ public class ConProducerAndConsumer {
                     while (queue.isEmpty()) {
                         try {
                             System.out.println("队列空，等待数据");
-                            notEmpty.await();
-                        } catch (InterruptedException e) {
+                            removeCon.await();
+                        } catch (Exception e) {
                             flag = false;
                         }
                     }
                     queue.poll();                //每次移走队首元素
-                    notFull.signalAll();
+                    putCon.signalAll();
                     System.out.println("从队列取走一个元素，队列剩余" + queue.size() + "个元素");
                 } finally {
                     lock.unlock();
@@ -138,13 +138,13 @@ public class ConProducerAndConsumer {
                     while (queue.size() == queueSize) {
                         try {
                             System.out.println("队列满，等待有空余空间");
-                            notFull.await();
-                        } catch (InterruptedException e) {
+                            putCon.await();
+                        } catch (Exception e) {
                             flag = false;
                         }
                     }
                     queue.offer(1);        //每次插入一个元素
-                    notEmpty.signalAll();
+                    removeCon.signalAll();
                     System.out.println("向队列取中插入一个元素，队列剩余空间：" + (queueSize - queue.size()));
                 } finally {
                     lock.unlock();

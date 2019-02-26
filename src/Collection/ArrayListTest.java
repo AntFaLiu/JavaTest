@@ -1,4 +1,4 @@
-package Collection;
+package collection;
 
 //1、ArrayList的大小是如何自动增加的？你能分享一下你的代码吗？
 //ArrayList Add方法：
@@ -45,8 +45,6 @@ package Collection;
 //        }
 //
 //        }
-
-import LockTest.ReLock.ReentrantLocakTest;
 
 import java.util.*;
 

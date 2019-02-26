@@ -1,4 +1,4 @@
-package MySemaphore;
+package mySemaphore;
 
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.locks.ReentrantLock;

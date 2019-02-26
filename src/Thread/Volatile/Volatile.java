@@ -1,9 +1,7 @@
-package Thread.Volatile;
+package thread.Volatile;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicInteger;
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * 原因在于，自增操作是不具备原子性的，它包括读取变量的原始值、进行加1操作、写入工作内存。那么就是说自增操作的三个子操作可能会分割开执行，就有可能导致下面这种情况出现：
@@ -15,10 +13,11 @@ import java.util.concurrent.locks.ReentrantLock;
 //    private static CountDownLatch countDownLatch = new CountDownLatch(10);
 //    public volatile int inc = 0;  //
 //
+//
 //    public static void main(String[] args) {
 //        final Volatile test = new Volatile();
 //        for (int i = 0; i < 10; i++) {
-//            new Thread() {
+//            new thread() {
 //                @Override
 //                public void run() {
 //                    for (int i = 0; i < 1000; i++) {
@@ -37,7 +36,7 @@ import java.util.concurrent.locks.ReentrantLock;
 //        System.out.println(test.inc);
 //    }
 //
-//    public  void increase() {  //synchronized  保证原子性
+//    public void increase() {  //synchronized  保证原子性
 //        inc++;
 //    }
 //}
@@ -59,7 +58,7 @@ import java.util.concurrent.locks.ReentrantLock;
 //    public static void main(String[] args) {
 //        final Volatile aVolatile = new Volatile();
 //        for(int i=0;i<10;i++){
-//            new Thread(){
+//            new thread(){
 //                public void run() {
 //                    for(int j=0;j<1000;j++)
 //                        aVolatile.increase();
@@ -77,6 +76,7 @@ import java.util.concurrent.locks.ReentrantLock;
 //        System.out.println(aVolatile.inc);
 //    }
 //}
+
 public class Volatile {
     private static CountDownLatch countDownLatch = new CountDownLatch(10);
         public AtomicInteger inc = new AtomicInteger();

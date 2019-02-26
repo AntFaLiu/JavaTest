@@ -1,4 +1,4 @@
-package LockTest.SynLockTest;
+package lockTest.SynLockTest;
 /*
     synchronized
 */
@@ -93,21 +93,21 @@ public class SynLock implements Runnable {
 //    在JDK中，Collections有一个方法可以把不是线程安全的集合转化为线性安全的集合，它是这样实现的：
 //
 //
-//    public static <T> Collection<T> synchronizedCollection(Collection<T> c) {
+//    public static <T> collection<T> synchronizedCollection(collection<T> c) {
 //        return new SynchronizedCollection<>(c);
 //    }
-//    static class SynchronizedCollection<E> implements Collection<E>, Serializable {
+//    static class SynchronizedCollection<E> implements collection<E>, Serializable {
 //        private static final long serialVersionUID = 3053995032091335093L;
 //
-//        final Collection<E> c;  // Backing Collection
+//        final collection<E> c;  // Backing collection
 //        final Object mutex;     // Object on which to synchronize
 //
-//        SynchronizedCollection(Collection<E> c) {
+//        SynchronizedCollection(collection<E> c) {
 //            this.c = Objects.requireNonNull(c);
 //            mutex = this;
 //        }
 //
-//        SynchronizedCollection(Collection<E> c, Object mutex) {
+//        SynchronizedCollection(collection<E> c, Object mutex) {
 //            this.c = Objects.requireNonNull(c);
 //            this.mutex = Objects.requireNonNull(mutex);
 //        }

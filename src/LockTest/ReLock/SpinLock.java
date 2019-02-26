@@ -1,4 +1,4 @@
-package LockTest.ReLock;
+package lockTest.ReLock;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
@@ -33,7 +33,7 @@ public class SpinLock implements Lock {
         while (!owner.compareAndSet(null, current)) {
         }
 
-        holdCount = 1;
+        holdCount = 1;//cas
     }
 
     @Override

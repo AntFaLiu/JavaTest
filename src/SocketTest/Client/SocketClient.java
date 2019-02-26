@@ -1,4 +1,4 @@
-package SocketTest.Client;
+package socketTest.Client;
 
 import java.io.*;
 import java.net.Socket;
@@ -32,7 +32,7 @@ public class SocketClient {
                 String str = sc.next();
                 if (str.equalsIgnoreCase("N")) {
                     dos.writeInt(0);
-                    dos.flush();
+                    //dos.flush();
                     flag = true;
                     break;
                 } else if (str.equalsIgnoreCase("Y")) {

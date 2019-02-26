@@ -7,17 +7,17 @@
 对一个集合的扩展和适应必须是简单的。
 
 ## 接口：
-  是代表集合的抽象数据类型。例如 Collection、List、Set、Map 等。之所以定义多个接口，是为了以不同的方式操作集合对象
-### Collection 接口
-  Collection 是最基本的集合接口，一个 Collection 代表一组 Object，即 Collection 的元素, Java不提供直接继承自Collection的类，只提供继承于的子接口(如List和set)。
-  Collection 接口存储一组不唯一，无序的对象。
+  是代表集合的抽象数据类型。例如 collection、List、Set、Map 等。之所以定义多个接口，是为了以不同的方式操作集合对象
+### collection 接口
+  collection 是最基本的集合接口，一个 collection 代表一组 Object，即 collection 的元素, Java不提供直接继承自Collection的类，只提供继承于的子接口(如List和set)。
+  collection 接口存储一组不唯一，无序的对象。
   
 ### List 接口
-  List接口是一个有序的 Collection，使用此接口能够精确的控制每个元素插入的位置，能够通过索引(元素在List中位置，类似于数组的下标)来访问List中的元素，第一个元素的索引为 0，而且允许有相同的元素。
+  List接口是一个有序的 collection，使用此接口能够精确的控制每个元素插入的位置，能够通过索引(元素在List中位置，类似于数组的下标)来访问List中的元素，第一个元素的索引为 0，而且允许有相同的元素。
   List 接口存储一组不唯一，有序（插入顺序）的对象。
   
 ### Set
-  Set 具有与 Collection 完全一样的接口，只是行为上不同，Set 不保存重复的元素。
+  Set 具有与 collection 完全一样的接口，只是行为上不同，Set 不保存重复的元素。
   Set 接口存储一组唯一，无序的对象。
   
 #### Set和List的区别：

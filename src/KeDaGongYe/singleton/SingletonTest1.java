@@ -1,4 +1,4 @@
-package KeDaGongYe.singleton;
+package keDaGongYe.singleton;
 /**
     饿汉式单例类。    它在类加载时就立即创建对象。
     比较懒，在类加载时，不创建实例，因此类加载速度快，但运行时获取对象的速度慢

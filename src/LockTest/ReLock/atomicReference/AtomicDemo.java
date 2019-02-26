@@ -1,4 +1,4 @@
-package LockTest.ReLock.atomicReference;
+package lockTest.ReLock.atomicReference;
 
 import java.util.concurrent.atomic.AtomicReference;
 

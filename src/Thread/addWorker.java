@@ -1,4 +1,4 @@
-package Thread;
+package thread;
 
 public class addWorker {
 }
@@ -12,7 +12,7 @@ public class addWorker {
    * factory fails to create a thread when asked.  If the thread
    * creation fails, either due to the thread factory returning
    * null, or due to an exception (typically OutOfMemoryError in
-   * Thread#start), we roll back cleanly.
+   * thread#start), we roll back cleanly.
    * 检查根据当前线程池的状态和给定的边界(core or maximum)是否可以创建一个新的worker
    * 如果是这样的话，worker的数量做相应的调整，如果可能的话，创建一个新的worker并启动，参数中的firstTask作为worker的第一个任务
    * 如果方法返回false，可能因为pool已经关闭或者调用过了shutdown
@@ -92,7 +92,7 @@ public class addWorker {
           w = new Worker(firstTask); //1、设置worker这个AQS锁的同步状态state=-1
           //2、将firstTask设置给worker的成员变量firstTask
           //3、使用worker自身这个runnable，调用ThreadFactory创建一个线程，并设置给worker的成员变量thread
-          final Thread t = w.thread;
+          final thread t = w.thread;
           if (t != null) {
               mainLock.lock();
               try {

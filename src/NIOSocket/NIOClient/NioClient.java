@@ -1,4 +1,4 @@
-package NIOSocket.NIOClient;
+package nioSocket.NIOClient;
 
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
@@ -8,22 +8,13 @@ import java.nio.channels.SocketChannel;
 import java.util.Iterator;
 import java.util.Set;
 
-/**
- *
- * <p>
- *   nio client
- * </p>
- *
- * @author 卓轩
- * @创建时间：2014年7月7日
- * @version： V1.0
- */
+
 public class NioClient {
 
     private static final int BLOCK_SIZE = 4096;
+    private static final InetSocketAddress SERVER_ADDRESS = new InetSocketAddress("127.0.0.1", 8787);
     private static ByteBuffer sendBuffer = ByteBuffer.allocate(BLOCK_SIZE);
     private static ByteBuffer receiveBuffer = ByteBuffer.allocate(BLOCK_SIZE);
-    private static final InetSocketAddress SERVER_ADDRESS = new InetSocketAddress("127.0.0.1", 8787);
 
     public static void main(String[] args) {
 

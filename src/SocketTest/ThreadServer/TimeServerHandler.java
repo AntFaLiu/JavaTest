@@ -1,4 +1,4 @@
-package SocketTest.ThreadServer;
+package socketTest.ThreadServer;
 
 import java.io.BufferedReader;
 import java.io.IOException;

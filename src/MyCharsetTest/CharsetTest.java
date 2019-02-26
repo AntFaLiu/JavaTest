@@ -1,4 +1,4 @@
-package MyCharsetTest;
+package myCharsetTest;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
@@ -37,44 +37,44 @@ public class CharsetTest {
             System.out.println("key: " + entry.getKey() + "    value: " + entry.getValue());
         }
 
-        System.out.println("======================================判断是否支持该编码类型===============================================");
-        //判断是否支持该编码类型
-        String charsetName = "UTF-8";
-        boolean supported = Charset.isSupported(charsetName);
-        System.out.println(supported);
-
-        try {
-            /**
-             *使用charset进行编码和解码
-             *charset如何使用
-             */
-            //得到一个CharSet实例
-            Charset charsetInstance = Charset.forName(charsetName);
-
-            //创建一个编码器实例
-            CharsetEncoder encoder = charsetInstance.newEncoder();
-
-            //创建一个接码器实例
-            CharsetDecoder decoder = charsetInstance.newDecoder();
-
-            CharBuffer wrap = CharBuffer.wrap("刘宇鹏".toCharArray());
-
-            //使用encoder进行解码返回一个ByteBuffer
-            ByteBuffer encode = encoder.encode(wrap);
-
-            System.out.println("encode:" + encode);
-
-            //ByteBuffer传递给decoder进行编码，返回一个CharBuffer
-            CharBuffer decode = decoder.decode(encode);
-
-            String string = decode.toString();
-
-            System.out.println("decode.toString(): " + string);
-
-        } catch (Exception e) {
-            // TODO: handle exception
-            System.err.println(e);
-        }
+//        System.out.println("======================================判断是否支持该编码类型===============================================");
+//        //判断是否支持该编码类型
+//        String charsetName = "UTF-8";
+//        boolean supported = Charset.isSupported(charsetName);
+//        System.out.println(supported);
+//
+//        try {
+//            /**
+//             *使用charset进行编码和解码
+//             *charset如何使用
+//             */
+//            //得到一个CharSet实例
+//            Charset charsetInstance = Charset.forName(charsetName);
+//
+//            //创建一个编码器实例
+//            CharsetEncoder encoder = charsetInstance.newEncoder();
+//
+//            //创建一个接码器实例
+//            CharsetDecoder decoder = charsetInstance.newDecoder();
+//
+//            CharBuffer wrap = CharBuffer.wrap("刘宇鹏".toCharArray());
+//
+//            //使用encoder进行解码返回一个ByteBuffer
+//            ByteBuffer encode = encoder.encode(wrap);
+//
+//            System.out.println("encode:" + encode);
+//
+//            //ByteBuffer传递给decoder进行编码，返回一个CharBuffer
+//            CharBuffer decode = decoder.decode(encode);
+//
+//            String string = decode.toString();
+//
+//            System.out.println("decode.toString(): " + string);
+//
+//        } catch (Exception e) {
+//            // TODO: handle exception
+//            System.err.println(e);
+//        }
     }
 
     public static void urlEncodeAndDecodeDemo() {

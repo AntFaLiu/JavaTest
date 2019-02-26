@@ -1,4 +1,4 @@
-package Thread;
+package thread;
 
 import java.util.concurrent.TimeUnit;
 
@@ -61,10 +61,10 @@ class Runnable1 implements Runnable {
 
 //public class Daemon {
 //    public static void main(String[] args) {
-//        Thread mainThread = new Thread(new Runnable() {
+//        thread mainThread = new thread(new Runnable() {
 //            @Override
 //            public void run() {
-//                Thread childThread = new Thread(new ClildThread());
+//                thread childThread = new thread(new ClildThread());
 //                childThread.setDaemon(true);
 //                childThread.start();
 //                System.out.println("I'm main thread...");
@@ -72,7 +72,7 @@ class Runnable1 implements Runnable {
 //        });
 //        mainThread.start();
 //
-//        Thread otherThread = new Thread(new Runnable() {    //因为这个线程还在运行所以守护线程不会结束
+//        thread otherThread = new thread(new Runnable() {    //因为这个线程还在运行所以守护线程不会结束
 //            @Override
 //            public void run() {
 //                while (true) {
@@ -110,10 +110,10 @@ class Runnable1 implements Runnable {
 //public class Daemon {
 //
 //    public static void main(String[] args) {
-//        Thread mainThread = new Thread(new Runnable() {
+//        thread mainThread = new thread(new Runnable() {
 //            public void run() {
 //                System.out.println("主线程开始...");
-//                Thread sonThread = new Thread(new Thread1(Thread.currentThread()));
+//                thread sonThread = new thread(new Thread1(thread.currentThread()));
 //                sonThread.setDaemon(false);
 //                sonThread.start();
 //
@@ -131,9 +131,9 @@ class Runnable1 implements Runnable {
 //}
 //
 //class Thread1 implements Runnable {
-//    private Thread mainThread;
+//    private thread mainThread;
 //
-//    public Thread1(Thread mainThread) {
+//    public Thread1(thread mainThread) {
 //        this.mainThread = mainThread;
 //    }
 //
@@ -171,20 +171,20 @@ class Runnable1 implements Runnable {
 //    DefaultThreadFactory() {
 //        SecurityManager s = System.getSecurityManager();
 //        group = (s != null) ? s.getThreadGroup() :
-//                Thread.currentThread().getThreadGroup();
+//                thread.currentThread().getThreadGroup();
 //        namePrefix = "pool-" +
 //                poolNumber.getAndIncrement() +
 //                "-thread-";
 //    }
 //
-//    public Thread newThread(Runnable r) {
-//        Thread t = new Thread(group, r,
+//    public thread newThread(Runnable r) {
+//        thread t = new thread(group, r,
 //                namePrefix + threadNumber.getAndIncrement(),
 //                0);
 //        if (t.isDaemon())
 //            t.setDaemon(false);
-//        if (t.getPriority() != Thread.NORM_PRIORITY)
-//            t.setPriority(Thread.NORM_PRIORITY);
+//        if (t.getPriority() != thread.NORM_PRIORITY)
+//            t.setPriority(thread.NORM_PRIORITY);
 //        return t;
 //    }
 //}
@@ -196,11 +196,11 @@ class Runnable1 implements Runnable {
 //public class Daemon {
 //
 //    public static void main(String[] args) {
-//        Thread mainThread = new Thread(new Runnable() {
+//        thread mainThread = new thread(new Runnable() {
 //            @Override
 //            public void run() {
 //                ExecutorService exec = Executors.newCachedThreadPool();
-//                Thread childThread = new Thread(new ClildThread());
+//                thread childThread = new thread(new ClildThread());
 //                childThread.setDaemon(true);
 //                exec.execute(childThread);
 //                exec.shutdown();

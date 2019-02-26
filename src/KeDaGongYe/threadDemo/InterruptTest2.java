@@ -1,4 +1,4 @@
-package KeDaGongYe.threadDemo;
+package keDaGongYe.threadDemo;
 
 
 class MyThreadDemo extends Thread {

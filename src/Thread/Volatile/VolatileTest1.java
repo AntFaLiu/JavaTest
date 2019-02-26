@@ -1,4 +1,4 @@
-package Thread.Volatile;
+package thread.Volatile;
 
 public class VolatileTest1 {
     static boolean flag;

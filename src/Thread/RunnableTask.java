@@ -1,4 +1,4 @@
-package Thread;
+package thread;
 
 public class RunnableTask {
     public static void main(String[] args) {
@@ -15,11 +15,11 @@ public class RunnableTask {
 
 
 //        Runnable task = () -> {
-//            String threadName = Thread.currentThread().getName();
+//            String threadName = thread.currentThread().getName();
 //            System.out.println("Hello " + threadName);
 //        };
 //        task.run();
-//        Thread thread = new Thread(task);
+//        thread thread = new thread(task);
 //        thread.start();
 
 

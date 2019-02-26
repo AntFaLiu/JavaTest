@@ -1,4 +1,4 @@
-package KeDaGongYe.threadDemo;
+package keDaGongYe.threadDemo;
 
 public class TestJoin {
     public static void main(String[] args) {
@@ -11,7 +11,7 @@ public class TestJoin {
         }
 
         for (int i = 0; i < 20; i++)
-            System.out.println("I am Main Thread");
+            System.out.println("I am Main thread");
     }
 }
 

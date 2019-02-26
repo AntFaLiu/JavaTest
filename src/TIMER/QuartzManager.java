@@ -1,8 +1,8 @@
-package TIMER;
-
-import java.util.Timer;
-import java.util.TimerTask;
-
+//package timer;
+//
+//import java.util.Timer;
+//import java.util.TimerTask;
+//
 //
 //public class QuartzManager {
 //    private static SchedulerFactory gSchedulerFactory = new StdSchedulerFactory();
@@ -33,7 +33,7 @@ import java.util.TimerTask;
 //            if (!sched.isShutdown()){
 //                sched.start();
 //            }
-//        } catch (Exception e) {
+//        } catch (exception e) {
 //            e.printStackTrace();
 //            throw new RuntimeException(e);
 //        }
@@ -66,7 +66,7 @@ import java.util.TimerTask;
 //            CronTrigger trigger = new CronTrigger(triggerName, triggerGroupName);// 触发器名,触发器组
 //            trigger.setCronExpression(time);// 触发器时间设定
 //            sched.scheduleJob(jobDetail, trigger);
-//        } catch (Exception e) {
+//        } catch (exception e) {
 //            e.printStackTrace();
 //            throw new RuntimeException(e);
 //        }
@@ -94,7 +94,7 @@ import java.util.TimerTask;
 //
 //                addJob(jobName, jobClass, time);
 //            }
-//        } catch (Exception e) {
+//        } catch (exception e) {
 //            e.printStackTrace();
 //            throw new RuntimeException(e);
 //        }
@@ -123,7 +123,7 @@ import java.util.TimerTask;
 //                // 重启触发器
 //                sched.resumeTrigger(triggerName, triggerGroupName);
 //            }
-//        } catch (Exception e) {
+//        } catch (exception e) {
 //            e.printStackTrace();
 //            throw new RuntimeException(e);
 //        }
@@ -140,7 +140,7 @@ import java.util.TimerTask;
 //            sched.pauseTrigger(jobName, TRIGGER_GROUP_NAME);// 停止触发器
 //            sched.unscheduleJob(jobName, TRIGGER_GROUP_NAME);// 移除触发器
 //            sched.deleteJob(jobName, JOB_GROUP_NAME);// 删除任务
-//        } catch (Exception e) {
+//        } catch (exception e) {
 //            e.printStackTrace();
 //            throw new RuntimeException(e);
 //        }
@@ -161,7 +161,7 @@ import java.util.TimerTask;
 //            sched.pauseTrigger(triggerName, triggerGroupName);// 停止触发器
 //            sched.unscheduleJob(triggerName, triggerGroupName);// 移除触发器
 //            sched.deleteJob(jobName, jobGroupName);// 删除任务
-//        } catch (Exception e) {
+//        } catch (exception e) {
 //            e.printStackTrace();
 //            throw new RuntimeException(e);
 //        }
@@ -174,7 +174,7 @@ import java.util.TimerTask;
 //        try {
 //            Scheduler sched = gSchedulerFactory.getScheduler();
 //            sched.start();
-//        } catch (Exception e) {
+//        } catch (exception e) {
 //            e.printStackTrace();
 //            throw new RuntimeException(e);
 //        }
@@ -189,7 +189,7 @@ import java.util.TimerTask;
 //            if(!sched.isShutdown()) {
 //                sched.shutdown();
 //            }
-//        } catch (Exception e) {
+//        } catch (exception e) {
 //            e.printStackTrace();
 //            throw new RuntimeException(e);
 //        }

@@ -1,4 +1,4 @@
-package LockTest.ReadAndWriteLock;
+package lockTest.ReadAndWriteLock;
 
 public class JusetReadSync {
     public synchronized void get(Thread thread) {

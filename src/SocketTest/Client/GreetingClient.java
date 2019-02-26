@@ -1,4 +1,4 @@
-package SocketTest.Client;
+package socketTest.Client;
 
 import java.net.*;
 import java.io.*;
@@ -20,8 +20,10 @@ public class GreetingClient
             DataOutputStream out = new DataOutputStream(outToServer);
             out.writeUTF("Hello from " + client.getLocalSocketAddress());
             InputStream inFromServer = client.getInputStream();
-            DataInputStream in = new DataInputStream(inFromServer);
-            System.out.println("服务器响应： " + in.readUTF());
+            BufferedInputStream in = new BufferedInputStream(inFromServer);
+            byte[] b = new byte[1024];
+            in.read(b);
+            System.out.println("服务器响应： " + new String(b));
             client.close();
         }catch(IOException e)
         {

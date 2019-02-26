@@ -1,4 +1,4 @@
-package KeDaGongYe.threadDemo;
+package keDaGongYe.threadDemo;
 
 class Test implements Runnable {
     boolean flag;

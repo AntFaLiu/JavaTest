@@ -1,4 +1,4 @@
-package LockTest.ReLock;
+package lockTest.ReLock;
 
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;

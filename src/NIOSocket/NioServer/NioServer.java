@@ -1,4 +1,4 @@
-package NIOSocket.NioServer;
+package nioSocket.NioServer;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -11,6 +11,7 @@ import java.nio.channels.SocketChannel;
 import java.util.Iterator;
 import java.util.Random;
 import java.util.Set;
+
 //NIO 指的就是Selector编程，了解Selector编程 首先要了解三个概念
 // 1：Buffer、2:channe 和我们前面将的流是一个作用只不过流是单向的而channel是双向的
 //Selector是Java  NIO 编程的基础。
@@ -40,7 +41,7 @@ public class NioServer {
         selector = Selector.open();
         //注册到selector上，等待连接
         serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT);
-        System.out.println("Server:init successfuly.");
+        System.out.println("server:init successfuly.");
     }
 
     public static void main(String[] args) {
@@ -69,7 +70,7 @@ public class NioServer {
             //遍历，循环处理请求的键集
             Iterator<SelectionKey> iterator = selectionKeys.iterator();
             while (iterator.hasNext()) {
-                SelectionKey selectionKey = (SelectionKey) iterator.next();
+                SelectionKey selectionKey = iterator.next();
                 iterator.remove();
                 handlerKey(selectionKey);
             }
@@ -106,7 +107,7 @@ public class NioServer {
             int count = client.read(receiveBuffer);
             if (count > 0) {
                 String receiveMessage = new String(receiveBuffer.array(), 0, count);
-                System.out.println("Server:接受客户端的数据:" + receiveMessage);
+                System.out.println("server:接受客户端的数据:" + receiveMessage);
                 client.register(selector, SelectionKey.OP_WRITE);
             }
         } else if (selectionKey.isWritable()) {
@@ -114,14 +115,14 @@ public class NioServer {
             sendBuffer.clear();
             //返回该键对应的通道
             client = (SocketChannel) selectionKey.channel();
-            String sendMessage = "Send form Server...Hello... " + new Random().nextInt(100) + " .";
+            String sendMessage = "Send form server...Hello... " + new Random().nextInt(100) + " .";
             //向缓冲区中写入数据
             sendBuffer.put(sendMessage.getBytes());
             //put了数据，标志位被改变
             sendBuffer.flip();
             //数据输出到通道
             client.write(sendBuffer);
-            System.out.println("Server:服务器向客户端发送数据:" + sendMessage);
+            System.out.println("server:服务器向客户端发送数据:" + sendMessage);
             client.register(selector, SelectionKey.OP_READ);
         }
     }

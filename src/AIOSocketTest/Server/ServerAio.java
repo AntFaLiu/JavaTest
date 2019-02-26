@@ -1,6 +1,6 @@
-package AIOSocketTest.Server;
+package aioSocketTest.Server;
 
-import AIOSocketTest.ServerHandler.AsyncServerHandler;
+import aioSocketTest.ServerHandler.AsyncServerHandler;
 
 public class ServerAio {
     private static int DEFAULT_PORT = 12345;
@@ -13,7 +13,7 @@ public class ServerAio {
         if(serverHandle!=null)
             return;
         serverHandle = new AsyncServerHandler(port);
-        new Thread(serverHandle,"Server").start();
+        new Thread(serverHandle,"server").start();
     }
     public static void main(String[] args){
         ServerAio.start();

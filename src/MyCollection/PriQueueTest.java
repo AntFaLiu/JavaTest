@@ -1,4 +1,4 @@
-package MyCollection;
+package myCollection;
 
 public class PriQueueTest {
     public static void main(String[] args) {

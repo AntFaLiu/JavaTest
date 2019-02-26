@@ -5,7 +5,7 @@
 ### 继承哪些接口实现哪些类
     public class LinkedList<E>
         extends AbstractSequentialList<E>
-        implements List<E>, Deque<E>, Cloneable, java.io.Serializable
+        implements List<E>, Deque<E>, caiYuan.cloneable, java.io.Serializable
 ### 原理及内部特点
     不是线程安全的，没有Synchronized关键字。
     允许向其中添加null。

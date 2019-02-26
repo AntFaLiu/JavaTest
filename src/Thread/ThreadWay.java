@@ -1,8 +1,6 @@
-package Thread;
+package thread;
 
 import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Future;
 import java.util.concurrent.FutureTask;
 
 public class ThreadWay {
@@ -13,7 +11,7 @@ public class ThreadWay {
 //        threadDemo01.start();
 
 //        //方式二 实现runnable接口
-//        Thread t1 = new Thread(new DemoOne(),"我是实现runnable接口的线程2");
+//        thread t1 = new thread(new DemoOne(),"我是实现runnable接口的线程2");
 //        t1.start();
 
 //        //方式三 实现callable接口
@@ -27,7 +25,7 @@ public class ThreadWay {
 //        ThreadDemo td = new ThreadDemo();
 //        //1.执行 Callable 方式，需要 FutureTask 实现类的支持，用于接收运算结果。
 //        FutureTask<Integer> result = new FutureTask<>(td);
-//        new Thread(result).start();
+//        new thread(result).start();
 //
 //        //2.接收线程运算后的结果
 //        try {

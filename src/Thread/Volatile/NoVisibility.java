@@ -1,23 +1,30 @@
-package Thread.Volatile;
+package thread.Volatile;
 
-public class NoVisibility {
-    private static volatile boolean ready = false;
-    private static volatile int number;
+public class NoVisibility implements Runnable{
 
-    public static void main(String[] args) {
-        new ReaderThread().start();
+    private String name;
 
-        number = 42;
-        ready = true;
+    public NoVisibility(String name) {
+        this.name = name;
     }
 
-    private static class ReaderThread extends Thread {
-        @Override
-        public void run() {
-            while (!ready) {
+    public void run() {
+        for (int i = 0; i < 100; i++) {
+            System.out.println(name  + ":" + i);
+            if ("t1".equals(name) && i == 5) {
+                System.out.println(name  + ":" + i +"......yield.............");
                 Thread.yield();
             }
-            System.out.println(number);
         }
+    }
+
+    /**
+     * 暂停当前正在执行的线程对象，并执行其他线程
+     */
+    public static void main(String[] args) throws Exception {
+        Thread t1 = new Thread(new NoVisibility("t1"));
+        Thread t2 = new Thread(new NoVisibility("t2"));
+        t1.start();
+        t2.start();
     }
 }

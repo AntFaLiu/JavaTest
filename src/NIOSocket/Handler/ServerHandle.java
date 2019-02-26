@@ -1,4 +1,4 @@
-package NIOSocket.Handler;
+package nioSocket.Handler;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -30,7 +30,7 @@ public class ServerHandle implements Runnable {
             serverChannel.configureBlocking(false);//开启非阻塞模式
             //绑定端口 backlog设为1024
             serverChannel.socket().bind(new InetSocketAddress(port), 1024);
-            //监听客户端连接请求
+            //监听客户端连接请求 像通道注册事件
             serverChannel.register(selector, SelectionKey.OP_ACCEPT);
             //标记服务器已开启
             started = true;
@@ -95,6 +95,7 @@ public class ServerHandle implements Runnable {
     private void handleInput(SelectionKey key) throws IOException {
         if (key.isValid()) {  //判读key是否有效
             //处理新接入的请求消息
+
             if (key.isAcceptable()) {   //判断是否有客户端连接进来
                 ServerSocketChannel ssc = (ServerSocketChannel) key.channel();
                 //通过ServerSocketChannel的accept创建SocketChannel实例

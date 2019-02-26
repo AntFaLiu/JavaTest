@@ -1,4 +1,4 @@
-package AIOSocketTest.ClientHandler;
+package aioSocketTest.ClientHandler;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;

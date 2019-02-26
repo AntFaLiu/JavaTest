@@ -1,4 +1,4 @@
-package LockTest.SynLockTest;
+package lockTest.SynLockTest;
 
 public class SynchronizedMethod {
     public synchronized  void method() {

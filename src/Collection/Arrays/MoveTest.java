@@ -1,4 +1,4 @@
-package Collection.Arrays;
+package collection.Arrays;
 
 public class MoveTest {
     public static void main(String[] args) {

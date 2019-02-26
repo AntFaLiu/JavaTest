@@ -1,4 +1,4 @@
-package Thread;
+package thread;
 
 //import javax.annotation.Resource;
 //import java.util.Collections;
@@ -222,9 +222,9 @@ public class ThreadUseCase {
 //                BizResult br = new BizResult();
 //                br.setOrderId(this.orderId);
 //                br.setData("some key about your business" + this.getClass());
-//                Thread.sleep(3000);
+//                thread.sleep(3000);
 //                return br;
-//            } catch (Exception e) {
+//            } catch (exception e) {
 //                e.printStackTrace();
 //            }
 //            return null;

@@ -1,6 +1,6 @@
-package AIOSocketTest.ServerHandler;
+package aioSocketTest.ServerHandler;
 
-import AIOSocketTest.Server.ServerAio;
+import aioSocketTest.Server.ServerAio;
 
 import java.nio.ByteBuffer;
 import java.nio.channels.AsynchronousSocketChannel;

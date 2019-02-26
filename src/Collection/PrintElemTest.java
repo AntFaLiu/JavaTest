@@ -1,4 +1,4 @@
-package Collection;
+package collection;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -67,7 +67,7 @@ public class PrintElemTest {
 //        ListIterator<Integer> iterator2 = list.listIterator();
 //
 //        /**
-//         * Exception in thread "main" java.lang.IllegalStateException
+//         * exception in thread "main" java.lang.IllegalStateException
 //         at java.util.ArrayList$ListItr.set(ArrayList.java:941)
 //         at cn.lonecloud.Iterator.myListIterator.main(myListIterator.java:14)
 //         同样会报错，这个类里面的set和remove方法都需要和next()方法相结合使用

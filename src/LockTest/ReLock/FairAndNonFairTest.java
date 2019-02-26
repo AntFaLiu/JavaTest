@@ -1,4 +1,4 @@
-package LockTest.ReLock;
+package lockTest.ReLock;
 
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -13,14 +13,14 @@ public class FairAndNonFairTest {
     public static void main(String[] args) {
         // TODO Auto-generated method stub
         FairAndNonFairTest rlt = new FairAndNonFairTest();
-        for (int i = 0; i < 100; i++) {
-            Thread nonT = new Thread(new NonFairTestThread(rlt));
-            nonT.setName("nonFair[" + (i + 1) + "]");
-            nonT.start();
+        for (int i = 0; i < 2; i++) {
+//            thread nonT = new thread(new NonFairTestThread(rlt));
+//            nonT.setName("nonFair[" + (i + 1) + "]");
+//            nonT.start();
 
-//            Thread fairT = new Thread(new FairTestThread(rlt));
-//            fairT.setName("fair[" + (i + 1) + "]");
-//            fairT.start();
+            Thread fairT = new Thread(new FairTestThread(rlt));
+            fairT.setName("fair[" + (i + 1) + "]");
+            fairT.start();
         }
     }
 
@@ -40,13 +40,15 @@ public class FairAndNonFairTest {
         }
 
         public void run() {
-            lock.lock();
-            try {
-                rlt.setNum(rlt.getNum() + 1);
-                System.out.println(Thread.currentThread().getName()
-                        + " nonfairlock***************" + rlt.getNum());
-            } finally {
-                lock.unlock();
+            while (true) {
+                lock.lock();
+                try {
+                    rlt.setNum(rlt.getNum() + 1);
+                    System.out.println(Thread.currentThread().getName()
+                            + " nonfairlock***************" + rlt.getNum());
+                } finally {
+                    lock.unlock();
+                }
             }
         }
     }
@@ -59,17 +61,18 @@ public class FairAndNonFairTest {
         }
 
         public void run() {
-            fairlock.lock();
-            try {
-                rlt.setNum(rlt.getNum() + 1);
-                System.out.println(Thread.currentThread().getName()
-                        + "   fairlock=======" + rlt.getNum() + "   "
-                        + fairlock.getHoldCount() + " queuelength="
-                        + fairlock.getQueueLength());
-            } finally {
-                fairlock.unlock();
+            while (true) {
+                fairlock.lock();
+                try {
+                    rlt.setNum(rlt.getNum() + 1);
+                    System.out.println(Thread.currentThread().getName()
+                            + "   fairlock=======" + rlt.getNum() + "   "
+                            + fairlock.getHoldCount() + " queuelength="
+                            + fairlock.getQueueLength());
+                } finally {
+                    fairlock.unlock();
+                }
             }
         }
     }
-
 }

@@ -1,4 +1,4 @@
-package LockTest.ReLock;
+package lockTest.ReLock;
 
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
@@ -41,7 +41,7 @@ public class ReentrantLocakTest implements Runnable {
 //    public void testMethod() {
 //        lock.lock();
 //        for (int i = 0; i < 5; i++) {
-//            System.out.println("ThreadName=" + Thread.currentThread().getName()
+//            System.out.println("ThreadName=" + thread.currentThread().getName()
 //                    + (" " + (i + 1)));
 //        }
 //        lock.unlock();

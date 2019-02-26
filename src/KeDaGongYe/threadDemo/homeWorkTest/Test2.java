@@ -1,4 +1,4 @@
-package KeDaGongYe.threadDemo.homeWorkTest;
+package keDaGongYe.threadDemo.homeWorkTest;
 
 /**
  * 用Java写一个会导致死锁的程序

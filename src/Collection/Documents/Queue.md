@@ -1,6 +1,6 @@
 ## 简介
-    Queue继承自 Collection 结构如下：
-        public interface Queue<E> extends Collection<E> {
+    Queue继承自 collection 结构如下：
+        public interface Queue<E> extends collection<E> {
             boolean add(E var1);
             boolean offer(E var1);
             E remove();
@@ -9,7 +9,7 @@
             E peek();
         }
 ## 处理元素的方法
-    在处理元素前用于保存元素的 collection。除了基本的 Collection 操作外，队列还提供其他的插入、提取和检查操作。
+    在处理元素前用于保存元素的 collection。除了基本的 collection 操作外，队列还提供其他的插入、提取和检查操作。
     每个方法都存在两种形式：一种抛出异常（操作失败时），另一种返回一个特殊值（null 或 false，具体取决于操作）。
     插入操作的后一种形式是用于专门为有容量限制的 Queue 实现设计的；在大多数实现中，插入操作不会失败。
 ### Queue 的抽象实现类
@@ -31,7 +31,7 @@
 ### ArrayDeque 源码解析
 ### 继承了那些接口
     public class ArrayDeque<E> extends AbstractCollection<E>
-                         implements Deque<E>, Cloneable, Serializab{
+                         implements Deque<E>, caiYuan.cloneable, Serializab{
 ### 属性解析
      /*** 数组作为存储结构*/
      private transient E[] elements;

@@ -1,9 +1,9 @@
-package BIOSocketTest.Server;
+package bioSocketTest.server;
 
 //伪异步IO模型   类似BIO模型 只是用线程池来管理工作线程  通过线程池的机制减少了一部分资源的浪费
 
 
-import BIOSocketTest.Handler.ServerHandler;
+import bioSocketTest.handler.ServerHandler;
 
 import java.io.IOException;
 import java.net.ServerSocket;

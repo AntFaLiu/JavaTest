@@ -1,4 +1,4 @@
-package KeDaGongYe.threadDemo;
+package keDaGongYe.threadDemo;
 
 public class FlagThread extends Thread {
     //设置中断标志

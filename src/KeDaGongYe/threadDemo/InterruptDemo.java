@@ -1,4 +1,4 @@
-package KeDaGongYe.threadDemo;
+package keDaGongYe.threadDemo;
 
 public class InterruptDemo {
     public static void main(String[] args) throws Exception {
@@ -14,7 +14,7 @@ public class InterruptDemo {
             System.out.println("Worker started.");
             System.out.println("Worker IsInterrupted before: " +
                     Thread.currentThread().isInterrupted());
-            //Thread.interrupted();
+            //thread.interrupted();
             System.out.println("Worker IsInterrupted  after interrupted: " +
                     Thread.currentThread().isInterrupted());
             try {

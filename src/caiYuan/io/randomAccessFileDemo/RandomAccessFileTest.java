@@ -10,22 +10,20 @@ public class RandomAccessFileTest {
     public static void main(String[] args) {
 
         String source = "E:/JavaIOTest.txt";
-//        randomReader(source,2);  //只能移动双数位
+        randomReader(source,2);  //只能移动双数位
         randomWrite(source);  //在末尾追加
-        randomInsert(source, 20, "白居易");
+//        randomInsert(source, 20, "白居易");
     }
 
     /**
      * 读取任意位置的数据
-     *
-     * @param path
-     * @param postion
      */
     public static void
     randomReader(String path, int postion) {
 
         try {
             RandomAccessFile raf = new RandomAccessFile(path, "r");
+
             //获取RandomAccessFile对象文件指针的位置，初始位置是0
             System.out.println("RandomAccessFile文件指针的初始位置:" + raf.getFilePointer());
             raf.seek(postion);//移动文件指针位置
@@ -55,7 +53,7 @@ public class RandomAccessFileTest {
 
             //将记录指针移动到文件最后
             raf.seek(raf.length());
-            raf.write("我是追加的 ".getBytes("gbk"));   //传中文应序列化
+            raf.write("我是追加的 ".getBytes("GBK"));   //传中文应序列化
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -64,10 +62,6 @@ public class RandomAccessFileTest {
 
     /**
      * 任意位置插入数据
-     *
-     * @param path
-     * @param points
-     * @param insertContent
      */
 
     public static void randomInsert(String path, long points, String insertContent) {

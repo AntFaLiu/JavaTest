@@ -1,4 +1,4 @@
-package AIOSocketTest.ServerHandler;
+package aioSocketTest.ServerHandler;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;

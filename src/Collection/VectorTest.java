@@ -1,6 +1,4 @@
-package Collection;
-
-import java.util.Vector;
+package collection;
 
 public class VectorTest {
     public static void main(String[] args) {

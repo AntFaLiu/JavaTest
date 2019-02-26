@@ -1,4 +1,4 @@
-package KeDaGongYe.threadDemo;
+package keDaGongYe.threadDemo;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
@@ -9,17 +9,25 @@ public class CountdownLatchTest2 {
 
     public static void main(String[] args) {
         CountDownLatch lock = new CountDownLatch(THREAD_NUM);
-        ExecutorService exec = Executors.newCachedThreadPool();
+        ExecutorService exec = Executors.newFixedThreadPool(THREAD_NUM);
         for (int i = 0; i < THREAD_NUM; i++) {
-            exec.submit(new CountdownLatchTask(lock, "Thread-" + i));
+            //exec.submit(new CountdownLatchTask(lock, "thread-" + i));
+            new Thread(new CountdownLatchTask(lock, "thread-" + i)).start();
+//            try {
+//                Thread.sleep(1000);
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
+//            System.out.println("lock.getCount(): " + lock.getCount());
         }
+        System.out.println("mian");
         try {
             lock.await();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
         System.out.println("大家都执行完成了，做总结性工作");
-        exec.shutdown();
+//        exec.shutdown();
     }
 
     static class CountdownLatchTask implements Runnable {
@@ -33,10 +41,14 @@ public class CountdownLatchTest2 {
 
         @Override
         public void run() {
-            for(int i = 0;i < 3;i++){
-                System.out.println(threadName + " 执行完成");
-                lock.countDown();
+            System.out.println(threadName + " 执行完成");
+            lock.countDown();
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
+
         }
     }
 }

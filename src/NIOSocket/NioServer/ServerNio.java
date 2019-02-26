@@ -1,6 +1,6 @@
-package NIOSocket.NioServer;
+package nioSocket.NioServer;
 
-import NIOSocket.Handler.ServerHandle;
+import nioSocket.Handler.ServerHandle;
 
 public class ServerNio {
     private static int DEFAULT_PORT = 12345;
@@ -14,7 +14,7 @@ public class ServerNio {
         if (serverHandle != null)
             serverHandle.stop();
         serverHandle = new ServerHandle(port);
-        new Thread(serverHandle, "Server").start();
+        new Thread(serverHandle, "server").start();
     }
 
     public static void main(String[] args) {

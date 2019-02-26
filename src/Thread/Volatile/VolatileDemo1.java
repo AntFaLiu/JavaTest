@@ -1,4 +1,4 @@
-package Thread.Volatile;
+package thread.Volatile;
 
 public class VolatileDemo1 {
     volatile int a = 10;

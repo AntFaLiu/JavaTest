@@ -1,4 +1,4 @@
-package LockTest.ReLock.atomicReference;
+package lockTest.ReLock.atomicReference;
 
 public class People {
     private String name;

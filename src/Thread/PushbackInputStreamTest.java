@@ -1,4 +1,4 @@
-package Thread;
+package thread;
 
 import java.io.IOException;
 import java.io.PushbackReader;

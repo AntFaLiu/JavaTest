@@ -1,9 +1,7 @@
-package KeDaGongYe.threadDemo;
+package keDaGongYe.threadDemo;
 
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 public class CyclicBarrierTest {
     private final static int THREAD_NUM = 10;
@@ -15,11 +13,21 @@ public class CyclicBarrierTest {
                 System.out.println("大家都准备完成了");
             }
         });
-        ExecutorService exec = Executors.newCachedThreadPool();
+        //ExecutorService exec = Executors.newCachedThreadPool();
         for (int i = 0; i < THREAD_NUM; i++) {
-            exec.submit(new CountdownLatchTask(lock, "Thread-" + i));
+            new Thread(new CountdownLatchTask(lock, "thread-" + i)).start();
+//            try {
+//                Thread.sleep(1000);
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
+//            if (i == 4) {
+//                lock.reset();
+//                System.out.println("**********reset() lock.getNumberWaiting()************ " + lock.getNumberWaiting());
+//            }
         }
-        exec.shutdown();
+
+        //exec.shutdown();
     }
 
     static class CountdownLatchTask implements Runnable {
@@ -33,17 +41,18 @@ public class CyclicBarrierTest {
 
         @Override
         public void run() {
-            for (int i = 0; i < 3; i++) {
-                System.out.println(threadName + " 准备完成");
-                try {
-                    lock.await();
-                } catch (BrokenBarrierException e) {
-                    e.printStackTrace();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                System.out.println(threadName + " 执行完成");
+
+            System.out.println(threadName + " 准备完成");
+            try {
+//                System.out.println("lock.getNumberWaiting(): " + lock.getNumberWaiting());
+//                System.out.println("lock.getParties():   " + lock.getParties());
+                lock.await();
+            } catch (BrokenBarrierException e) {
+                e.printStackTrace();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
+            System.out.println(threadName + " 执行完成");
         }
     }
 }

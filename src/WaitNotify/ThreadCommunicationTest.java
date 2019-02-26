@@ -1,4 +1,4 @@
-package WaitNotify;
+package waitNotify;
 
 
 import java.util.concurrent.ExecutorService;

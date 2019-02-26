@@ -1,4 +1,4 @@
-package KeDaGongYe.threadDemo.homeWorkTest;
+package keDaGongYe.threadDemo.homeWorkTest;
 
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;

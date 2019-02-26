@@ -138,7 +138,7 @@ public class IoTest {
     /**
      *      * 缓冲字符写入文件，写字符串，数组或字符数据
      *      * @param content
-     *      * @throws Exception
+     *      * @throws exception
      *      
      */
 
@@ -166,7 +166,7 @@ public class IoTest {
     /**
      *      * 文件输出流,必须将数据转换为字节，并保存到文件
      *      * @param content
-     *      * @throws Exception
+     *      * @throws exception
      *      
      */
 
@@ -247,7 +247,7 @@ public class IoTest {
 //
 //ObjectInputStream/ObjectOutputStream用于对象的输入，输出字节数据（对象需要序列化）
 //
-//BufferedInputStream/BufferedOutputStream实现缓冲的输入/输出字节数据
+//BufferedInputStreamTest/BufferedOutputStream实现缓冲的输入/输出字节数据
 //
 //操作耗时比
 

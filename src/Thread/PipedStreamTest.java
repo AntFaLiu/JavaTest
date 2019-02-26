@@ -1,4 +1,4 @@
-package Thread;
+package thread;
 
 import java.io.IOException;
 import java.io.PipedInputStream;
@@ -18,6 +18,7 @@ class Receiver extends Thread {
     @Override
     public void run() {
         readMessageOnce();
+
 //        readMessageContinued();
     }
 

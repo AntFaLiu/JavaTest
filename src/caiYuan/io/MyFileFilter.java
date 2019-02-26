@@ -9,7 +9,7 @@ import java.io.FilenameFilter;
 class MyFileNmaeFileFilter implements FilenameFilter {
     @Override
     public boolean accept(File dir, String name) {
-        //lyp  reader     InPutStream()
+        //dir: 是文件的父目录 例如：E:/java/IoTest    dir： E:/java   name:IoTest
         System.out.println("dir： " + dir + "   name: " + name);
         return (new File(dir, name).isDirectory()) ||
                 (new File(dir, name)).isFile() && name.endsWith(".java");
@@ -46,7 +46,7 @@ public class MyFileFilter {
                         if (files[j].isFile()) {
                             //System.out.println(files[j].getName());
                         } else {
-                            fileNameMyFilter(files[j].getAbsolutePath());
+                           // fileNameMyFilter(files[j].getAbsolutePath());
                         }
                     }
                 }

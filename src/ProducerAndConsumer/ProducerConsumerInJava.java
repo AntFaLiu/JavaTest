@@ -1,4 +1,4 @@
-package ProducerAndConsumer;
+package producerAndConsumer;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -29,7 +29,7 @@ class Producer extends Thread {
 
     @Override
     public void run() {
-        while (true) {
+        //while (true) {
             synchronized (queue) {
                 while (queue.size() == maxSize) {
                     try {
@@ -47,7 +47,7 @@ class Producer extends Thread {
                 queue.notifyAll();
             }
         }
-    }
+    //}
 }
 
 
@@ -63,7 +63,7 @@ class Consumer extends Thread {
 
     @Override
     public void run() {
-        while (true) {
+        //while (true) {  //flag
             synchronized (queue) {
                 while (queue.isEmpty()) {
                     System.out.println("Queue is empty," + "Consumer thread is waiting" + " for producer thread to put something in queue");
@@ -78,7 +78,7 @@ class Consumer extends Thread {
                 queue.notifyAll();
             }
         }
-    }
+    //}
 }
 
 //1. 你可以使用wait和notify函数来实现线程间通信。你可以用它们来实现多线程（>3）之间的通信。

@@ -1,12 +1,12 @@
-package LockTest.ReLock;
+package lockTest.ReLock;
 
 import java.util.ArrayList;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class LockTest {
-    private ArrayList<Integer> arrayList = new ArrayList<Integer>();
     Lock lock = new ReentrantLock();    //注意这个地方
+    private ArrayList<Integer> arrayList = new ArrayList<Integer>();
 
     public static void main(String[] args) {
         final LockTest test = new LockTest();
@@ -16,6 +16,7 @@ public class LockTest {
                 test.insert(Thread.currentThread());
             }
         }.start();
+
         new Thread() {
             public void run() {
                 test.insert(Thread.currentThread());

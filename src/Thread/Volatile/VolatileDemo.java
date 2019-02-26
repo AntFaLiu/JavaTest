@@ -1,4 +1,4 @@
-package Thread.Volatile;
+package thread.Volatile;
 
 public class VolatileDemo extends Object implements Runnable {
     //value变量没有被标记为volatile
@@ -24,7 +24,7 @@ public class VolatileDemo extends Object implements Runnable {
             Thread t = new Thread(vol);
             t.start();
             //休眠100ms，让刚刚启动的线程有时间运行
-            //Thread.sleep(100);
+            //thread.sleep(100);
             //workMethod方法在main线程中运行
             vol.workMethod();
         } catch (InterruptedException x) {
@@ -48,7 +48,7 @@ public class VolatileDemo extends Object implements Runnable {
 //                synchronized (lock) {
 //                    //不做任何事
 //                    try {
-//                        Thread.sleep(1000);
+//                        thread.sleep(1000);
 //                    } catch (InterruptedException e) {
 //                        // TODO Auto-generated catch block
 //                        e.printStackTrace();
@@ -72,7 +72,7 @@ public class VolatileDemo extends Object implements Runnable {
         missedIt = true;
         print("in workMethod() - just set missedIt=" + missedIt);
         print("in workMethod() - about to sleep for 3 seconds");
-        //  Thread.sleep(5000);
+        //  thread.sleep(5000);
         //仅在此改变value的值
         value = 50;
         print("in workMethod() - just set value=" + value);

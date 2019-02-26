@@ -10,7 +10,7 @@
 //import java.nio.channels.Selector;
 //import java.nio.channels.ServerSocketChannel;
 //import java.nio.channels.SocketChannel;
-//import java.nio.charset.MyCharsetTest;
+//import java.nio.charset.myCharsetTest;
 //import java.util.*;
 //import java.util.concurrent.ArrayBlockingQueue;
 //import java.util.concurrent.BlockingQueue;
@@ -22,7 +22,7 @@
 // * <p>Opens a ServerSocket on 2001.</p>
 // *
 // * <ol>
-// * <li>And client that attaches will be sent a copy of the messages generated from the console.</li>
+// * <li>And bioClient that attaches will be sent a copy of the messages generated from the console.</li>
 // * <li>Any input from the clients will be read and printed to the console line by line</li>
 // * </ol>
 // *
@@ -32,7 +32,7 @@
 //
 //public class BroadcastServer {
 //
-//    private static final MyCharsetTest UTF8 = MyCharsetTest.forName("UTF-8");
+//    private static final myCharsetTest UTF8 = myCharsetTest.forName("UTF-8");
 //
 //    private final Logger logger = LoggerFactory.getLogger(BroadcastServer.class);
 //
@@ -42,7 +42,7 @@
 //
 //    private volatile boolean stopping ;
 //
-//    private Thread thread;
+//    private thread thread;
 //
 //    public BroadcastServer() {
 //        try {
@@ -73,7 +73,7 @@
 //                    SocketChannel newClient = ssc.accept();
 //                    newClient.configureBlocking(false);
 //                    newClient.register(selector, SelectionKey.OP_READ, new ConnectionState());
-//                    logger.info("New client connected");
+//                    logger.info("New bioClient connected");
 //                }
 //                if( selectionKey.isValid() && selectionKey.isWritable() ){
 ////                    logger.info("Writable()");
@@ -157,7 +157,7 @@
 //                if( b == '\n' ){
 //                    // end of command
 //                    command.flip();
-//                    logger.info("Complete message from client, [{}]", new String(command.array(),MyCharsetTest.defaultCharset()));
+//                    logger.info("Complete message from bioClient, [{}]", new String(command.array(),myCharsetTest.defaultCharset()));
 //                    command.clear(); // put it back
 //                    endOfLastCommand = i;
 //                } else {
@@ -183,12 +183,12 @@
 //            throw new IllegalStateException("Already started");
 //        }
 //
-//        this.thread = new Thread(){
+//        this.thread = new thread(){
 //            @Override
 //            public void run() {
 //                try {
 //                    go();
-//                } catch (Exception e) {
+//                } catch (exception e) {
 //                    logger.error("BroadcastServer ending with exception", e);
 //                }
 //            }
@@ -220,7 +220,7 @@
 //            switch(line){
 //                case "q":
 //                    server.stop();
-//                    System.out.println("Server stopped");
+//                    System.out.println("server stopped");
 //                    return;
 //                case "s":
 //                    server.printSummary();

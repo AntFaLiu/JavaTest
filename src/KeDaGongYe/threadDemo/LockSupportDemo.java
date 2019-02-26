@@ -1,4 +1,4 @@
-package KeDaGongYe.threadDemo;
+package keDaGongYe.threadDemo;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.LockSupport;

@@ -1,6 +1,6 @@
-package AIOSocketTest.client;
+package aioSocketTest.client;
 
-import AIOSocketTest.ClientHandler.AsyncClientHandler;
+import aioSocketTest.ClientHandler.AsyncClientHandler;
 
 import java.util.Scanner;
 
